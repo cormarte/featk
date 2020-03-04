@@ -1,0 +1,195 @@
+\hypertarget{classfeatk_reaction_diffusion_solver}{}\doxysection{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$ Class Template Reference}
+\label{classfeatk_reaction_diffusion_solver}\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+
+
+{\ttfamily \#include $<$featk\+Reaction\+Diffusion\+Solver.\+h$>$}
+
+Inheritance diagram for featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classfeatk_reaction_diffusion_solver}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_reaction_diffusion_solver_aacad8b93910ea0f7bbbc3e30f623fd1d}{featk\+Reaction\+Diffusion\+Solver}} ()
+\item 
+\mbox{\hyperlink{classfeatk_reaction_diffusion_solver_ab6bace315251d67bfcf00b29872df484}{$\sim$featk\+Reaction\+Diffusion\+Solver}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a8736dd765d52ad3c5f987ae895365138}{get\+Global\+System\+Matrix}} ()
+\item 
+virtual Vector\+Xd \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a64d91439da7f1d34cf9bf2bc255f8587}{get\+Global\+Initial\+Vector}} ()
+\item 
+Vector\+Xd \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a1c087e841cf00e2b0978e8eb80b666a5}{get\+Global\+System\+Vector}} (const Vector\+Xd \&u)
+\item 
+void \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_abe3ea2c890c68a26d054f09649d45a10}{initialize}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a06e4f37beccd2c6c93fd3f6dcd4f6baf}{intermediate\+Process}} (const Vector\+Xd \&u, unsigned int iteration)
+\item 
+void \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a584b380a23746a317d1054cc1089314f}{post\+Process}} (const Vector\+Xd \&u)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_acaf06dfee59f6682e947ecb4c5f3849e}{diffusion\+Attribute\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_afa42437aca381c8f8c0476c6046dfcdb}{input\+Attribute\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a7e1754824ec83f9840962612dbc76bf8}{output\+Attribute\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_ad916d931022eede80ad7bddc5f9ae21e}{reaction\+Attribute\+Name}}
+\item 
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a087269eaee841c20eb5f2e148ed4fc16}{m}}
+\item 
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a6ec8e481d83cee4bb3d101f7cc2dd11b}{d}}
+\item 
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a1d66b9d32c98152f798f95ce4d3042aa}{r}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_aacad8b93910ea0f7bbbc3e30f623fd1d}\label{classfeatk_reaction_diffusion_solver_aacad8b93910ea0f7bbbc3e30f623fd1d}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!featkReactionDiffusionSolver@{featkReactionDiffusionSolver}}
+\index{featkReactionDiffusionSolver@{featkReactionDiffusionSolver}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{featkReactionDiffusionSolver()}{featkReactionDiffusionSolver()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::\mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_ab6bace315251d67bfcf00b29872df484}\label{classfeatk_reaction_diffusion_solver_ab6bace315251d67bfcf00b29872df484}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!````~featkReactionDiffusionSolver@{$\sim$featkReactionDiffusionSolver}}
+\index{````~featkReactionDiffusionSolver@{$\sim$featkReactionDiffusionSolver}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkReactionDiffusionSolver()}{~featkReactionDiffusionSolver()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::$\sim$\mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a64d91439da7f1d34cf9bf2bc255f8587}\label{classfeatk_reaction_diffusion_solver_a64d91439da7f1d34cf9bf2bc255f8587}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!getGlobalInitialVector@{getGlobalInitialVector}}
+\index{getGlobalInitialVector@{getGlobalInitialVector}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalInitialVector()}{getGlobalInitialVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Vector\+Xd \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::get\+Global\+Initial\+Vector\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_dynamic_solver_base_ab7aa2ab066a261e7b1fcc2dec5b6fbb7}{featk\+Dynamic\+Solver\+Base$<$ Dimension, 0 $>$}}.
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a8736dd765d52ad3c5f987ae895365138}\label{classfeatk_reaction_diffusion_solver_a8736dd765d52ad3c5f987ae895365138}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!getGlobalSystemMatrix@{getGlobalSystemMatrix}}
+\index{getGlobalSystemMatrix@{getGlobalSystemMatrix}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalSystemMatrix()}{getGlobalSystemMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::get\+Global\+System\+Matrix\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_dynamic_solver_base_a9010f2ac534f4790f9f9aab8c8493196}{featk\+Dynamic\+Solver\+Base$<$ Dimension, 0 $>$}}.
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a1c087e841cf00e2b0978e8eb80b666a5}\label{classfeatk_reaction_diffusion_solver_a1c087e841cf00e2b0978e8eb80b666a5}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!getGlobalSystemVector@{getGlobalSystemVector}}
+\index{getGlobalSystemVector@{getGlobalSystemVector}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalSystemVector()}{getGlobalSystemVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Vector\+Xd \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::get\+Global\+System\+Vector (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_dynamic_solver_base_a6ce22a4365569bf559c70f31b4420541}{featk\+Dynamic\+Solver\+Base$<$ Dimension, 0 $>$}}.
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_abe3ea2c890c68a26d054f09649d45a10}\label{classfeatk_reaction_diffusion_solver_abe3ea2c890c68a26d054f09649d45a10}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!initialize@{initialize}}
+\index{initialize@{initialize}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::initialize\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classfeatk_solver_base_a0041283d0bbb41b0955e511469ce3b65}{featk\+Solver\+Base$<$ Dimension, Order $>$}}.
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a06e4f37beccd2c6c93fd3f6dcd4f6baf}\label{classfeatk_reaction_diffusion_solver_a06e4f37beccd2c6c93fd3f6dcd4f6baf}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!intermediateProcess@{intermediateProcess}}
+\index{intermediateProcess@{intermediateProcess}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{intermediateProcess()}{intermediateProcess()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::intermediate\+Process (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{u,  }\item[{unsigned int}]{iteration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classfeatk_dynamic_solver_base_a3ccc53e28780049cd8e3e887aab58e54}{featk\+Dynamic\+Solver\+Base$<$ Dimension, 0 $>$}}.
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a584b380a23746a317d1054cc1089314f}\label{classfeatk_reaction_diffusion_solver_a584b380a23746a317d1054cc1089314f}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!postProcess@{postProcess}}
+\index{postProcess@{postProcess}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{postProcess()}{postProcess()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::post\+Process (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_dynamic_solver_base_a4598fd4c6e61fad82cade009411eed70}{featk\+Dynamic\+Solver\+Base$<$ Dimension, 0 $>$}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a6ec8e481d83cee4bb3d101f7cc2dd11b}\label{classfeatk_reaction_diffusion_solver_a6ec8e481d83cee4bb3d101f7cc2dd11b}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!d@{d}}
+\index{d@{d}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::d\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_acaf06dfee59f6682e947ecb4c5f3849e}\label{classfeatk_reaction_diffusion_solver_acaf06dfee59f6682e947ecb4c5f3849e}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!diffusionAttributeName@{diffusionAttributeName}}
+\index{diffusionAttributeName@{diffusionAttributeName}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{diffusionAttributeName}{diffusionAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::diffusion\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_afa42437aca381c8f8c0476c6046dfcdb}\label{classfeatk_reaction_diffusion_solver_afa42437aca381c8f8c0476c6046dfcdb}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!inputAttributeName@{inputAttributeName}}
+\index{inputAttributeName@{inputAttributeName}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{inputAttributeName}{inputAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::input\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a087269eaee841c20eb5f2e148ed4fc16}\label{classfeatk_reaction_diffusion_solver_a087269eaee841c20eb5f2e148ed4fc16}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!m@{m}}
+\index{m@{m}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::m\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a7e1754824ec83f9840962612dbc76bf8}\label{classfeatk_reaction_diffusion_solver_a7e1754824ec83f9840962612dbc76bf8}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!outputAttributeName@{outputAttributeName}}
+\index{outputAttributeName@{outputAttributeName}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{outputAttributeName}{outputAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::output\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_a1d66b9d32c98152f798f95ce4d3042aa}\label{classfeatk_reaction_diffusion_solver_a1d66b9d32c98152f798f95ce4d3042aa}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!r@{r}}
+\index{r@{r}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::r\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_reaction_diffusion_solver_ad916d931022eede80ad7bddc5f9ae21e}\label{classfeatk_reaction_diffusion_solver_ad916d931022eede80ad7bddc5f9ae21e}} 
+\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}!reactionAttributeName@{reactionAttributeName}}
+\index{reactionAttributeName@{reactionAttributeName}!featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{reactionAttributeName}{reactionAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}}$<$ Dimension $>$\+::reaction\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_reaction_diffusion_solver_8h}{featk\+Reaction\+Diffusion\+Solver.\+h}}\end{DoxyCompactItemize}

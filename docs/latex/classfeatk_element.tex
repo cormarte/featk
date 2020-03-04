@@ -1,0 +1,414 @@
+\hypertarget{classfeatk_element}{}\doxysection{featk\+Element$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$ Class Template Reference}
+\label{classfeatk_element}\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+
+
+Concrete implementation of a \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Element.\+h$>$}
+
+Inheritance diagram for featk\+Element$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfeatk_element}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\using \mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}}$<$ Dimension, Nodes, Order $>$
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\using \mbox{\hyperlink{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}{C\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}{C\+Matrix\+Type}}$<$ Dimension, Order $>$
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\using \mbox{\hyperlink{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}{D\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}{D\+Matrix\+Type}}$<$ Dimension, Order $>$
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\using \mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Dimension, Nodes, Order $>$
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\using \mbox{\hyperlink{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}{N\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}{N\+Matrix\+Type}}$<$ Dimension, Nodes, Order $>$
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\using \mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Dimension, Nodes, Order $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}}$<$ Dimension, Natural\+Dimension $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}}$<$ Natural\+Dimension $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}}$<$ Dimension, Nodes $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}{Nodes\+Natural\+Coordinates\+Matrix\+Type}}$<$ Nodes, Natural\+Dimension $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}}$<$ Dimension, Nodes $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}}$<$ Nodes, Natural\+Dimension $>$
+\item 
+using \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}} = \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}}$<$ Nodes $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_element_a7137d81e6019b65a633353a28286d472}{featk\+Element}} (std\+::vector$<$ \mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classfeatk_element_interface_ab5e7733ed80d249322ae0cbf83bac7f0}{nodes}})
+\item 
+\mbox{\hyperlink{classfeatk_element_a5c7a1346d902b55f2c41099d0a5fa7e0}{$\sim$featk\+Element}} ()
+\item 
+\mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}{get\+Shape\+Function\+Natural\+Derivative\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\item 
+\mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}{get\+Shape\+Function\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_a726ae6afae08839ae4fe9909c9b42379}{get\+B\+Matrix}} (const \mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \&cartesian\+Derivatives) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_af88ec3bcfa0b3ef4710ed23cc993c29e}{get\+Bt\+B\+Integral\+Matrix}} () const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_aa314ca1fd05f40c318c5e5f7193e92e2}{get\+Bt\+C\+B\+Integral\+Matrix}} (size\+\_\+t element\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}{C\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_a4023c30990e843e0eb3ab182e60cadec}{get\+C\+Matrix}} (size\+\_\+t element\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}{N\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_a2e9b20e07891d61730b3341d3be16db9}{get\+N\+Matrix}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}{D\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_ae9ada170cff15b7ef15e5ebb1baa3dab}{get\+Node\+B\+Q\+Matrix}} (\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$node, size\+\_\+t node\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_aad858594aafd2f84cfe2cf8fa57d7f9d}{get\+Nt\+C\+N\+Integral\+Matrix}} (size\+\_\+t element\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_a8307d3b49ed0550ff1a04ba9bcad3804}{get\+Nt\+N\+Integral\+Matrix}} () const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_ad393e79d72abb4094a19626af9bc34a2}{get\+Nt\+N\+Q\+Integral\+Matrix}} (size\+\_\+t node\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_a9574e7a75e6c674d05a6e86c2468a8b6}{get\+Nt\+C\+N\+Q\+N\+Q\+Integral\+Matrix}} (size\+\_\+t element\+Attribute\+ID, size\+\_\+t node\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_ab6600868a39dbca4e9596ebeecbd39ba}{get\+Q\+Matrix}} (size\+\_\+t node\+Attribute\+ID) const
+\item 
+\mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a671fd6a2f8d1d11a11f9f93bc22315f0}{get\+Jacobian}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\item 
+\mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a4565b81e39e368c6e8ad5296ce3bfa9f}{get\+Jacobian}} (const \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \&natural\+Derivatives) const
+\item 
+\mbox{\hyperlink{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a729b1eb24b72be76dbaf5f90aa35b802}{get\+Node\+Cartesian\+Coordinates}} () const
+\item 
+\mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_aacc1d34cf84f8e0a8a530e81e9d0d423}{get\+Shape\+Function\+Cartesian\+Derivative\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\item 
+\mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a92759751eedaa6c9bad8cc1b585291c4}{get\+Shape\+Function\+Cartesian\+Derivative\+Values}} (const \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \&natural\+Derivatives, const \mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \&jacobian) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classfeatk_element_aacef94b33d0dd23bb58bf837dab10bc2}{set\+Integration\+Rule}} (\mbox{\hyperlink{classfeatk_integration_rule_interface}{featk\+Integration\+Rule\+Interface}}$<$ Dimension $>$ $\ast$rule)
+\item 
+static \mbox{\hyperlink{classfeatk_integration_rule_interface}{featk\+Integration\+Rule\+Interface}}$<$ Dimension $>$ \mbox{\hyperlink{classfeatk_element_aca9170c99130cb8bef1811c63e675268}{get\+Integration\+Rule}} ()
+\item 
+static \mbox{\hyperlink{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_aabace09af70e383acbacdb67a160635b}{get\+Nodes\+Natural\+Coordinates}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$\newline
+class featk\+Element$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$}
+
+Concrete implementation of a \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}. 
+
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}} is a the concrete implementation of an element with its attributes, nodes, shape function values and derivatives and integration rule. \mbox{\hyperlink{classfeatk_element}{featk\+Element}} provides routine member functions for numerical integration of usual quantities found in finite element problems.
+
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}} is templated over unsigned integers Dimension, Nodes, Boundaries and Natural\+Dimension (see definitions below). A given combination of these template parameters univoquely defines an element type. Member variables featk\+Element\+::integration\+Rule and featk\+Element\+::nodes\+Natural\+Coordinates and member functions \mbox{\hyperlink{classfeatk_element_a7137d81e6019b65a633353a28286d472}{featk\+Element\+::featk\+Element()}}, \mbox{\hyperlink{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}{featk\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values()}} and \mbox{\hyperlink{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}{featk\+Element\+::get\+Shape\+Function\+Values()}} have no default implementation and must be reimplemented for each template specialization.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the element.\\
+\hline
+{\em Nodes} & The number of nodes of the element.\\
+\hline
+{\em Boundaries} & The number of boundaries of the element.\\
+\hline
+{\em Natural\+Dimension} & The natural dimension of the element parametrization. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}\label{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!BMatrixType@{BMatrixType}}
+\index{BMatrixType@{BMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{BMatrixType}{BMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}}$<$Dimension, Nodes, Order$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}\label{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!CMatrixType@{CMatrixType}}
+\index{CMatrixType@{CMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{CMatrixType}{CMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}{C\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}{C\+Matrix\+Type}}$<$Dimension, Order$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}\label{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!DMatrixType@{DMatrixType}}
+\index{DMatrixType@{DMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{DMatrixType}{DMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}{D\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}{D\+Matrix\+Type}}$<$Dimension, Order$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}\label{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!JacobianMatrixType@{JacobianMatrixType}}
+\index{JacobianMatrixType@{JacobianMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{JacobianMatrixType}{JacobianMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}}$<$Dimension, Natural\+Dimension$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a40031945649d1580f98a68009197a541}\label{classfeatk_element_a40031945649d1580f98a68009197a541}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!KMatrixType@{KMatrixType}}
+\index{KMatrixType@{KMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{KMatrixType}{KMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$Dimension, Nodes, Order$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}\label{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!NaturalCoordinatesMatrixType@{NaturalCoordinatesMatrixType}}
+\index{NaturalCoordinatesMatrixType@{NaturalCoordinatesMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{NaturalCoordinatesMatrixType}{NaturalCoordinatesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}}$<$Natural\+Dimension$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}\label{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!NMatrixType@{NMatrixType}}
+\index{NMatrixType@{NMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{NMatrixType}{NMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}{N\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}{N\+Matrix\+Type}}$<$Dimension, Nodes, Order$>$}
+
+\mbox{\Hypertarget{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}\label{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!NodesCartesianCoordinatesMatrixType@{NodesCartesianCoordinatesMatrixType}}
+\index{NodesCartesianCoordinatesMatrixType@{NodesCartesianCoordinatesMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{NodesCartesianCoordinatesMatrixType}{NodesCartesianCoordinatesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}}$<$Dimension, Nodes$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}\label{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!NodesNaturalCoordinatesMatrixType@{NodesNaturalCoordinatesMatrixType}}
+\index{NodesNaturalCoordinatesMatrixType@{NodesNaturalCoordinatesMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{NodesNaturalCoordinatesMatrixType}{NodesNaturalCoordinatesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} $<$Nodes, Natural\+Dimension$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}\label{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!QMatrixType@{QMatrixType}}
+\index{QMatrixType@{QMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{QMatrixType}{QMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$Dimension, Nodes, Order$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}\label{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!ShapeFunctionCartesianDerivativeValuesMatrixType@{ShapeFunctionCartesianDerivativeValuesMatrixType}}
+\index{ShapeFunctionCartesianDerivativeValuesMatrixType@{ShapeFunctionCartesianDerivativeValuesMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{ShapeFunctionCartesianDerivativeValuesMatrixType}{ShapeFunctionCartesianDerivativeValuesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}}$<$Dimension, Nodes$>$}
+
+\mbox{\Hypertarget{classfeatk_element_abd937eda1455af93affea83afd8159e3}\label{classfeatk_element_abd937eda1455af93affea83afd8159e3}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!ShapeFunctionNaturalDerivativeValuesMatrixType@{ShapeFunctionNaturalDerivativeValuesMatrixType}}
+\index{ShapeFunctionNaturalDerivativeValuesMatrixType@{ShapeFunctionNaturalDerivativeValuesMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{ShapeFunctionNaturalDerivativeValuesMatrixType}{ShapeFunctionNaturalDerivativeValuesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}}$<$Nodes, Natural\+Dimension$>$}
+
+\mbox{\Hypertarget{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}\label{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!ShapeFunctionValuesMatrixType@{ShapeFunctionValuesMatrixType}}
+\index{ShapeFunctionValuesMatrixType@{ShapeFunctionValuesMatrixType}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{ShapeFunctionValuesMatrixType}{ShapeFunctionValuesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+using \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}} =  \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}}$<$Nodes$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_element_a7137d81e6019b65a633353a28286d472}\label{classfeatk_element_a7137d81e6019b65a633353a28286d472}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!featkElement@{featkElement}}
+\index{featkElement@{featkElement}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{featkElement()}{featkElement()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element}{featk\+Element}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$ $>$}]{nodes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_element_a5c7a1346d902b55f2c41099d0a5fa7e0}\label{classfeatk_element_a5c7a1346d902b55f2c41099d0a5fa7e0}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!````~featkElement@{$\sim$featkElement}}
+\index{````~featkElement@{$\sim$featkElement}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkElement()}{~featkElement()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::$\sim$\mbox{\hyperlink{classfeatk_element}{featk\+Element}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_element_a726ae6afae08839ae4fe9909c9b42379}\label{classfeatk_element_a726ae6afae08839ae4fe9909c9b42379}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getBMatrix@{getBMatrix}}
+\index{getBMatrix@{getBMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getBMatrix()}{getBMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+B\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \&}]{cartesian\+Derivatives }\end{DoxyParamCaption}) const}
+
+\begin{DoxyVerb}                                                   T                                        T
+\end{DoxyVerb}
+ \mbox{[}u\+\_\+x,x u\+\_\+x,y u\+\_\+x,z u\+\_\+y,x u\+\_\+y,y u\+\_\+y,z u\+\_\+z,x u\+\_\+z,y u\+\_\+z,z\mbox{]} = B$\ast$\mbox{[}u\+\_\+1x u\+\_\+1y u\+\_\+1z ... u\+\_\+nx u\+\_\+ny u\+\_\+nz\mbox{]}\mbox{\Hypertarget{classfeatk_element_af88ec3bcfa0b3ef4710ed23cc993c29e}\label{classfeatk_element_af88ec3bcfa0b3ef4710ed23cc993c29e}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getBtBIntegralMatrix@{getBtBIntegralMatrix}}
+\index{getBtBIntegralMatrix@{getBtBIntegralMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getBtBIntegralMatrix()}{getBtBIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Bt\+B\+Integral\+Matrix}
+
+\mbox{\Hypertarget{classfeatk_element_aa314ca1fd05f40c318c5e5f7193e92e2}\label{classfeatk_element_aa314ca1fd05f40c318c5e5f7193e92e2}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getBtCBIntegralMatrix@{getBtCBIntegralMatrix}}
+\index{getBtCBIntegralMatrix@{getBtCBIntegralMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getBtCBIntegralMatrix()}{getBtCBIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Bt\+C\+B\+Integral\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+In the previous implementation, Jacobian (and shape function natural derivatives) were computed twice.\mbox{\Hypertarget{classfeatk_element_a4023c30990e843e0eb3ab182e60cadec}\label{classfeatk_element_a4023c30990e843e0eb3ab182e60cadec}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getCMatrix@{getCMatrix}}
+\index{getCMatrix@{getCMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getCMatrix()}{getCMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a8c9803b3cb72eddaa0a9c67ce167be76}{C\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+C\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_aca9170c99130cb8bef1811c63e675268}\label{classfeatk_element_aca9170c99130cb8bef1811c63e675268}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getIntegrationRule@{getIntegrationRule}}
+\index{getIntegrationRule@{getIntegrationRule}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getIntegrationRule()}{getIntegrationRule()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_integration_rule_interface}{featk\+Integration\+Rule\+Interface}}$<$ Dimension $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Integration\+Rule\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeatk_element_a671fd6a2f8d1d11a11f9f93bc22315f0}\label{classfeatk_element_a671fd6a2f8d1d11a11f9f93bc22315f0}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_a4565b81e39e368c6e8ad5296ce3bfa9f}\label{classfeatk_element_a4565b81e39e368c6e8ad5296ce3bfa9f}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \&}]{natural\+Derivatives }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_a2e9b20e07891d61730b3341d3be16db9}\label{classfeatk_element_a2e9b20e07891d61730b3341d3be16db9}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNMatrix@{getNMatrix}}
+\index{getNMatrix@{getNMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNMatrix()}{getNMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a3018cffcc51a4448315134fe8f9842fa}{N\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+N\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+
+\begin{DoxyVerb}         T                                        T
+\end{DoxyVerb}
+ \mbox{[}u\+\_\+x u\+\_\+y u\+\_\+z\mbox{]} = N$\ast$\mbox{[}u\+\_\+1x u\+\_\+1y u\+\_\+1z ... u\+\_\+nx u\+\_\+ny u\+\_\+nz\mbox{]}\mbox{\Hypertarget{classfeatk_element_ae9ada170cff15b7ef15e5ebb1baa3dab}\label{classfeatk_element_ae9ada170cff15b7ef15e5ebb1baa3dab}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNodeBQMatrix@{getNodeBQMatrix}}
+\index{getNodeBQMatrix@{getNodeBQMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeBQMatrix()}{getNodeBQMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a4ca01cb6a2a45fcbd9d3f1eeca5fa412}{D\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Node\+B\+Q\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$}]{node,  }\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_a729b1eb24b72be76dbaf5f90aa35b802}\label{classfeatk_element_a729b1eb24b72be76dbaf5f90aa35b802}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNodeCartesianCoordinates@{getNodeCartesianCoordinates}}
+\index{getNodeCartesianCoordinates@{getNodeCartesianCoordinates}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeCartesianCoordinates()}{getNodeCartesianCoordinates()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_af4a1774f1181599c71828e5ce6abbd0d}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Node\+Cartesian\+Coordinates}
+
+\mbox{\Hypertarget{classfeatk_element_aabace09af70e383acbacdb67a160635b}\label{classfeatk_element_aabace09af70e383acbacdb67a160635b}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNodesNaturalCoordinates@{getNodesNaturalCoordinates}}
+\index{getNodesNaturalCoordinates@{getNodesNaturalCoordinates}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNodesNaturalCoordinates()}{getNodesNaturalCoordinates()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a47f65a24620772c801566b8b7a28bb28}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Nodes\+Natural\+Coordinates\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeatk_element_aad858594aafd2f84cfe2cf8fa57d7f9d}\label{classfeatk_element_aad858594aafd2f84cfe2cf8fa57d7f9d}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNtCNIntegralMatrix@{getNtCNIntegralMatrix}}
+\index{getNtCNIntegralMatrix@{getNtCNIntegralMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNtCNIntegralMatrix()}{getNtCNIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Nt\+C\+N\+Integral\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_a9574e7a75e6c674d05a6e86c2468a8b6}\label{classfeatk_element_a9574e7a75e6c674d05a6e86c2468a8b6}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNtCNQNQIntegralMatrix@{getNtCNQNQIntegralMatrix}}
+\index{getNtCNQNQIntegralMatrix@{getNtCNQNQIntegralMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNtCNQNQIntegralMatrix()}{getNtCNQNQIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Nt\+C\+N\+Q\+N\+Q\+Integral\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID,  }\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_a8307d3b49ed0550ff1a04ba9bcad3804}\label{classfeatk_element_a8307d3b49ed0550ff1a04ba9bcad3804}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNtNIntegralMatrix@{getNtNIntegralMatrix}}
+\index{getNtNIntegralMatrix@{getNtNIntegralMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNtNIntegralMatrix()}{getNtNIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a40031945649d1580f98a68009197a541}{K\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Nt\+N\+Integral\+Matrix}
+
+\mbox{\Hypertarget{classfeatk_element_ad393e79d72abb4094a19626af9bc34a2}\label{classfeatk_element_ad393e79d72abb4094a19626af9bc34a2}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getNtNQIntegralMatrix@{getNtNQIntegralMatrix}}
+\index{getNtNQIntegralMatrix@{getNtNQIntegralMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getNtNQIntegralMatrix()}{getNtNQIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Nt\+N\+Q\+Integral\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_ab6600868a39dbca4e9596ebeecbd39ba}\label{classfeatk_element_ab6600868a39dbca4e9596ebeecbd39ba}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getQMatrix@{getQMatrix}}
+\index{getQMatrix@{getQMatrix}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getQMatrix()}{getQMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a16d2fcce611edfb9e6d32665529f8d77}{Q\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Q\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+The following implementation should be more efficient, however Eigen does not allow to define Matrix$<$double, row, 1, Row\+Major$>$ types (i.\+e featk\+Attribute$<$\+Dimension, 1$>$\+::\+Value\+Type types with row major storage), hence Col\+Major matrices must be used for featk\+Attribute$<$\+Dimension, Order$>$\+::\+Value\+Type types which are reshaped to Matrix$<$double, P\+O\+W\+E\+R(\+Dimension, Order), 1$>$ column by column by Eigen\+::\+Map, i.\+e.\+: \begin{DoxyVerb}      |a|
+\end{DoxyVerb}
+ $\vert$a b$\vert$ $\vert$c$\vert$ $\vert$c d$\vert$ =$>$ $\vert$b$\vert$ $\vert$d$\vert$
+
+This is however not a problem for symmetric attributes.\mbox{\Hypertarget{classfeatk_element_aacc1d34cf84f8e0a8a530e81e9d0d423}\label{classfeatk_element_aacc1d34cf84f8e0a8a530e81e9d0d423}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getShapeFunctionCartesianDerivativeValues@{getShapeFunctionCartesianDerivativeValues}}
+\index{getShapeFunctionCartesianDerivativeValues@{getShapeFunctionCartesianDerivativeValues}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getShapeFunctionCartesianDerivativeValues()}{getShapeFunctionCartesianDerivativeValues()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Shape\+Function\+Cartesian\+Derivative\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+
+See Felippa. 2017. Advanced Finite Element Methods. Ch.\+11 p.\+7. and Filomeno Coelho and Pyl. 2014. Structural Analysis and Finite Elements, p.\+71.\mbox{\Hypertarget{classfeatk_element_a92759751eedaa6c9bad8cc1b585291c4}\label{classfeatk_element_a92759751eedaa6c9bad8cc1b585291c4}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getShapeFunctionCartesianDerivativeValues@{getShapeFunctionCartesianDerivativeValues}}
+\index{getShapeFunctionCartesianDerivativeValues@{getShapeFunctionCartesianDerivativeValues}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getShapeFunctionCartesianDerivativeValues()}{getShapeFunctionCartesianDerivativeValues()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Shape\+Function\+Cartesian\+Derivative\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \&}]{natural\+Derivatives,  }\item[{const \mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \&}]{jacobian }\end{DoxyParamCaption}) const}
+
+See Felippa. 2017. Advanced Finite Element Methods. Ch.\+11 p.\+7. and Filomeno Coelho and Pyl. 2014. Structural Analysis and Finite Elements, p.\+71.\mbox{\Hypertarget{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}\label{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getShapeFunctionNaturalDerivativeValues@{getShapeFunctionNaturalDerivativeValues}}
+\index{getShapeFunctionNaturalDerivativeValues@{getShapeFunctionNaturalDerivativeValues}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getShapeFunctionNaturalDerivativeValues()}{getShapeFunctionNaturalDerivativeValues()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{featk\+Tet4\+Element\+::\+Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} featk\+Tet4\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}\label{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getShapeFunctionValues@{getShapeFunctionValues}}
+\index{getShapeFunctionValues@{getShapeFunctionValues}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{getShapeFunctionValues()}{getShapeFunctionValues()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{featk\+Tet4\+Element\+::\+Shape\+Function\+Values\+Matrix\+Type}} featk\+Tet4\+Element\+::get\+Shape\+Function\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_aacef94b33d0dd23bb58bf837dab10bc2}\label{classfeatk_element_aacef94b33d0dd23bb58bf837dab10bc2}} 
+\index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!setIntegrationRule@{setIntegrationRule}}
+\index{setIntegrationRule@{setIntegrationRule}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
+\doxysubsubsection{\texorpdfstring{setIntegrationRule()}{setIntegrationRule()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::set\+Integration\+Rule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfeatk_integration_rule_interface}{featk\+Integration\+Rule\+Interface}}$<$ Dimension $>$ $\ast$}]{rule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_element_8h}{featk\+Element.\+h}}\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_tet4_element_8cpp}{featk\+Tet4\+Element.\+cpp}}\end{DoxyCompactItemize}

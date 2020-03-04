@@ -1,0 +1,68 @@
+\hypertarget{classfeatk_hex8_element}{}\doxysection{featk\+Hex8\+Element Class Reference}
+\label{classfeatk_hex8_element}\index{featkHex8Element@{featkHex8Element}}
+
+
+Specialization of a 8-\/node hexahedral \mbox{\hyperlink{classfeatk_element}{featk\+Element}}.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Hex8\+Element.\+h$>$}
+
+
+
+\doxysubsection{Detailed Description}
+Specialization of a 8-\/node hexahedral \mbox{\hyperlink{classfeatk_element}{featk\+Element}}. 
+
+\mbox{\hyperlink{classfeatk_hex8_element}{featk\+Hex8\+Element}} is a specialization of \mbox{\hyperlink{classfeatk_element}{featk\+Element}} representing an isoparametric tetrahedron in Dimension 3 with 8 Nodes, 6 Boundaries parametrized in Natural\+Dimension 3. \mbox{\hyperlink{classfeatk_hex8_element}{featk\+Hex8\+Element}} provides implementations for the specialization of member variables featk\+Element\+::integration\+Rule and featk\+Element\+::nodes\+Natural\+Coordinates and member functions \mbox{\hyperlink{classfeatk_element_a7137d81e6019b65a633353a28286d472}{featk\+Element\+::featk\+Element()}}, \mbox{\hyperlink{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}{featk\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values()}} and \mbox{\hyperlink{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}{featk\+Element\+::get\+Shape\+Function\+Values()}}.
+
+\mbox{\hyperlink{classfeatk_hex8_element}{featk\+Hex8\+Element}} is parametrization used as follows\+:
+
+\begin{DoxyVerb}    (7)-------(6)
+    /|        /|
+   / |       / |      ζ
+  /  |      /  |      | η
+(4)-(3)---(5)-(2)     |/
+ |  ///////|///       o----ξ
+ | ////////|//
+ |/////////|/
+(0)-------(1)
+\end{DoxyVerb}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Node }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ξ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ η }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ζ  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Node }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ξ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ η }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ζ  }\\\cline{1-4}
+\endhead
+\PBS\centering (0) &\PBS\centering −1 &\PBS\centering −1 &\PBS\centering −1  \\\cline{1-4}
+\PBS\centering (1) &\PBS\centering +1 &\PBS\centering −1 &\PBS\centering −1  \\\cline{1-4}
+\PBS\centering (2) &\PBS\centering +1 &\PBS\centering +1 &\PBS\centering −1  \\\cline{1-4}
+\PBS\centering (3) &\PBS\centering −1 &\PBS\centering +1 &\PBS\centering −1  \\\cline{1-4}
+\PBS\centering (4) &\PBS\centering −1 &\PBS\centering −1 &\PBS\centering +1  \\\cline{1-4}
+\PBS\centering (5) &\PBS\centering +1 &\PBS\centering −1 &\PBS\centering +1  \\\cline{1-4}
+\PBS\centering (6) &\PBS\centering +1 &\PBS\centering +1 &\PBS\centering +1  \\\cline{1-4}
+\PBS\centering (7) &\PBS\centering −1 &\PBS\centering +1 &\PBS\centering +1  \\\cline{1-4}
+\end{longtabu}
+
+
+N0(ξ, η, ζ) = (1/8)$\ast$(1−ξ)$\ast$(1−η)$\ast$(1−ζ)~\newline
+ N1(ξ, η, ζ) = (1/8)$\ast$(1+ξ)$\ast$(1−η)$\ast$(1−ζ)~\newline
+ N2(ξ, η, ζ) = (1/8)$\ast$(1+ξ)$\ast$(1+η)$\ast$(1−ζ)~\newline
+ N3(ξ, η, ζ) = (1/8)$\ast$(1−ξ)$\ast$(1+η)$\ast$(1−ζ)~\newline
+ N4(ξ, η, ζ) = (1/8)$\ast$(1−ξ)$\ast$(1−η)$\ast$(1+ζ)~\newline
+ N5(ξ, η, ζ) = (1/8)$\ast$(1+ξ)$\ast$(1−η)$\ast$(1+ζ)~\newline
+ N6(ξ, η, ζ) = (1/8)$\ast$(1+ξ)$\ast$(1+η)$\ast$(1+ζ)~\newline
+ N7(ξ, η, ζ) = (1/8)$\ast$(1−ξ)$\ast$(1+η)$\ast$(1+ζ)~\newline
+
+
+See C. Felippa, Advanced Finite Element Methods\+: Chapter 11 -\/ The 8-\/Node Hexahedron, p. 4, Tables 11.\+1-\/2, 2017. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_hex8_element_8h}{featk\+Hex8\+Element.\+h}}\end{DoxyCompactItemize}

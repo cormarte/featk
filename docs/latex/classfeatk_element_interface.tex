@@ -1,0 +1,192 @@
+\hypertarget{classfeatk_element_interface}{}\doxysection{featk\+Element\+Interface Class Reference}
+\label{classfeatk_element_interface}\index{featkElementInterface@{featkElementInterface}}
+
+
+Interface for \mbox{\hyperlink{classfeatk_element}{featk\+Element}} objects with Dimension cartesian dimensions.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Element.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfeatk_element_interface_a392bcc99fe3323204209264aa4776269}{$\sim$featk\+Element\+Interface}} ()
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Matrix\+Xd \mbox{\hyperlink{classfeatk_element_interface_ab201d50b27a255076054ebd0625267b9}{get\+Bt\+B\+Integral\+Matrix}} () const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Matrix\+Xd \mbox{\hyperlink{classfeatk_element_interface_a06fe4aa7abe91f2430a2e81e295c43c6}{get\+Bt\+C\+B\+Integral\+Matrix}} (size\+\_\+t element\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Vector\+Xd \mbox{\hyperlink{classfeatk_element_interface_ad776a8f6173292bcaed1060fc40899e2}{get\+Node\+B\+Q\+Vector}} (\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$node, size\+\_\+t element\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Matrix\+Xd \mbox{\hyperlink{classfeatk_element_interface_ab0c093072ff1b0e0fc29434a1f95e181}{get\+Nt\+C\+N\+Integral\+Matrix}} (size\+\_\+t element\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Vector\+Xd \mbox{\hyperlink{classfeatk_element_interface_a799fbae238800d29db63f1f66d9db396}{get\+Nt\+C\+N\+Q\+N\+Q\+Integral\+Vector}} (size\+\_\+t element\+Attribute\+ID, size\+\_\+t node\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Matrix\+Xd \mbox{\hyperlink{classfeatk_element_interface_a399f19e184c3deda54bc6b86f5a1d8af}{get\+Nt\+N\+Integral\+Matrix}} () const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Vector\+Xd \mbox{\hyperlink{classfeatk_element_interface_a6f6aef4f187940116b6e71ea80a6763f}{get\+Nt\+N\+Q\+Integral\+Vector}} (size\+\_\+t node\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Vector\+Xd \mbox{\hyperlink{classfeatk_element_interface_acffc7acff5118350d03d33d3ef588cd1}{get\+Nt\+N\+Q\+N\+Q\+Integral\+Vector}} (size\+\_\+t node\+Attribute\+ID) const
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\Vector\+Xd \mbox{\hyperlink{classfeatk_element_interface_af673d2064cfcf0ce55f5ea22c8e2afb4}{get\+Q\+Vector}} (size\+\_\+t node\+Attribute\+ID) const
+\item 
+\mbox{\hyperlink{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}{Attribute\+Value\+Type}}$<$ Dimension, 1 $>$ \mbox{\hyperlink{classfeatk_element_interface_af7e5e82024f59c0683b68d83cf24d055}{get\+Barycenter}} () const
+\item 
+\mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} \mbox{\hyperlink{classfeatk_element_interface_a2c45f670a6ce455424f2b95d5f5c474f}{get\+Element\+Type}} () const
+\item 
+\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$ \mbox{\hyperlink{classfeatk_element_interface_abacd3823ca68777fa7c421edc735a029}{get\+Node}} (unsigned int index) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classfeatk_element_interface_a869f4ad8da56a9d9bfccf60b74773072}{get\+Nodes}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_element_interface_a3f64dc5d9655dd52b6867f5d7e9882fa}{featk\+Element\+Interface}} (\mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} \mbox{\hyperlink{classfeatk_element_interface_a55aae16978a7866632017f59c0991db7}{element\+Type}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classfeatk_element_interface_ab5e7733ed80d249322ae0cbf83bac7f0}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for \mbox{\hyperlink{classfeatk_element}{featk\+Element}} objects with Dimension cartesian dimensions. 
+
+\mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}} is an interface allowing to handle \mbox{\hyperlink{classfeatk_element}{featk\+Element}} objects with Dimension cartesian dimensions and various Nodes, Boundaries and Natural\+Dimension template parameter values. \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}} makes it possible to define hybrid \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} seamlessly.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the element. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_element_interface_a392bcc99fe3323204209264aa4776269}\label{classfeatk_element_interface_a392bcc99fe3323204209264aa4776269}} 
+\index{featkElementInterface@{featkElementInterface}!````~featkElementInterface@{$\sim$featkElementInterface}}
+\index{````~featkElementInterface@{$\sim$featkElementInterface}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkElementInterface()}{~featkElementInterface()}}
+{\footnotesize\ttfamily virtual featk\+Element\+Interface\+::$\sim$featk\+Element\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a3f64dc5d9655dd52b6867f5d7e9882fa}\label{classfeatk_element_interface_a3f64dc5d9655dd52b6867f5d7e9882fa}} 
+\index{featkElementInterface@{featkElementInterface}!featkElementInterface@{featkElementInterface}}
+\index{featkElementInterface@{featkElementInterface}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{featkElementInterface()}{featkElementInterface()}}
+{\footnotesize\ttfamily featk\+Element\+Interface\+::featk\+Element\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_element_interface_af7e5e82024f59c0683b68d83cf24d055}\label{classfeatk_element_interface_af7e5e82024f59c0683b68d83cf24d055}} 
+\index{featkElementInterface@{featkElementInterface}!getBarycenter@{getBarycenter}}
+\index{getBarycenter@{getBarycenter}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getBarycenter()}{getBarycenter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}{Attribute\+Value\+Type}}$<$Dimension, 1$>$ featk\+Element\+Interface\+::get\+Barycenter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_ab201d50b27a255076054ebd0625267b9}\label{classfeatk_element_interface_ab201d50b27a255076054ebd0625267b9}} 
+\index{featkElementInterface@{featkElementInterface}!getBtBIntegralMatrix@{getBtBIntegralMatrix}}
+\index{getBtBIntegralMatrix@{getBtBIntegralMatrix}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getBtBIntegralMatrix()}{getBtBIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Matrix\+Xd featk\+Element\+Interface\+::get\+Bt\+B\+Integral\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a06fe4aa7abe91f2430a2e81e295c43c6}\label{classfeatk_element_interface_a06fe4aa7abe91f2430a2e81e295c43c6}} 
+\index{featkElementInterface@{featkElementInterface}!getBtCBIntegralMatrix@{getBtCBIntegralMatrix}}
+\index{getBtCBIntegralMatrix@{getBtCBIntegralMatrix}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getBtCBIntegralMatrix()}{getBtCBIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Matrix\+Xd featk\+Element\+Interface\+::get\+Bt\+C\+B\+Integral\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a2c45f670a6ce455424f2b95d5f5c474f}\label{classfeatk_element_interface_a2c45f670a6ce455424f2b95d5f5c474f}} 
+\index{featkElementInterface@{featkElementInterface}!getElementType@{getElementType}}
+\index{getElementType@{getElementType}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getElementType()}{getElementType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} featk\+Element\+Interface\+::get\+Element\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_abacd3823ca68777fa7c421edc735a029}\label{classfeatk_element_interface_abacd3823ca68777fa7c421edc735a029}} 
+\index{featkElementInterface@{featkElementInterface}!getNode@{getNode}}
+\index{getNode@{getNode}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNode()}{getNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$Dimension$>$$\ast$ featk\+Element\+Interface\+::get\+Node (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_ad776a8f6173292bcaed1060fc40899e2}\label{classfeatk_element_interface_ad776a8f6173292bcaed1060fc40899e2}} 
+\index{featkElementInterface@{featkElementInterface}!getNodeBQVector@{getNodeBQVector}}
+\index{getNodeBQVector@{getNodeBQVector}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNodeBQVector()}{getNodeBQVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Vector\+Xd featk\+Element\+Interface\+::get\+Node\+B\+Q\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$ Dimension $>$ $\ast$}]{node,  }\item[{size\+\_\+t}]{element\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a869f4ad8da56a9d9bfccf60b74773072}\label{classfeatk_element_interface_a869f4ad8da56a9d9bfccf60b74773072}} 
+\index{featkElementInterface@{featkElementInterface}!getNodes@{getNodes}}
+\index{getNodes@{getNodes}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNodes()}{getNodes()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$Dimension$>$$\ast$$>$ featk\+Element\+Interface\+::get\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_ab0c093072ff1b0e0fc29434a1f95e181}\label{classfeatk_element_interface_ab0c093072ff1b0e0fc29434a1f95e181}} 
+\index{featkElementInterface@{featkElementInterface}!getNtCNIntegralMatrix@{getNtCNIntegralMatrix}}
+\index{getNtCNIntegralMatrix@{getNtCNIntegralMatrix}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNtCNIntegralMatrix()}{getNtCNIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Matrix\+Xd featk\+Element\+Interface\+::get\+Nt\+C\+N\+Integral\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a799fbae238800d29db63f1f66d9db396}\label{classfeatk_element_interface_a799fbae238800d29db63f1f66d9db396}} 
+\index{featkElementInterface@{featkElementInterface}!getNtCNQNQIntegralVector@{getNtCNQNQIntegralVector}}
+\index{getNtCNQNQIntegralVector@{getNtCNQNQIntegralVector}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNtCNQNQIntegralVector()}{getNtCNQNQIntegralVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Vector\+Xd featk\+Element\+Interface\+::get\+Nt\+C\+N\+Q\+N\+Q\+Integral\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+Attribute\+ID,  }\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a399f19e184c3deda54bc6b86f5a1d8af}\label{classfeatk_element_interface_a399f19e184c3deda54bc6b86f5a1d8af}} 
+\index{featkElementInterface@{featkElementInterface}!getNtNIntegralMatrix@{getNtNIntegralMatrix}}
+\index{getNtNIntegralMatrix@{getNtNIntegralMatrix}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNtNIntegralMatrix()}{getNtNIntegralMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Matrix\+Xd featk\+Element\+Interface\+::get\+Nt\+N\+Integral\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_a6f6aef4f187940116b6e71ea80a6763f}\label{classfeatk_element_interface_a6f6aef4f187940116b6e71ea80a6763f}} 
+\index{featkElementInterface@{featkElementInterface}!getNtNQIntegralVector@{getNtNQIntegralVector}}
+\index{getNtNQIntegralVector@{getNtNQIntegralVector}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNtNQIntegralVector()}{getNtNQIntegralVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Vector\+Xd featk\+Element\+Interface\+::get\+Nt\+N\+Q\+Integral\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_acffc7acff5118350d03d33d3ef588cd1}\label{classfeatk_element_interface_acffc7acff5118350d03d33d3ef588cd1}} 
+\index{featkElementInterface@{featkElementInterface}!getNtNQNQIntegralVector@{getNtNQNQIntegralVector}}
+\index{getNtNQNQIntegralVector@{getNtNQNQIntegralVector}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getNtNQNQIntegralVector()}{getNtNQNQIntegralVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Vector\+Xd featk\+Element\+Interface\+::get\+Nt\+N\+Q\+N\+Q\+Integral\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_element_interface_af673d2064cfcf0ce55f5ea22c8e2afb4}\label{classfeatk_element_interface_af673d2064cfcf0ce55f5ea22c8e2afb4}} 
+\index{featkElementInterface@{featkElementInterface}!getQVector@{getQVector}}
+\index{getQVector@{getQVector}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{getQVector()}{getQVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Order$>$ \\
+Vector\+Xd featk\+Element\+Interface\+::get\+Q\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+Attribute\+ID }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeatk_element_interface_a55aae16978a7866632017f59c0991db7}\label{classfeatk_element_interface_a55aae16978a7866632017f59c0991db7}} 
+\index{featkElementInterface@{featkElementInterface}!elementType@{elementType}}
+\index{elementType@{elementType}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{elementType}{elementType}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} featk\+Element\+Interface\+::element\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_element_interface_ab5e7733ed80d249322ae0cbf83bac7f0}\label{classfeatk_element_interface_ab5e7733ed80d249322ae0cbf83bac7f0}} 
+\index{featkElementInterface@{featkElementInterface}!nodes@{nodes}}
+\index{nodes@{nodes}!featkElementInterface@{featkElementInterface}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classfeatk_node}{featk\+Node}}$<$Dimension$>$$\ast$$>$ featk\+Element\+Interface\+::nodes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_element_8h}{featk\+Element.\+h}}\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_element_interface_8h}{featk\+Element\+Interface.\+h}}\end{DoxyCompactItemize}

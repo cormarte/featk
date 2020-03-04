@@ -1,0 +1,67 @@
+\hypertarget{classfeatk_global_system_matrix_pruner}{}\doxysection{featk\+Global\+System\+Matrix\+Pruner$<$ Scalar\+Type $>$ Class Template Reference}
+\label{classfeatk_global_system_matrix_pruner}\index{featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}}
+
+
+Eigen\+::\+Sparse\+Matrix pruner for E\+BC modification of the global system matrix.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Global\+System\+Matrix\+Pruner.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_global_system_matrix_pruner_a13478d738417ef557dea6b6feb716851}{featk\+Global\+System\+Matrix\+Pruner}} (std\+::set$<$ size\+\_\+t $>$ dofs)
+\item 
+\mbox{\hyperlink{classfeatk_global_system_matrix_pruner_a34d0153b6ac6a318166e6095e1460a2c}{$\sim$featk\+Global\+System\+Matrix\+Pruner}} ()
+\item 
+bool \mbox{\hyperlink{classfeatk_global_system_matrix_pruner_abc6da5d8a33356e801c354759535bfc4}{operator()}} (const Index \&row, const Index \&col, const Scalar\+Type \&value) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+Type$>$\newline
+class featk\+Global\+System\+Matrix\+Pruner$<$ Scalar\+Type $>$}
+
+Eigen\+::\+Sparse\+Matrix pruner for E\+BC modification of the global system matrix. 
+
+\mbox{\hyperlink{classfeatk_global_system_matrix_pruner}{featk\+Global\+System\+Matrix\+Pruner}} is a Eigen\+::\+Sparse\+Matrix pruner used to remove non-\/diagonal non-\/zero entries of the global system matrix corresponding to degrees of freedom fixed by essential boundary conditions. See Eigen\+::\+Sparse\+Matrix\+::prune() member function for more info.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\+Type} & The scalar type of the Eigen\+::\+Sparse\+Matrix. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_global_system_matrix_pruner_a13478d738417ef557dea6b6feb716851}\label{classfeatk_global_system_matrix_pruner_a13478d738417ef557dea6b6feb716851}} 
+\index{featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}!featkGlobalSystemMatrixPruner@{featkGlobalSystemMatrixPruner}}
+\index{featkGlobalSystemMatrixPruner@{featkGlobalSystemMatrixPruner}!featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}}
+\doxysubsubsection{\texorpdfstring{featkGlobalSystemMatrixPruner()}{featkGlobalSystemMatrixPruner()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Type $>$ \\
+\mbox{\hyperlink{classfeatk_global_system_matrix_pruner}{featk\+Global\+System\+Matrix\+Pruner}}$<$ Scalar\+Type $>$\+::\mbox{\hyperlink{classfeatk_global_system_matrix_pruner}{featk\+Global\+System\+Matrix\+Pruner}} (\begin{DoxyParamCaption}\item[{std\+::set$<$ size\+\_\+t $>$}]{dofs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_global_system_matrix_pruner_a34d0153b6ac6a318166e6095e1460a2c}\label{classfeatk_global_system_matrix_pruner_a34d0153b6ac6a318166e6095e1460a2c}} 
+\index{featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}!````~featkGlobalSystemMatrixPruner@{$\sim$featkGlobalSystemMatrixPruner}}
+\index{````~featkGlobalSystemMatrixPruner@{$\sim$featkGlobalSystemMatrixPruner}!featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkGlobalSystemMatrixPruner()}{~featkGlobalSystemMatrixPruner()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Type $>$ \\
+\mbox{\hyperlink{classfeatk_global_system_matrix_pruner}{featk\+Global\+System\+Matrix\+Pruner}}$<$ Scalar\+Type $>$\+::$\sim$\mbox{\hyperlink{classfeatk_global_system_matrix_pruner}{featk\+Global\+System\+Matrix\+Pruner}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_global_system_matrix_pruner_abc6da5d8a33356e801c354759535bfc4}\label{classfeatk_global_system_matrix_pruner_abc6da5d8a33356e801c354759535bfc4}} 
+\index{featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!featkGlobalSystemMatrixPruner$<$ ScalarType $>$@{featkGlobalSystemMatrixPruner$<$ ScalarType $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Type $>$ \\
+bool \mbox{\hyperlink{classfeatk_global_system_matrix_pruner}{featk\+Global\+System\+Matrix\+Pruner}}$<$ Scalar\+Type $>$\+::operator() (\begin{DoxyParamCaption}\item[{const Index \&}]{row,  }\item[{const Index \&}]{col,  }\item[{const Scalar\+Type \&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_global_system_matrix_pruner_8h}{featk\+Global\+System\+Matrix\+Pruner.\+h}}\end{DoxyCompactItemize}

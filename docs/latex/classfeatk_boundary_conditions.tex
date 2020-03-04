@@ -1,0 +1,125 @@
+\hypertarget{classfeatk_boundary_conditions}{}\doxysection{featk\+Boundary\+Conditions$<$ Dimension, Order $>$ Class Template Reference}
+\label{classfeatk_boundary_conditions}\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+
+
+Boundary conditions for finite element problems.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Boundary\+Conditions.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_boundary_conditions_afbef6e32a1d2867312bb8e6d3e304bd8}{featk\+Boundary\+Conditions}} ()
+\item 
+\mbox{\hyperlink{classfeatk_boundary_conditions_ac9bfe98b71227832da061cac6bccb88e}{$\sim$featk\+Boundary\+Conditions}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_boundary_conditions_af1ffc3f8c87ff2e9e39227023e8faf04}{add\+D\+O\+F\+Value}} (size\+\_\+t node\+ID, unsigned int node\+D\+OF, double value)
+\item 
+std\+::set$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfeatk_boundary_conditions_aa791cb25208c897b76464c3703d3066d}{get\+All\+D\+O\+Fs}} ()
+\item 
+std\+::map$<$ size\+\_\+t, double $>$ \mbox{\hyperlink{classfeatk_boundary_conditions_a4e6f1c8adedd8897985d5c62e6ec4d80}{get\+All\+D\+O\+F\+Values}} ()
+\item 
+std\+::set$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfeatk_boundary_conditions_a829bed0ec0327ba938f9c832d1fb2ff1}{get\+Non\+Zero\+D\+O\+Fs}} ()
+\item 
+std\+::map$<$ size\+\_\+t, double $>$ \mbox{\hyperlink{classfeatk_boundary_conditions_afbbe38c1590cde8388e0bf4bd330e15e}{get\+Non\+Zero\+D\+O\+F\+Values}} ()
+\item 
+std\+::set$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfeatk_boundary_conditions_a7ae7f42ec2814f0732bb226dfcfa5292}{get\+Zero\+D\+O\+Fs}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_boundary_conditions_af0f54be057367ded489256b40752843e}{set\+D\+O\+F\+Value}} (size\+\_\+t node\+ID, unsigned int node\+D\+OF, double value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension, unsigned int Order$>$\newline
+class featk\+Boundary\+Conditions$<$ Dimension, Order $>$}
+
+Boundary conditions for finite element problems. 
+
+\mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}} stores the ids of the fixed degrees of freedom of finite element problems along with their prescribed values.
+
+For efficiency reasons during the assembly process (see \mbox{\hyperlink{classfeatk_solver_base}{featk\+Solver\+Base}}), distinction is made between zero prescrided values, for which the global system vector can be trivially modified, and non-\/zero prescrided values, involving iteration over non-\/zeros entries of the global system matrix.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the problem.\\
+\hline
+{\em Order} & The order of the variable the system is solved for. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_boundary_conditions_afbef6e32a1d2867312bb8e6d3e304bd8}\label{classfeatk_boundary_conditions_afbef6e32a1d2867312bb8e6d3e304bd8}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!featkBoundaryConditions@{featkBoundaryConditions}}
+\index{featkBoundaryConditions@{featkBoundaryConditions}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{featkBoundaryConditions()}{featkBoundaryConditions()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::\mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_ac9bfe98b71227832da061cac6bccb88e}\label{classfeatk_boundary_conditions_ac9bfe98b71227832da061cac6bccb88e}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!````~featkBoundaryConditions@{$\sim$featkBoundaryConditions}}
+\index{````~featkBoundaryConditions@{$\sim$featkBoundaryConditions}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkBoundaryConditions()}{~featkBoundaryConditions()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::$\sim$\mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_boundary_conditions_af1ffc3f8c87ff2e9e39227023e8faf04}\label{classfeatk_boundary_conditions_af1ffc3f8c87ff2e9e39227023e8faf04}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!addDOFValue@{addDOFValue}}
+\index{addDOFValue@{addDOFValue}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{addDOFValue()}{addDOFValue()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+void \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::add\+D\+O\+F\+Value (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+ID,  }\item[{unsigned int}]{node\+D\+OF,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_aa791cb25208c897b76464c3703d3066d}\label{classfeatk_boundary_conditions_aa791cb25208c897b76464c3703d3066d}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!getAllDOFs@{getAllDOFs}}
+\index{getAllDOFs@{getAllDOFs}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getAllDOFs()}{getAllDOFs()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+std\+::set$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::get\+All\+D\+O\+Fs}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_a4e6f1c8adedd8897985d5c62e6ec4d80}\label{classfeatk_boundary_conditions_a4e6f1c8adedd8897985d5c62e6ec4d80}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!getAllDOFValues@{getAllDOFValues}}
+\index{getAllDOFValues@{getAllDOFValues}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getAllDOFValues()}{getAllDOFValues()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+std\+::map$<$ size\+\_\+t, double $>$ \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::get\+All\+D\+O\+F\+Values}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_a829bed0ec0327ba938f9c832d1fb2ff1}\label{classfeatk_boundary_conditions_a829bed0ec0327ba938f9c832d1fb2ff1}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!getNonZeroDOFs@{getNonZeroDOFs}}
+\index{getNonZeroDOFs@{getNonZeroDOFs}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getNonZeroDOFs()}{getNonZeroDOFs()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+std\+::set$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::get\+Non\+Zero\+D\+O\+Fs}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_afbbe38c1590cde8388e0bf4bd330e15e}\label{classfeatk_boundary_conditions_afbbe38c1590cde8388e0bf4bd330e15e}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!getNonZeroDOFValues@{getNonZeroDOFValues}}
+\index{getNonZeroDOFValues@{getNonZeroDOFValues}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getNonZeroDOFValues()}{getNonZeroDOFValues()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+std\+::map$<$ size\+\_\+t, double $>$ \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::get\+Non\+Zero\+D\+O\+F\+Values}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_a7ae7f42ec2814f0732bb226dfcfa5292}\label{classfeatk_boundary_conditions_a7ae7f42ec2814f0732bb226dfcfa5292}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!getZeroDOFs@{getZeroDOFs}}
+\index{getZeroDOFs@{getZeroDOFs}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getZeroDOFs()}{getZeroDOFs()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+std\+::set$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::get\+Zero\+D\+O\+Fs}
+
+\mbox{\Hypertarget{classfeatk_boundary_conditions_af0f54be057367ded489256b40752843e}\label{classfeatk_boundary_conditions_af0f54be057367ded489256b40752843e}} 
+\index{featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}!setDOFValue@{setDOFValue}}
+\index{setDOFValue@{setDOFValue}!featkBoundaryConditions$<$ Dimension, Order $>$@{featkBoundaryConditions$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{setDOFValue()}{setDOFValue()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+void \mbox{\hyperlink{classfeatk_boundary_conditions}{featk\+Boundary\+Conditions}}$<$ Dimension, Order $>$\+::set\+D\+O\+F\+Value (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+ID,  }\item[{unsigned int}]{node\+D\+OF,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_boundary_conditions_8h}{featk\+Boundary\+Conditions.\+h}}\end{DoxyCompactItemize}

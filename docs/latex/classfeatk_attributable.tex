@@ -1,0 +1,111 @@
+\hypertarget{classfeatk_attributable}{}\doxysection{featk\+Attributable$<$ Dimension $>$ Class Template Reference}
+\label{classfeatk_attributable}\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+
+
+Base class for featk objects possessing attributes, i.\+e. \mbox{\hyperlink{classfeatk_node}{featk\+Node}} and \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Attributable.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_attributable_ad548f4774968d887a8f06ca9afcd4271}{$\sim$featk\+Attributable}} ()
+\item 
+Matrix\+Xd \mbox{\hyperlink{classfeatk_attributable_a56a7593089dd60442bb497c178bcbecd}{get\+Attribute\+Value}} (size\+\_\+t id) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_attributable_a9f81c4d17c432ab01ca1659cf7438bb3}{featk\+Attributable}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_attributable_a1548f3bc69eb35dd474a72a2cf94c507}{set\+Attribute}} (size\+\_\+t id, std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$ attribute)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ size\+\_\+t, std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$ $>$ \mbox{\hyperlink{classfeatk_attributable_a21d44bcec7f63b4112a2db59dc355064}{attributes}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfeatk_attributable_af27129d4d39b651080dbc984cee94f0b}{featk\+Mesh$<$ Dimension $>$}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension$>$\newline
+class featk\+Attributable$<$ Dimension $>$}
+
+Base class for featk objects possessing attributes, i.\+e. \mbox{\hyperlink{classfeatk_node}{featk\+Node}} and \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}. 
+
+\mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}} is a base class for featk objects with attributes (\mbox{\hyperlink{classfeatk_node}{featk\+Node}} and \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}), providing member variables and functions for attribute assignment, storage and access.
+
+Attributes are stored as std\+::shared\+\_\+ptr$<$\+Eigen\+::\+Matrix\+Xd$>$. std\+::shared\+\_\+ptr allows \mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}} objects to share attributes without having to duplicate them nor to worry about memory mangement. Dynamic-\/sized Eigen\+::\+Matrix\+Xd allows to store attributes of various Order seamlessly.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the attributable. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_attributable_ad548f4774968d887a8f06ca9afcd4271}\label{classfeatk_attributable_ad548f4774968d887a8f06ca9afcd4271}} 
+\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}!````~featkAttributable@{$\sim$featkAttributable}}
+\index{````~featkAttributable@{$\sim$featkAttributable}!featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkAttributable()}{~featkAttributable()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}$<$ Dimension $>$\+::$\sim$\mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}}
+
+\mbox{\Hypertarget{classfeatk_attributable_a9f81c4d17c432ab01ca1659cf7438bb3}\label{classfeatk_attributable_a9f81c4d17c432ab01ca1659cf7438bb3}} 
+\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}!featkAttributable@{featkAttributable}}
+\index{featkAttributable@{featkAttributable}!featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{featkAttributable()}{featkAttributable()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}$<$ Dimension $>$\+::\mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_attributable_a56a7593089dd60442bb497c178bcbecd}\label{classfeatk_attributable_a56a7593089dd60442bb497c178bcbecd}} 
+\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}!getAttributeValue@{getAttributeValue}}
+\index{getAttributeValue@{getAttributeValue}!featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getAttributeValue()}{getAttributeValue()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Matrix\+Xd \mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}$<$ Dimension $>$\+::get\+Attribute\+Value (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_attributable_a1548f3bc69eb35dd474a72a2cf94c507}\label{classfeatk_attributable_a1548f3bc69eb35dd474a72a2cf94c507}} 
+\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}!setAttribute@{setAttribute}}
+\index{setAttribute@{setAttribute}!featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{setAttribute()}{setAttribute()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}$<$ Dimension $>$\+::set\+Attribute (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$}]{attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classfeatk_attributable_af27129d4d39b651080dbc984cee94f0b}\label{classfeatk_attributable_af27129d4d39b651080dbc984cee94f0b}} 
+\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}!featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}}
+\index{featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}!featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{featkMesh$<$ Dimension $>$}{featkMesh< Dimension >}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+friend class \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeatk_attributable_a21d44bcec7f63b4112a2db59dc355064}\label{classfeatk_attributable_a21d44bcec7f63b4112a2db59dc355064}} 
+\index{featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}!attributes@{attributes}}
+\index{attributes@{attributes}!featkAttributable$<$ Dimension $>$@{featkAttributable$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::map$<$size\+\_\+t, std\+::shared\+\_\+ptr$<$Matrix\+Xd$>$ $>$ \mbox{\hyperlink{classfeatk_attributable}{featk\+Attributable}}$<$ Dimension $>$\+::attributes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_attributable_8h}{featk\+Attributable.\+h}}\end{DoxyCompactItemize}

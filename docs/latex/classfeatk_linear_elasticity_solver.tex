@@ -1,0 +1,140 @@
+\hypertarget{classfeatk_linear_elasticity_solver}{}\doxysection{featk\+Linear\+Elasticity\+Solver$<$ Dimension $>$ Class Template Reference}
+\label{classfeatk_linear_elasticity_solver}\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+
+
+Finite element solver for linear elasticity problems in Dimension dimensions.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Linear\+Elasticity\+Solver.\+h$>$}
+
+Inheritance diagram for featk\+Linear\+Elasticity\+Solver$<$ Dimension $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classfeatk_linear_elasticity_solver}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_linear_elasticity_solver_a539080a81f6d0a644f895fb3de9e1731}{featk\+Linear\+Elasticity\+Solver}} ()
+\item 
+\mbox{\hyperlink{classfeatk_linear_elasticity_solver_aaf8257ca4a73dd6e9ea46b70f020effa}{$\sim$featk\+Linear\+Elasticity\+Solver}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a8d14fe2e242299e11d0b727bf9359368}{get\+Global\+System\+Matrix}} ()
+\item 
+Vector\+Xd \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a47ca44dabf3b79c8c4a23c4e15a92f10}{get\+Global\+System\+Vector}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a69689ca0159d83c7477b99a1c59fa829}{post\+Process}} (const Vector\+Xd \&u)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_linear_elasticity_solver_ad7b66cd7aa834421b7dc8e4102c18ff5}{body\+Force\+Attribute\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a11a3be92e002edb176cdce3bd3f604eb}{output\+Attribute\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classfeatk_linear_elasticity_solver_aade067a20c9cabf588200766d68823c4}{stiffness\+Attribute\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension$>$\newline
+class featk\+Linear\+Elasticity\+Solver$<$ Dimension $>$}
+
+Finite element solver for linear elasticity problems in Dimension dimensions. 
+
+\mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}} is a finite element solver for linear elasticity problems in Dimension dimensions.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the problem. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_a539080a81f6d0a644f895fb3de9e1731}\label{classfeatk_linear_elasticity_solver_a539080a81f6d0a644f895fb3de9e1731}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!featkLinearElasticitySolver@{featkLinearElasticitySolver}}
+\index{featkLinearElasticitySolver@{featkLinearElasticitySolver}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{featkLinearElasticitySolver()}{featkLinearElasticitySolver()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::\mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}}
+
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_aaf8257ca4a73dd6e9ea46b70f020effa}\label{classfeatk_linear_elasticity_solver_aaf8257ca4a73dd6e9ea46b70f020effa}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!````~featkLinearElasticitySolver@{$\sim$featkLinearElasticitySolver}}
+\index{````~featkLinearElasticitySolver@{$\sim$featkLinearElasticitySolver}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkLinearElasticitySolver()}{~featkLinearElasticitySolver()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::$\sim$\mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_a8d14fe2e242299e11d0b727bf9359368}\label{classfeatk_linear_elasticity_solver_a8d14fe2e242299e11d0b727bf9359368}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!getGlobalSystemMatrix@{getGlobalSystemMatrix}}
+\index{getGlobalSystemMatrix@{getGlobalSystemMatrix}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalSystemMatrix()}{getGlobalSystemMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::get\+Global\+System\+Matrix\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_static_solver_base_aac33015020924e2912b3f7ce241df22a}{featk\+Static\+Solver\+Base$<$ Dimension, 1 $>$}}.
+
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_a47ca44dabf3b79c8c4a23c4e15a92f10}\label{classfeatk_linear_elasticity_solver_a47ca44dabf3b79c8c4a23c4e15a92f10}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!getGlobalSystemVector@{getGlobalSystemVector}}
+\index{getGlobalSystemVector@{getGlobalSystemVector}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalSystemVector()}{getGlobalSystemVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+Vector\+Xd \mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::get\+Global\+System\+Vector\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_static_solver_base_a54aa1950c22a71bdc5ad62619fabc720}{featk\+Static\+Solver\+Base$<$ Dimension, 1 $>$}}.
+
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_a69689ca0159d83c7477b99a1c59fa829}\label{classfeatk_linear_elasticity_solver_a69689ca0159d83c7477b99a1c59fa829}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!postProcess@{postProcess}}
+\index{postProcess@{postProcess}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{postProcess()}{postProcess()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::post\+Process (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_static_solver_base_a6257c58cd9ec094aa45f30850cf85552}{featk\+Static\+Solver\+Base$<$ Dimension, 1 $>$}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_ad7b66cd7aa834421b7dc8e4102c18ff5}\label{classfeatk_linear_elasticity_solver_ad7b66cd7aa834421b7dc8e4102c18ff5}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!bodyForceAttributeName@{bodyForceAttributeName}}
+\index{bodyForceAttributeName@{bodyForceAttributeName}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{bodyForceAttributeName}{bodyForceAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::body\+Force\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_a11a3be92e002edb176cdce3bd3f604eb}\label{classfeatk_linear_elasticity_solver_a11a3be92e002edb176cdce3bd3f604eb}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!outputAttributeName@{outputAttributeName}}
+\index{outputAttributeName@{outputAttributeName}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{outputAttributeName}{outputAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::output\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classfeatk_linear_elasticity_solver_aade067a20c9cabf588200766d68823c4}\label{classfeatk_linear_elasticity_solver_aade067a20c9cabf588200766d68823c4}} 
+\index{featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}!stiffnessAttributeName@{stiffnessAttributeName}}
+\index{stiffnessAttributeName@{stiffnessAttributeName}!featkLinearElasticitySolver$<$ Dimension $>$@{featkLinearElasticitySolver$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{stiffnessAttributeName}{stiffnessAttributeName}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::string \mbox{\hyperlink{classfeatk_linear_elasticity_solver}{featk\+Linear\+Elasticity\+Solver}}$<$ Dimension $>$\+::stiffness\+Attribute\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_linear_elasticity_solver_8h}{featk\+Linear\+Elasticity\+Solver.\+h}}\end{DoxyCompactItemize}

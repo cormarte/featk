@@ -1,0 +1,108 @@
+\hypertarget{classfeatk_static_solver_base}{}\doxysection{featk\+Static\+Solver\+Base$<$ Dimension, Order $>$ Class Template Reference}
+\label{classfeatk_static_solver_base}\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+
+
+{\ttfamily \#include $<$featk\+Static\+Solver\+Base.\+h$>$}
+
+Inheritance diagram for featk\+Static\+Solver\+Base$<$ Dimension, Order $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfeatk_static_solver_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfeatk_static_solver_base_ad63f269e5817ab968730c60ccea2e23d}{$\sim$featk\+Static\+Solver\+Base}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_static_solver_base_aa757fa7495d6f1238edf588477fbb3b8}{solve}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_static_solver_base_a8a6eb22240288b52cc9b3b4384f5698e}{featk\+Static\+Solver\+Base}} ()
+\item 
+virtual Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_static_solver_base_aac33015020924e2912b3f7ce241df22a}{get\+Global\+System\+Matrix}} ()=0
+\item 
+virtual Vector\+Xd \mbox{\hyperlink{classfeatk_static_solver_base_a54aa1950c22a71bdc5ad62619fabc720}{get\+Global\+System\+Vector}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classfeatk_static_solver_base_a6257c58cd9ec094aa45f30850cf85552}{post\+Process}} (const Vector\+Xd \&solution)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_static_solver_base_ad63f269e5817ab968730c60ccea2e23d}\label{classfeatk_static_solver_base_ad63f269e5817ab968730c60ccea2e23d}} 
+\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}!````~featkStaticSolverBase@{$\sim$featkStaticSolverBase}}
+\index{````~featkStaticSolverBase@{$\sim$featkStaticSolverBase}!featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkStaticSolverBase()}{~featkStaticSolverBase()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}$<$ Dimension, Order $>$\+::$\sim$\mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classfeatk_static_solver_base_a8a6eb22240288b52cc9b3b4384f5698e}\label{classfeatk_static_solver_base_a8a6eb22240288b52cc9b3b4384f5698e}} 
+\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}!featkStaticSolverBase@{featkStaticSolverBase}}
+\index{featkStaticSolverBase@{featkStaticSolverBase}!featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{featkStaticSolverBase()}{featkStaticSolverBase()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+\mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}$<$ Dimension, Order $>$\+::\mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_static_solver_base_aac33015020924e2912b3f7ce241df22a}\label{classfeatk_static_solver_base_aac33015020924e2912b3f7ce241df22a}} 
+\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}!getGlobalSystemMatrix@{getGlobalSystemMatrix}}
+\index{getGlobalSystemMatrix@{getGlobalSystemMatrix}!featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalSystemMatrix()}{getGlobalSystemMatrix()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+virtual Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}$<$ Dimension, Order $>$\+::get\+Global\+System\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_solver_base_acddf99bbfc1908f9a5e84c22a23e9f36}{featk\+Solver\+Base$<$ Dimension, Order $>$}}.
+
+
+
+Implemented in \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a8d14fe2e242299e11d0b727bf9359368}{featk\+Linear\+Elasticity\+Solver$<$ Dimension $>$}}.
+
+\mbox{\Hypertarget{classfeatk_static_solver_base_a54aa1950c22a71bdc5ad62619fabc720}\label{classfeatk_static_solver_base_a54aa1950c22a71bdc5ad62619fabc720}} 
+\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}!getGlobalSystemVector@{getGlobalSystemVector}}
+\index{getGlobalSystemVector@{getGlobalSystemVector}!featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalSystemVector()}{getGlobalSystemVector()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+virtual Vector\+Xd \mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}$<$ Dimension, Order $>$\+::get\+Global\+System\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a47ca44dabf3b79c8c4a23c4e15a92f10}{featk\+Linear\+Elasticity\+Solver$<$ Dimension $>$}}.
+
+\mbox{\Hypertarget{classfeatk_static_solver_base_a6257c58cd9ec094aa45f30850cf85552}\label{classfeatk_static_solver_base_a6257c58cd9ec094aa45f30850cf85552}} 
+\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}!postProcess@{postProcess}}
+\index{postProcess@{postProcess}!featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{postProcess()}{postProcess()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+virtual void \mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}$<$ Dimension, Order $>$\+::post\+Process (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{solution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_solver_base_a1062d8f689866f75771e19349f27ae0a}{featk\+Solver\+Base$<$ Dimension, Order $>$}}.
+
+
+
+Implemented in \mbox{\hyperlink{classfeatk_linear_elasticity_solver_a69689ca0159d83c7477b99a1c59fa829}{featk\+Linear\+Elasticity\+Solver$<$ Dimension $>$}}.
+
+\mbox{\Hypertarget{classfeatk_static_solver_base_aa757fa7495d6f1238edf588477fbb3b8}\label{classfeatk_static_solver_base_aa757fa7495d6f1238edf588477fbb3b8}} 
+\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}!solve@{solve}}
+\index{solve@{solve}!featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+void \mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}}$<$ Dimension, Order $>$\+::solve\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_solver_base_a616415cf09df676e1ba6bb139d54ea8c}{featk\+Solver\+Base$<$ Dimension, Order $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_static_solver_base_8h}{featk\+Static\+Solver\+Base.\+h}}\end{DoxyCompactItemize}

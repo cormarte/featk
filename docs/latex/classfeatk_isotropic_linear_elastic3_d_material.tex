@@ -1,0 +1,53 @@
+\hypertarget{classfeatk_isotropic_linear_elastic3_d_material}{}\doxysection{featk\+Isotropic\+Linear\+Elastic3\+D\+Material Class Reference}
+\label{classfeatk_isotropic_linear_elastic3_d_material}\index{featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}}
+
+
+Hookean linear elastic material in 3D.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Isotropic\+Linear\+Elastic3\+D\+Material.\+h$>$}
+
+Inheritance diagram for featk\+Isotropic\+Linear\+Elastic3\+D\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfeatk_isotropic_linear_elastic3_d_material}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_isotropic_linear_elastic3_d_material_adf662aabca2375889bcf1d784d2a9438}{featk\+Isotropic\+Linear\+Elastic3\+D\+Material}} (double young\+Modulus, double poisson\+Ratio)
+\item 
+\mbox{\hyperlink{classfeatk_isotropic_linear_elastic3_d_material_ac9d643e5db806370550b2cd4a9dfc22d}{$\sim$featk\+Isotropic\+Linear\+Elastic3\+D\+Material}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Hookean linear elastic material in 3D. 
+
+\mbox{\hyperlink{classfeatk_isotropic_linear_elastic3_d_material}{featk\+Isotropic\+Linear\+Elastic3\+D\+Material}} is a 3D linear elastic \mbox{\hyperlink{classfeatk_material_base}{featk\+Material\+Base}} governed by Hooke\textquotesingle{}s law. \mbox{\hyperlink{classfeatk_isotropic_linear_elastic3_d_material}{featk\+Isotropic\+Linear\+Elastic3\+D\+Material}} generates and stores the non-\/symmetrized 4th-\/order Hooke\textquotesingle{}s tensor (i.\+e. a Eigen\+::\+Matrix$<$double, 9, 9$>$), given its Young\textquotesingle{}s modulus $E$ and Poisson\textquotesingle{}s ratio $\nu$. For generalization purpose of the solving routines, the Hooke\textquotesingle{}s law is not explicitly symmetrized in featk, hence Hooke\textquotesingle{}s tensor is re-\/arranged as follows\+:
+
+\[ \begin{bmatrix} \sigma_{xx}\\ \sigma_{xy}\\ \sigma_{xz}\\ \sigma_{yx}\\ \sigma_{yy}\\ \sigma_{yz}\\ \sigma_{zx}\\ \sigma_{zy}\\ \sigma_{zz}\\ \end{bmatrix} = \begin{bmatrix} 2\mu+\lambda & 0 & 0 & 0 & \lambda & 0 & 0 & 0 & \lambda\\ 0 & \mu & 0 & \mu & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & \mu & 0 & 0 & 0 & \mu & 0 & 0\\ 0 & \mu & 0 & \mu & 0 & 0 & 0 & 0 & 0\\ \lambda & 0 & 0 & 0 & 2\mu+\lambda & 0 & 0 & 0 & \lambda\\ 0 & 0 & 0 & 0 & 0 & \mu & 0 & \mu & 0\\ 0 & 0 & \mu & 0 & 0 & 0 & \mu & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & \mu & 0 & \mu & 0\\ \lambda & 0 & 0 & 0 & \lambda & 0 & 0 & 0 & 2\mu+\lambda \end{bmatrix} \begin{bmatrix} u_{x,x}\\ u_{x,y}\\ u_{x,z}\\ u_{y,x}\\ u_{y,y}\\ u_{y,z}\\ u_{z,x}\\ u_{z,y}\\ u_{z,z}\\ \end{bmatrix} \quad \lambda = \frac{\nu E}{(1+\nu)(1-2\nu)}, \quad \mu=\frac{E}{2(1+\nu)} \] 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_isotropic_linear_elastic3_d_material_adf662aabca2375889bcf1d784d2a9438}\label{classfeatk_isotropic_linear_elastic3_d_material_adf662aabca2375889bcf1d784d2a9438}} 
+\index{featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}!featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}}
+\index{featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}!featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}}
+\doxysubsubsection{\texorpdfstring{featkIsotropicLinearElastic3DMaterial()}{featkIsotropicLinearElastic3DMaterial()}}
+{\footnotesize\ttfamily featk\+Isotropic\+Linear\+Elastic3\+D\+Material\+::featk\+Isotropic\+Linear\+Elastic3\+D\+Material (\begin{DoxyParamCaption}\item[{double}]{young\+Modulus,  }\item[{double}]{poisson\+Ratio }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_isotropic_linear_elastic3_d_material_ac9d643e5db806370550b2cd4a9dfc22d}\label{classfeatk_isotropic_linear_elastic3_d_material_ac9d643e5db806370550b2cd4a9dfc22d}} 
+\index{featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}!````~featkIsotropicLinearElastic3DMaterial@{$\sim$featkIsotropicLinearElastic3DMaterial}}
+\index{````~featkIsotropicLinearElastic3DMaterial@{$\sim$featkIsotropicLinearElastic3DMaterial}!featkIsotropicLinearElastic3DMaterial@{featkIsotropicLinearElastic3DMaterial}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkIsotropicLinearElastic3DMaterial()}{~featkIsotropicLinearElastic3DMaterial()}}
+{\footnotesize\ttfamily featk\+Isotropic\+Linear\+Elastic3\+D\+Material\+::$\sim$featk\+Isotropic\+Linear\+Elastic3\+D\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_isotropic_linear_elastic3_d_material_8h}{featk\+Isotropic\+Linear\+Elastic3\+D\+Material.\+h}}\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/\mbox{\hyperlink{featk_isotropic_linear_elastic3_d_material_8cpp}{featk\+Isotropic\+Linear\+Elastic3\+D\+Material.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,162 @@
+\hypertarget{featk_defines_8h}{}\doxysection{D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/featk\+Defines.h File Reference}
+\label{featk_defines_8h}\index{D:/Documents de Corentin/Programmation/C++/featk/src/featk/featkDefines.h@{D:/Documents de Corentin/Programmation/C++/featk/src/featk/featkDefines.h}}
+{\ttfamily \#include $<$featk/featk\+Utils.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}{Attribute\+Value\+Type}} = Matrix$<$ double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order/2+Order\%2), \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order/2)$>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a583f5e75cec4321e5ba7ea0432807e50}{B\+Matrix\+Type}} = Matrix$<$ double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order+1), Nodes $\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order)$>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_ac6df23a1e88e573e134288d1c835c35b}{C\+Matrix\+Type}} = \mbox{\hyperlink{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}{Attribute\+Value\+Type}}$<$ Dimension, Order $>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a0b05035cc3995913dafb3a5f13c63725}{D\+Matrix\+Type}} = Matrix$<$ double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order+1), 1 $>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_aed3eb28ebbd6c49ba1b50dbb6a576b0d}{K\+Matrix\+Type}} = Matrix$<$ double, Nodes $\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order), Nodes $\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order)$>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_abba33dc76344292872408d61699cad28}{N\+Matrix\+Type}} = Matrix$<$ double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order), Nodes $\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order)$>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ }\\using \mbox{\hyperlink{featk_defines_8h_ab220ae51bf027eee8192e0548c1888a0}{Q\+Matrix\+Type}} = Matrix$<$ double, Nodes $\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order), 1 $>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Natural\+Dimension$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a1093fb9abcc4d0263ec034d90c82e852}{Jacobian\+Matrix\+Type}} = Matrix$<$ double, Natural\+Dimension, Dimension $>$
+\item 
+{\footnotesize template$<$unsigned int Natural\+Dimension$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a20b62fd584f2e6b9ada1cc7a1aef23ba}{Natural\+Coordinates\+Matrix\+Type}} = Matrix$<$ double, 1, Natural\+Dimension $>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Nodes$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a14321d45fe8ef57803c55df7c7491fff}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}} = Matrix$<$ double, Nodes, Dimension $>$
+\item 
+{\footnotesize template$<$unsigned int Nodes, unsigned int Natural\+Dimension$>$ }\\using \mbox{\hyperlink{featk_defines_8h_abf53ff4665edacfd92df190a4df3732c}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} = Matrix$<$ double, Nodes, Natural\+Dimension $>$
+\item 
+{\footnotesize template$<$unsigned int Dimension, unsigned int Nodes$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a0fadee5a89be2d0e4d63a7dfffc08e5a}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} = Matrix$<$ double, Dimension, Nodes $>$
+\item 
+{\footnotesize template$<$unsigned int Nodes, unsigned int Natural\+Dimension$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a37bd9b23d531d93eae6570584d689bf2}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} = Matrix$<$ double, Natural\+Dimension, Nodes $>$
+\item 
+{\footnotesize template$<$unsigned int Nodes$>$ }\\using \mbox{\hyperlink{featk_defines_8h_a2956e7d5e7280586f499cf1df96e5f98}{Shape\+Function\+Values\+Matrix\+Type}} = Matrix$<$ double, 1, Nodes $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} \+: unsigned char \{ \mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7a7ea15e4a5339ec92ef8d077b4f81082a}{F\+E\+A\+T\+K\+\_\+\+T\+E\+T4}}, 
+\mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7aa589d87091da278755064c5c4d99b93a}{F\+E\+A\+T\+K\+\_\+\+H\+E\+X8}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}\label{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}} 
+\index{featkDefines.h@{featkDefines.h}!AttributeValueType@{AttributeValueType}}
+\index{AttributeValueType@{AttributeValueType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{AttributeValueType}{AttributeValueType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}{Attribute\+Value\+Type}} =  Matrix$<$double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order/2+Order\%2), \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order/2)$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a583f5e75cec4321e5ba7ea0432807e50}\label{featk_defines_8h_a583f5e75cec4321e5ba7ea0432807e50}} 
+\index{featkDefines.h@{featkDefines.h}!BMatrixType@{BMatrixType}}
+\index{BMatrixType@{BMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{BMatrixType}{BMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a583f5e75cec4321e5ba7ea0432807e50}{B\+Matrix\+Type}} =  Matrix$<$double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order+1), Nodes$\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order)$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_ac6df23a1e88e573e134288d1c835c35b}\label{featk_defines_8h_ac6df23a1e88e573e134288d1c835c35b}} 
+\index{featkDefines.h@{featkDefines.h}!CMatrixType@{CMatrixType}}
+\index{CMatrixType@{CMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{CMatrixType}{CMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_ac6df23a1e88e573e134288d1c835c35b}{C\+Matrix\+Type}} =  \mbox{\hyperlink{featk_defines_8h_a3564f12a2374cd41f5bb744ec66e8173}{Attribute\+Value\+Type}}$<$Dimension, Order$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a0b05035cc3995913dafb3a5f13c63725}\label{featk_defines_8h_a0b05035cc3995913dafb3a5f13c63725}} 
+\index{featkDefines.h@{featkDefines.h}!DMatrixType@{DMatrixType}}
+\index{DMatrixType@{DMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{DMatrixType}{DMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a0b05035cc3995913dafb3a5f13c63725}{D\+Matrix\+Type}} =  Matrix$<$double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order+1), 1$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a1093fb9abcc4d0263ec034d90c82e852}\label{featk_defines_8h_a1093fb9abcc4d0263ec034d90c82e852}} 
+\index{featkDefines.h@{featkDefines.h}!JacobianMatrixType@{JacobianMatrixType}}
+\index{JacobianMatrixType@{JacobianMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{JacobianMatrixType}{JacobianMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Natural\+Dimension$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a1093fb9abcc4d0263ec034d90c82e852}{Jacobian\+Matrix\+Type}} =  Matrix$<$double, Natural\+Dimension, Dimension$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_aed3eb28ebbd6c49ba1b50dbb6a576b0d}\label{featk_defines_8h_aed3eb28ebbd6c49ba1b50dbb6a576b0d}} 
+\index{featkDefines.h@{featkDefines.h}!KMatrixType@{KMatrixType}}
+\index{KMatrixType@{KMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{KMatrixType}{KMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_aed3eb28ebbd6c49ba1b50dbb6a576b0d}{K\+Matrix\+Type}} =  Matrix$<$double, Nodes$\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order), Nodes$\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order)$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a20b62fd584f2e6b9ada1cc7a1aef23ba}\label{featk_defines_8h_a20b62fd584f2e6b9ada1cc7a1aef23ba}} 
+\index{featkDefines.h@{featkDefines.h}!NaturalCoordinatesMatrixType@{NaturalCoordinatesMatrixType}}
+\index{NaturalCoordinatesMatrixType@{NaturalCoordinatesMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{NaturalCoordinatesMatrixType}{NaturalCoordinatesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Natural\+Dimension$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a20b62fd584f2e6b9ada1cc7a1aef23ba}{Natural\+Coordinates\+Matrix\+Type}} =  Matrix$<$double, 1, Natural\+Dimension$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_abba33dc76344292872408d61699cad28}\label{featk_defines_8h_abba33dc76344292872408d61699cad28}} 
+\index{featkDefines.h@{featkDefines.h}!NMatrixType@{NMatrixType}}
+\index{NMatrixType@{NMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{NMatrixType}{NMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_abba33dc76344292872408d61699cad28}{N\+Matrix\+Type}} =  Matrix$<$double, \mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order), Nodes$\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order)$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a14321d45fe8ef57803c55df7c7491fff}\label{featk_defines_8h_a14321d45fe8ef57803c55df7c7491fff}} 
+\index{featkDefines.h@{featkDefines.h}!NodesCartesianCoordinatesMatrixType@{NodesCartesianCoordinatesMatrixType}}
+\index{NodesCartesianCoordinatesMatrixType@{NodesCartesianCoordinatesMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{NodesCartesianCoordinatesMatrixType}{NodesCartesianCoordinatesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a14321d45fe8ef57803c55df7c7491fff}{Nodes\+Cartesian\+Coordinates\+Matrix\+Type}} =  Matrix$<$double, Nodes, Dimension$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_abf53ff4665edacfd92df190a4df3732c}\label{featk_defines_8h_abf53ff4665edacfd92df190a4df3732c}} 
+\index{featkDefines.h@{featkDefines.h}!NodesNaturalCoordinatesMatrixType@{NodesNaturalCoordinatesMatrixType}}
+\index{NodesNaturalCoordinatesMatrixType@{NodesNaturalCoordinatesMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{NodesNaturalCoordinatesMatrixType}{NodesNaturalCoordinatesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Nodes, unsigned int Natural\+Dimension$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_abf53ff4665edacfd92df190a4df3732c}{Nodes\+Natural\+Coordinates\+Matrix\+Type}} =  Matrix$<$double, Nodes, Natural\+Dimension$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_ab220ae51bf027eee8192e0548c1888a0}\label{featk_defines_8h_ab220ae51bf027eee8192e0548c1888a0}} 
+\index{featkDefines.h@{featkDefines.h}!QMatrixType@{QMatrixType}}
+\index{QMatrixType@{QMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{QMatrixType}{QMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Order$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_ab220ae51bf027eee8192e0548c1888a0}{Q\+Matrix\+Type}} =  Matrix$<$double, Nodes$\ast$\mbox{\hyperlink{featk_utils_8h_a9f2f94eb8cb9804cf3c8b90780b8b8f7}{P\+O\+W\+ER}}(Dimension, Order), 1$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a0fadee5a89be2d0e4d63a7dfffc08e5a}\label{featk_defines_8h_a0fadee5a89be2d0e4d63a7dfffc08e5a}} 
+\index{featkDefines.h@{featkDefines.h}!ShapeFunctionCartesianDerivativeValuesMatrixType@{ShapeFunctionCartesianDerivativeValuesMatrixType}}
+\index{ShapeFunctionCartesianDerivativeValuesMatrixType@{ShapeFunctionCartesianDerivativeValuesMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{ShapeFunctionCartesianDerivativeValuesMatrixType}{ShapeFunctionCartesianDerivativeValuesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a0fadee5a89be2d0e4d63a7dfffc08e5a}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} =  Matrix$<$double, Dimension, Nodes$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a37bd9b23d531d93eae6570584d689bf2}\label{featk_defines_8h_a37bd9b23d531d93eae6570584d689bf2}} 
+\index{featkDefines.h@{featkDefines.h}!ShapeFunctionNaturalDerivativeValuesMatrixType@{ShapeFunctionNaturalDerivativeValuesMatrixType}}
+\index{ShapeFunctionNaturalDerivativeValuesMatrixType@{ShapeFunctionNaturalDerivativeValuesMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{ShapeFunctionNaturalDerivativeValuesMatrixType}{ShapeFunctionNaturalDerivativeValuesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Nodes, unsigned int Natural\+Dimension$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a37bd9b23d531d93eae6570584d689bf2}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} =  Matrix$<$double, Natural\+Dimension, Nodes$>$}
+
+\mbox{\Hypertarget{featk_defines_8h_a2956e7d5e7280586f499cf1df96e5f98}\label{featk_defines_8h_a2956e7d5e7280586f499cf1df96e5f98}} 
+\index{featkDefines.h@{featkDefines.h}!ShapeFunctionValuesMatrixType@{ShapeFunctionValuesMatrixType}}
+\index{ShapeFunctionValuesMatrixType@{ShapeFunctionValuesMatrixType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{ShapeFunctionValuesMatrixType}{ShapeFunctionValuesMatrixType}}
+{\footnotesize\ttfamily template$<$unsigned int Nodes$>$ \\
+using \mbox{\hyperlink{featk_defines_8h_a2956e7d5e7280586f499cf1df96e5f98}{Shape\+Function\+Values\+Matrix\+Type}} =  Matrix$<$double, 1, Nodes$>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}\label{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}} 
+\index{featkDefines.h@{featkDefines.h}!featkElementType@{featkElementType}}
+\index{featkElementType@{featkElementType}!featkDefines.h@{featkDefines.h}}
+\doxysubsubsection{\texorpdfstring{featkElementType}{featkElementType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7}{featk\+Element\+Type}} \+: unsigned char}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FEATK\_TET4@{FEATK\_TET4}!featkDefines.h@{featkDefines.h}}\index{featkDefines.h@{featkDefines.h}!FEATK\_TET4@{FEATK\_TET4}}}\mbox{\Hypertarget{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7a7ea15e4a5339ec92ef8d077b4f81082a}\label{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7a7ea15e4a5339ec92ef8d077b4f81082a}} 
+F\+E\+A\+T\+K\+\_\+\+T\+E\+T4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FEATK\_HEX8@{FEATK\_HEX8}!featkDefines.h@{featkDefines.h}}\index{featkDefines.h@{featkDefines.h}!FEATK\_HEX8@{FEATK\_HEX8}}}\mbox{\Hypertarget{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7aa589d87091da278755064c5c4d99b93a}\label{featk_defines_8h_a0bf1655c1320f5c6294259194aeeb2e7aa589d87091da278755064c5c4d99b93a}} 
+F\+E\+A\+T\+K\+\_\+\+H\+E\+X8&\\
+\hline
+
+\end{DoxyEnumFields}
