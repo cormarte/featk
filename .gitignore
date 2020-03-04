@@ -1,0 +1,5 @@
+archive/
+doc/latex/
+doc/Doxyfile
+*.pro
+*.pro.user
