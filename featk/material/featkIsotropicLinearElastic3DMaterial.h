@@ -79,9 +79,10 @@
 #ifndef FEATKISOTROPICLINEARELASTIC3DMATERIAL_H
 #define FEATKISOTROPICLINEARELASTIC3DMATERIAL_H
 
+#include <featk/core/featkGlobal.h>
 #include <featk/material/featkMaterialBase.h>
 
-class featkIsotropicLinearElastic3DMaterial final : public featkMaterialBase<3> {
+class FEATK_EXPORT featkIsotropicLinearElastic3DMaterial final : public featkMaterialBase<3> {
 
     public:
 

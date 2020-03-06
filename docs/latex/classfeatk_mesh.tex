@@ -11,7 +11,11 @@
 \item 
 \mbox{\hyperlink{classfeatk_mesh_a80c03a5f112e5543894764ba350ff9f0}{$\sim$featk\+Mesh}} ()
 \item 
-{\footnotesize template$<$unsigned int Order$>$ }\\void \mbox{\hyperlink{classfeatk_mesh_ac3e207b39412fa797dd7f53cef5931f1}{compute\+Node\+BQ}} (std\+::string input\+Name, std\+::string output\+Name)
+{\footnotesize template$<$unsigned int Order$>$ }\\void \mbox{\hyperlink{classfeatk_mesh_a4dfa0f19184cad70de56ebd2354b9a93}{compute\+Node\+BQ}} (std\+::string input\+Node\+Attribute\+Name, std\+::string output\+Node\+Attribute\+Name)
+\item 
+{\footnotesize template$<$unsigned int Order$>$ }\\void \mbox{\hyperlink{classfeatk_mesh_ac2eb40ca401545d690fe98c78b4e0a2e}{compute\+Node\+C\+BQ}} (std\+::string element\+Attribute\+Name, std\+::string input\+Node\+Attribute\+Name, std\+::string output\+Node\+Attribute\+Name)
+\item 
+void \mbox{\hyperlink{classfeatk_mesh_aa642e18f5542be2db2a5a2cdd47b4c21}{add\+Node\+Attribute\+From\+Values}} (std\+::string name, unsigned int order, const Matrix\+Xd \&values)
 \item 
 \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}$<$ Dimension $>$ $\ast$ \mbox{\hyperlink{classfeatk_mesh_a9d28e3dbffebb9894fee1cf2a650bb66}{get\+Element}} (size\+\_\+t index) const
 \item 
@@ -65,13 +69,28 @@ size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_ac3b6be8d7e93f5b5bd4d8508cdf78e23}{
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classfeatk_mesh_ac3e207b39412fa797dd7f53cef5931f1}\label{classfeatk_mesh_ac3e207b39412fa797dd7f53cef5931f1}} 
+\mbox{\Hypertarget{classfeatk_mesh_aa642e18f5542be2db2a5a2cdd47b4c21}\label{classfeatk_mesh_aa642e18f5542be2db2a5a2cdd47b4c21}} 
+\index{featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}!addNodeAttributeFromValues@{addNodeAttributeFromValues}}
+\index{addNodeAttributeFromValues@{addNodeAttributeFromValues}!featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{addNodeAttributeFromValues()}{addNodeAttributeFromValues()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$\+::add\+Node\+Attribute\+From\+Values (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const Matrix\+Xd \&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_mesh_a4dfa0f19184cad70de56ebd2354b9a93}\label{classfeatk_mesh_a4dfa0f19184cad70de56ebd2354b9a93}} 
 \index{featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}!computeNodeBQ@{computeNodeBQ}}
 \index{computeNodeBQ@{computeNodeBQ}!featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}}
 \doxysubsubsection{\texorpdfstring{computeNodeBQ()}{computeNodeBQ()}}
 {\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
 template$<$unsigned int Order$>$ \\
-void \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$\+::compute\+Node\+BQ (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+Name,  }\item[{std\+::string}]{output\+Name }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$\+::compute\+Node\+BQ (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+Node\+Attribute\+Name,  }\item[{std\+::string}]{output\+Node\+Attribute\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_mesh_ac2eb40ca401545d690fe98c78b4e0a2e}\label{classfeatk_mesh_ac2eb40ca401545d690fe98c78b4e0a2e}} 
+\index{featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}!computeNodeCBQ@{computeNodeCBQ}}
+\index{computeNodeCBQ@{computeNodeCBQ}!featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{computeNodeCBQ()}{computeNodeCBQ()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+template$<$unsigned int Order$>$ \\
+void \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$\+::compute\+Node\+C\+BQ (\begin{DoxyParamCaption}\item[{std\+::string}]{element\+Attribute\+Name,  }\item[{std\+::string}]{input\+Node\+Attribute\+Name,  }\item[{std\+::string}]{output\+Node\+Attribute\+Name }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classfeatk_mesh_a9d28e3dbffebb9894fee1cf2a650bb66}\label{classfeatk_mesh_a9d28e3dbffebb9894fee1cf2a650bb66}} 
 \index{featkMesh$<$ Dimension $>$@{featkMesh$<$ Dimension $>$}!getElement@{getElement}}
@@ -189,5 +208,5 @@ void \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$\+::set\+No
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-featk/geometry/\mbox{\hyperlink{featk_attributable_8h}{featk\+Attributable.\+h}}\item 
-featk/geometry/\mbox{\hyperlink{featk_mesh_8h}{featk\+Mesh.\+h}}\end{DoxyCompactItemize}
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/geometry/\mbox{\hyperlink{featk_attributable_8h}{featk\+Attributable.\+h}}\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/geometry/\mbox{\hyperlink{featk_mesh_8h}{featk\+Mesh.\+h}}\end{DoxyCompactItemize}

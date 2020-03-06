@@ -88,6 +88,21 @@ template<unsigned int Dimension>
 void featkLinearElasticitySolver<Dimension>::postProcess(const VectorXd& u) {
 
     this->mesh->setNodeAttributeFromValues(this->outputAttributeName, 1, u);
+    this->mesh->computeNodeCBQ<1>(this->stiffnessAttributeName, this->outputAttributeName, "Stress Tensor");  // Compute this before moving nodes!
+    this->mesh->addNodeAttributeFromValues("Cartesian Coordinates", 1, u);
+
+    std::vector<featkNode<3>*> nodes = this->mesh->getNodes();
+    MatrixXd values(nodes.size(), 1);
+
+    size_t id = this->mesh->getNodeAttributeID("Stress Tensor", 2);
+
+    for (size_t n=0; n!=nodes.size(); n++) {
+
+        MatrixXd s = nodes[n]->getAttributeValue(id);
+        values(n, 0) = sqrt(0.5*((s(0,0)-s(1,1))*(s(0,0)-s(1,1)) + (s(1,1)-s(2,2))*(s(1,1)-s(2,2)) + (s(2,2)-s(0,0))*(s(2,2)-s(0,0))) + 3.0*(s(0,1)*s(1,0) + s(1,2)*s(2,1) + s(2,0)*s(0,2)));
+    }
+
+    this->mesh->setNodeAttributeFromValues("Von Mises Stresses", 0, values);
 }
 
 #endif // FEATKLINEARELASTICITYSOLVER_H

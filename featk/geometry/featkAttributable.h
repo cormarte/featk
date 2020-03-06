@@ -64,6 +64,7 @@ class featkAttributable {
 
         featkAttributable();
 
+        void addAttribute(size_t id, std::shared_ptr<MatrixXd> attribute);
         void setAttribute(size_t id, std::shared_ptr<MatrixXd> attribute);
 
         std::map<size_t, std::shared_ptr<MatrixXd>> attributes;
@@ -81,6 +82,12 @@ featkAttributable<Dimension>::~featkAttributable() {
 
 
 template<unsigned int Dimension>
+void featkAttributable<Dimension>::addAttribute(size_t id, std::shared_ptr<MatrixXd> attribute) {
+
+    (*this->attributes[id]) += (*attribute);
+}
+
+template<unsigned int Dimension>
 MatrixXd featkAttributable<Dimension>::getAttributeValue(size_t id) const {
 
     return this->attributes.count(id) ? *(this->attributes.at(id)) : MatrixXd::Zero(1, 1);
@@ -91,6 +98,5 @@ void featkAttributable<Dimension>::setAttribute(size_t id, std::shared_ptr<Matri
 
     this->attributes[id] = attribute;
 }
-
 
 #endif // FEATKATTRIBUTUTABLE_H

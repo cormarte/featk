@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -77,16 +84,17 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#a06fe4aa7abe91f2430a2e81e295c43c6">getBtCBIntegralMatrix</a>(size_t elementAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a2c45f670a6ce455424f2b95d5f5c474f">getElementType</a>() const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#abacd3823ca68777fa7c421edc735a029">getNode</a>(unsigned int index) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#ad776a8f6173292bcaed1060fc40899e2">getNodeBQVector</a>(featkNode&lt; Dimension &gt; *node, size_t elementAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#a869f4ad8da56a9d9bfccf60b74773072">getNodes</a>() const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#ab0c093072ff1b0e0fc29434a1f95e181">getNtCNIntegralMatrix</a>(size_t elementAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#a799fbae238800d29db63f1f66d9db396">getNtCNQNQIntegralVector</a>(size_t elementAttributeID, size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a399f19e184c3deda54bc6b86f5a1d8af">getNtNIntegralMatrix</a>() const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#a6f6aef4f187940116b6e71ea80a6763f">getNtNQIntegralVector</a>(size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#acffc7acff5118350d03d33d3ef588cd1">getNtNQNQIntegralVector</a>(size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#af673d2064cfcf0ce55f5ea22c8e2afb4">getQVector</a>(size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#ab5e7733ed80d249322ae0cbf83bac7f0">nodes</a></td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#a392bcc99fe3323204209264aa4776269">~featkElementInterface</a>()</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a0dd3c56a3340c801136d10cea7ada4b5">getNodeBQVector</a>(featkNode&lt; Dimension &gt; *node, size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#ada7ec6c7b99ebe7efbb45e20db6d04a7">getNodeCBQVector</a>(featkNode&lt; Dimension &gt; *node, size_t elementAttributeID, size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a869f4ad8da56a9d9bfccf60b74773072">getNodes</a>() const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#ab0c093072ff1b0e0fc29434a1f95e181">getNtCNIntegralMatrix</a>(size_t elementAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a799fbae238800d29db63f1f66d9db396">getNtCNQNQIntegralVector</a>(size_t elementAttributeID, size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#a399f19e184c3deda54bc6b86f5a1d8af">getNtNIntegralMatrix</a>() const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a6f6aef4f187940116b6e71ea80a6763f">getNtNQIntegralVector</a>(size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#acffc7acff5118350d03d33d3ef588cd1">getNtNQNQIntegralVector</a>(size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#af673d2064cfcf0ce55f5ea22c8e2afb4">getQVector</a>(size_t nodeAttributeID) const</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_element_interface.html#ab5e7733ed80d249322ae0cbf83bac7f0">nodes</a></td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_element_interface.html#a392bcc99fe3323204209264aa4776269">~featkElementInterface</a>()</td><td class="entry"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

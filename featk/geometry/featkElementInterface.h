@@ -39,8 +39,8 @@
 #include <featk/core/featkDefines.h>
 #include <featk/geometry/featkAttributable.h>
 #include <featk/geometry/featkHex8Element.h>
+#include <featk/geometry/featkTet4Element.h>
 #include <featk/geometry/featkNode.h>
-//#include <featk/geometry/featkTet4Element.h>
 
 #include <vector>
 
@@ -55,7 +55,8 @@ class featkElementInterface : public featkAttributable<Dimension> {
 
         template<unsigned int Order> MatrixXd getBtBIntegralMatrix() const;
         template<unsigned int Order> MatrixXd getBtCBIntegralMatrix(size_t elementAttributeID) const;
-        template<unsigned int Order> VectorXd getNodeBQVector(featkNode<Dimension>* node, size_t elementAttributeID) const;
+        template<unsigned int Order> VectorXd getNodeBQVector(featkNode<Dimension>* node, size_t nodeAttributeID) const;
+        template<unsigned int Order> VectorXd getNodeCBQVector(featkNode<Dimension>* node, size_t elementAttributeID, size_t nodeAttributeID) const;
         template<unsigned int Order> MatrixXd getNtCNIntegralMatrix(size_t elementAttributeID) const;
         template<unsigned int Order> VectorXd getNtCNQNQIntegralVector(size_t elementAttributeID, size_t nodeAttributeID) const;
         template<unsigned int Order> MatrixXd getNtNIntegralMatrix() const;
@@ -159,7 +160,7 @@ MatrixXd featkElementInterface<Dimension>::getBtCBIntegralMatrix(size_t elementA
 
 template<unsigned int Dimension>
 template<unsigned int Order>
-VectorXd featkElementInterface<Dimension>::getNodeBQVector(featkNode<Dimension>* node, size_t elementAttributeID) const {
+VectorXd featkElementInterface<Dimension>::getNodeBQVector(featkNode<Dimension>* node, size_t nodeAttributeID) const {
 
     /**
      * C++ does not allow template virtual member function but as many matrix dimensions as possible must be
@@ -177,11 +178,46 @@ VectorXd featkElementInterface<Dimension>::getNodeBQVector(featkNode<Dimension>*
     switch (this->elementType) {
 
         case FEATK_TET4:
-            matrix = static_cast<const featkTet4Element*>(this)->getNodeBQMatrix<Order>(node, elementAttributeID);
+            matrix = static_cast<const featkTet4Element*>(this)->getNodeBQMatrix<Order>(node, nodeAttributeID);
             break;
 
         case FEATK_HEX8:
-            matrix = static_cast<const featkHex8Element*>(this)->getNodeBQMatrix<Order>(node, elementAttributeID);
+            matrix = static_cast<const featkHex8Element*>(this)->getNodeBQMatrix<Order>(node, nodeAttributeID);
+            break;
+
+        default:
+            matrix = VectorXd::Zero(1, 1);;
+            break;
+    }
+
+    return matrix;
+}
+
+template<unsigned int Dimension>
+template<unsigned int Order>
+VectorXd featkElementInterface<Dimension>::getNodeCBQVector(featkNode<Dimension>* node, size_t elementAttributeID, size_t nodeAttributeID) const {
+
+    /**
+     * C++ does not allow template virtual member function but as many matrix dimensions as possible must be
+     * known at compile time for performance reasons, hence element matrix getters remain templated over
+     * variable order. The following solution is not elegant but does the trick while avoiding multiple
+     * dynamic_cast attempts.
+     *
+     * Another solution would be to not allow hybrid meshes and template featkMesh over element type and
+     * featkSolverBase over featkMesh<Dimension, Element>. This way, all matrix dimension would be known at
+     * compile time.
+     */
+
+    MatrixXd matrix;
+
+    switch (this->elementType) {
+
+        case FEATK_TET4:
+            matrix = static_cast<const featkTet4Element*>(this)->getNodeCBQMatrix<Order>(node, elementAttributeID, nodeAttributeID);
+            break;
+
+        case FEATK_HEX8:
+            matrix = static_cast<const featkHex8Element*>(this)->getNodeCBQMatrix<Order>(node, elementAttributeID, nodeAttributeID);
             break;
 
         default:
@@ -380,7 +416,7 @@ AttributeValueType<Dimension, 1> featkElementInterface<Dimension>::getBarycenter
         barycenter += node->getCoordinates();
     }
 
-    barycenter /= n;
+    barycenter /= this->nodes.size();
 
     return barycenter;
 }

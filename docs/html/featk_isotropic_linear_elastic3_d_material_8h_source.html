@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEATK: featk/material/featkIsotropicLinearElastic3DMaterial.h Source File</title>
+<title>FEATK: D:/Documents de Corentin/Programmation/C++/featk/src/featk/material/featkIsotropicLinearElastic3DMaterial.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -93,23 +100,24 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#ifndef FEATKISOTROPICLINEARELASTIC3DMATERIAL_H</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define FEATKISOTROPICLINEARELASTIC3DMATERIAL_H</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_material_base_8h.html">featk/material/featkMaterialBase.h</a>&gt;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classfeatk_isotropic_linear_elastic3_d_material.html">   84</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfeatk_isotropic_linear_elastic3_d_material.html">featkIsotropicLinearElastic3DMaterial</a> final : <span class="keyword">public</span> <a class="code" href="classfeatk_material_base.html">featkMaterialBase</a>&lt;3&gt; {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classfeatk_isotropic_linear_elastic3_d_material.html#adf662aabca2375889bcf1d784d2a9438">featkIsotropicLinearElastic3DMaterial</a>(<span class="keywordtype">double</span> youngModulus, <span class="keywordtype">double</span> poissonRatio);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classfeatk_isotropic_linear_elastic3_d_material.html#ac9d643e5db806370550b2cd4a9dfc22d">~featkIsotropicLinearElastic3DMaterial</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif // FEATKISOTROPICLINEARELASTIC3DMATERIAL_H</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_global_8h.html">featk/core/featkGlobal.h</a>&gt;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_material_base_8h.html">featk/material/featkMaterialBase.h</a>&gt;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classfeatk_isotropic_linear_elastic3_d_material.html">   85</a></span>&#160;<span class="keyword">class </span><a class="code" href="featk_global_8h.html#a5f4372de0b65ec06faebbdc500ff9e8e">FEATK_EXPORT</a> <a class="code" href="classfeatk_isotropic_linear_elastic3_d_material.html">featkIsotropicLinearElastic3DMaterial</a> final : <span class="keyword">public</span> <a class="code" href="classfeatk_material_base.html">featkMaterialBase</a>&lt;3&gt; {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classfeatk_isotropic_linear_elastic3_d_material.html">featkIsotropicLinearElastic3DMaterial</a>(<span class="keywordtype">double</span> youngModulus, <span class="keywordtype">double</span> poissonRatio);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ~<a class="code" href="classfeatk_isotropic_linear_elastic3_d_material.html">featkIsotropicLinearElastic3DMaterial</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // FEATKISOTROPICLINEARELASTIC3DMATERIAL_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassfeatk_isotropic_linear_elastic3_d_material_html"><div class="ttname"><a href="classfeatk_isotropic_linear_elastic3_d_material.html">featkIsotropicLinearElastic3DMaterial</a></div><div class="ttdoc">Hookean linear elastic material in 3D.</div><div class="ttdef"><b>Definition:</b> featkIsotropicLinearElastic3DMaterial.h:84</div></div>
+<div class="ttc" id="aclassfeatk_isotropic_linear_elastic3_d_material_html"><div class="ttname"><a href="classfeatk_isotropic_linear_elastic3_d_material.html">featkIsotropicLinearElastic3DMaterial</a></div><div class="ttdoc">Hookean linear elastic material in 3D.</div><div class="ttdef"><b>Definition:</b> featkIsotropicLinearElastic3DMaterial.h:85</div></div>
 <div class="ttc" id="aclassfeatk_material_base_html"><div class="ttname"><a href="classfeatk_material_base.html">featkMaterialBase</a></div><div class="ttdef"><b>Definition:</b> featkMaterialBase.h:7</div></div>
-<div class="ttc" id="aclassfeatk_isotropic_linear_elastic3_d_material_html_ac9d643e5db806370550b2cd4a9dfc22d"><div class="ttname"><a href="classfeatk_isotropic_linear_elastic3_d_material.html#ac9d643e5db806370550b2cd4a9dfc22d">featkIsotropicLinearElastic3DMaterial::~featkIsotropicLinearElastic3DMaterial</a></div><div class="ttdeci">~featkIsotropicLinearElastic3DMaterial()</div><div class="ttdef"><b>Definition:</b> featkIsotropicLinearElastic3DMaterial.cpp:21</div></div>
+<div class="ttc" id="afeatk_global_8h_html_a5f4372de0b65ec06faebbdc500ff9e8e"><div class="ttname"><a href="featk_global_8h.html#a5f4372de0b65ec06faebbdc500ff9e8e">FEATK_EXPORT</a></div><div class="ttdeci">#define FEATK_EXPORT</div><div class="ttdoc">featkGlobal defines export/import declarations for the Finite Element Analysis Toolkit.</div><div class="ttdef"><b>Definition:</b> featkGlobal.h:33</div></div>
+<div class="ttc" id="afeatk_global_8h_html"><div class="ttname"><a href="featk_global_8h.html">featkGlobal.h</a></div></div>
 <div class="ttc" id="afeatk_material_base_8h_html"><div class="ttname"><a href="featk_material_base_8h.html">featkMaterialBase.h</a></div></div>
-<div class="ttc" id="aclassfeatk_isotropic_linear_elastic3_d_material_html_adf662aabca2375889bcf1d784d2a9438"><div class="ttname"><a href="classfeatk_isotropic_linear_elastic3_d_material.html#adf662aabca2375889bcf1d784d2a9438">featkIsotropicLinearElastic3DMaterial::featkIsotropicLinearElastic3DMaterial</a></div><div class="ttdeci">featkIsotropicLinearElastic3DMaterial(double youngModulus, double poissonRatio)</div><div class="ttdef"><b>Definition:</b> featkIsotropicLinearElastic3DMaterial.cpp:5</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

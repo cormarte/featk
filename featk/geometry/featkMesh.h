@@ -17,8 +17,10 @@ class featkMesh {
         featkMesh(std::vector<featkNode<Dimension>*> nodes, std::vector<featkElementInterface<Dimension>*> elements);
         ~featkMesh();
 
-        template<unsigned int Order> void computeNodeBQ(std::string inputName, std::string outputName);
+        template<unsigned int Order> void computeNodeBQ(std::string inputNodeAttributeName, std::string outputNodeAttributeName);
+        template<unsigned int Order> void computeNodeCBQ(std::string elementAttributeName, std::string inputNodeAttributeName, std::string outputNodeAttributeName);
 
+        void addNodeAttributeFromValues(std::string name, unsigned int order, const MatrixXd& values);
         featkElementInterface<Dimension>* getElement(size_t index) const;
         size_t getElementAttributeID(std::string name, unsigned int order) const;
         std::map<std::string, std::pair<size_t, unsigned int>> getElementAttributeTable() const;
@@ -38,6 +40,7 @@ class featkMesh {
 
     private:
 
+        template<typename AttributeOwnerType> void addAttributes(const std::vector<AttributeOwnerType*>& items, size_t id, std::vector<std::shared_ptr<MatrixXd>> attributes) const;
         template<typename AttributeOwnerType> MatrixXd getAttributeValues(const std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, const std::vector<AttributeOwnerType*>& items, std::string name, unsigned int order) const;
         template<typename AttributeOwnerType> void setAttributes(const std::vector<AttributeOwnerType*>& items, size_t id, std::vector<std::shared_ptr<MatrixXd>> attributes) const;
 
@@ -81,15 +84,28 @@ featkMesh<Dimension>::~featkMesh() {
 
 
 template<unsigned int Dimension>
+template<typename AttributeOwnerType>
+void featkMesh<Dimension>::addAttributes(const std::vector<AttributeOwnerType*>& items, size_t id, std::vector<std::shared_ptr<MatrixXd>> attributes) const {
+
+    if (items.size() == attributes.size()) {
+
+        for (size_t i=0; i!=items.size(); i++) {
+
+            items[i]->addAttribute(id, attributes[i]);
+        }
+    }
+}
+
+template<unsigned int Dimension>
 template<unsigned int Order>
-void featkMesh<Dimension>::computeNodeBQ(std::string inputName, std::string outputName) {
+void featkMesh<Dimension>::computeNodeBQ(std::string inputNodeAttributeName, std::string outputNodeAttributeName) {
 
     MatrixXd values;
 
     unsigned int rows = POWER(Dimension, (Order+1));
     unsigned int cols = 1;
 
-    size_t id = this->getNodeAttributeID(inputName, Order);
+    size_t id = this->getNodeAttributeID(inputNodeAttributeName, Order);
 
     if (id != 0) {
 
@@ -119,7 +135,50 @@ void featkMesh<Dimension>::computeNodeBQ(std::string inputName, std::string outp
         values = MatrixXd::Zero(this->nodes.size()*rows, cols);
     }
 
-    this->setNodeAttributeFromValues(outputName, Order+1, values);
+    this->setNodeAttributeFromValues(outputNodeAttributeName, Order+1, values);
+}
+
+template<unsigned int Dimension>
+template<unsigned int Order>
+void featkMesh<Dimension>::computeNodeCBQ(std::string elementAttributeName, std::string inputNodeAttributeName, std::string outputNodeAttributeName) {
+
+    MatrixXd values;
+
+    unsigned int rows = POWER(Dimension, (Order+1));
+    unsigned int cols = 1;
+
+    size_t elementAttributeID = this->getElementAttributeID(elementAttributeName, 2*(Order+1));
+    size_t inputNodeAttributeID = this->getNodeAttributeID(inputNodeAttributeName, Order);
+
+    if (elementAttributeID != 0 && inputNodeAttributeID != 0) {
+
+        values = MatrixXd(this->nodes.size()*rows, cols);
+
+        size_t index = 0;
+
+        for (featkNode<Dimension>* node : this->nodes) {
+
+            MatrixXd value = MatrixXd::Zero(rows, cols);
+            std::vector<featkElementInterface<Dimension>*> elements = node->getElements();
+
+            for (featkElementInterface<Dimension>* element : elements) {
+
+                value += element->getNodeCBQVector<Order>(node, elementAttributeID, inputNodeAttributeID);
+            }
+
+            value /= elements.size();
+            values.block(index, 0, rows, cols) = value;
+
+            index += rows;
+        }
+    }
+
+    else {
+
+        values = MatrixXd::Zero(this->nodes.size()*rows, cols);
+    }
+
+    this->setNodeAttributeFromValues(outputNodeAttributeName, Order+1, values);
 }
 
 template<unsigned int Dimension>
@@ -167,6 +226,18 @@ void featkMesh<Dimension>::setAttributes(const std::vector<AttributeOwnerType*>&
     }
 }
 
+
+template<unsigned int Dimension>
+void featkMesh<Dimension>::addNodeAttributeFromValues(std::string name, unsigned int order, const MatrixXd& values) {
+
+    size_t id = this->getNodeAttributeID(name, order);
+
+    if (id != 0) {
+
+        std::vector<std::shared_ptr<MatrixXd>> attributes = this->getAttributesFromValues(this->nodes.size(), order, values);  // This must be checked before registering
+        this->addAttributes(this->nodes, id, attributes);
+    }
+}
 
 template<unsigned int Dimension>
 size_t featkMesh<Dimension>::getAttributeID(const std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, std::string name, unsigned int order) const {

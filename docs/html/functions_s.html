@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -69,6 +76,9 @@ $(function() {
 <li>setAttribute()
 : <a class="el" href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">featkAttributable&lt; Dimension &gt;</a>
 </li>
+<li>setDimensions()
+: <a class="el" href="classfeatk3_d_beam_source.html#a60940000c75c87de25bbfc3b219b8b68">featk3DBeamSource</a>
+</li>
 <li>setDOFValue()
 : <a class="el" href="classfeatk_boundary_conditions.html#af0f54be057367ded489256b40752843e">featkBoundaryConditions&lt; Dimension, Order &gt;</a>
 </li>
@@ -91,7 +101,8 @@ $(function() {
 : <a class="el" href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">featkSolverBase&lt; Dimension, Order &gt;</a>
 </li>
 <li>setInputMesh()
-: <a class="el" href="classfeatk_mesh_to_v_t_k_unstructured_grid_filter.html#aa6dca148bb36979153e312438c6f1073">featkMeshToVTKUnstructuredGridFilter&lt; Dimension &gt;</a>
+: <a class="el" href="classfeatk_mesh_consumer_base.html#a8b32812de5ed09a4e19d891e6ca26a2a">featkMeshConsumerBase&lt; Dimension &gt;</a>
+, <a class="el" href="classfeatk_mesh_to_v_t_k_unstructured_grid_filter.html#aa6dca148bb36979153e312438c6f1073">featkMeshToVTKUnstructuredGridFilter&lt; Dimension &gt;</a>
 , <a class="el" href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">featkSolverBase&lt; Dimension, Order &gt;</a>
 </li>
 <li>setInputVTKUnstructuredGrid()
@@ -121,8 +132,17 @@ $(function() {
 <li>setNumberOfIterations()
 : <a class="el" href="classfeatk_dynamic_solver_base.html#afa73aa078854d108bca69643f4424568">featkDynamicSolverBase&lt; Dimension, Order &gt;</a>
 </li>
+<li>setNumberOfOutputMeshes()
+: <a class="el" href="classfeatk_mesh_producer_base.html#a055b0248d348910f1854b50d600e74bb">featkMeshProducerBase&lt; Dimension &gt;</a>
+</li>
+<li>setOrigin()
+: <a class="el" href="classfeatk3_d_beam_source.html#af9199b8b7902e322df9c678fd12be3b7">featk3DBeamSource</a>
+</li>
 <li>setPassAllAttributes()
 : <a class="el" href="classfeatk_v_t_k_unstructured_grid_to_mesh_filter.html#a65762c3ac8b427b9bfaa9c8772756358">featkVTKUnstructuredGridToMeshFilter&lt; Dimension &gt;</a>
+</li>
+<li>setSpacing()
+: <a class="el" href="classfeatk3_d_beam_source.html#a3b1d0cdae097f45981cf30b97bf94f7e">featk3DBeamSource</a>
 </li>
 <li>setTimeStep()
 : <a class="el" href="classfeatk_dynamic_solver_base.html#a67eb5938e8cec65cb82a269ea3253a24">featkDynamicSolverBase&lt; Dimension, Order &gt;</a>

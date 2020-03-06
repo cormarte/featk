@@ -54,6 +54,7 @@
 #define FEATKELEMENT_H
 
 #include <featk/core/featkDefines.h>
+#include <featk/core/featkGlobal.h>
 #include <featk/geometry/featkElementInterface.h>
 #include <featk/integration/featkIntegrationRuleInterface.h>
 
@@ -82,11 +83,11 @@ class featkElement final : public featkElementInterface<Dimension> {
         using ShapeFunctionNaturalDerivativeValuesMatrixType   = ShapeFunctionNaturalDerivativeValuesMatrixType<Nodes, NaturalDimension>;
         using ShapeFunctionValuesMatrixType                    = ShapeFunctionValuesMatrixType<Nodes>;
 
-        featkElement(std::vector<featkNode<Dimension>*> nodes);
+        FEATK_EXPORT featkElement(std::vector<featkNode<Dimension>*> nodes);
         ~featkElement();
 
-        ShapeFunctionNaturalDerivativeValuesMatrixType getShapeFunctionNaturalDerivativeValues(const NaturalCoordinatesMatrixType& point) const;  // May be known at compile time for each integration point if integration rule is given as template parameters
-        ShapeFunctionValuesMatrixType getShapeFunctionValues(const NaturalCoordinatesMatrixType& point) const;                                    // May be known at compile time for each integration point if integration rule is given as template parameters
+        FEATK_EXPORT ShapeFunctionNaturalDerivativeValuesMatrixType getShapeFunctionNaturalDerivativeValues(const NaturalCoordinatesMatrixType& point) const;  // May be known at compile time for each integration point if integration rule is given as template parameters
+        FEATK_EXPORT ShapeFunctionValuesMatrixType getShapeFunctionValues(const NaturalCoordinatesMatrixType& point) const;                                    // May be known at compile time for each integration point if integration rule is given as template parameters
 
         static void setIntegrationRule(featkIntegrationRuleInterface<Dimension>* rule);
         static featkIntegrationRuleInterface<Dimension> getIntegrationRule();
@@ -98,6 +99,7 @@ class featkElement final : public featkElementInterface<Dimension> {
         template<unsigned int Order> CMatrixType<Order> getCMatrix(size_t elementAttributeID) const;
         template<unsigned int Order> NMatrixType<Order> getNMatrix(const NaturalCoordinatesMatrixType& point) const;
         template<unsigned int Order> DMatrixType<Order> getNodeBQMatrix(featkNode<Dimension>* node, size_t nodeAttributeID) const;
+        template<unsigned int Order> DMatrixType<Order> getNodeCBQMatrix(featkNode<Dimension>* node, size_t elementAttributeID, size_t nodeAttributeID) const;
         template<unsigned int Order> KMatrixType<Order> getNtCNIntegralMatrix(size_t elementAttributeID) const;
         template<unsigned int Order> KMatrixType<Order> getNtNIntegralMatrix() const;
         template<unsigned int Order> QMatrixType<Order> getNtNQIntegralMatrix(size_t nodeAttributeID) const;
@@ -112,8 +114,8 @@ class featkElement final : public featkElementInterface<Dimension> {
 
     private:
 
-        static featkIntegrationRuleInterface<Dimension>* integrationRule;
-        static const NodesNaturalCoordinatesMatrixType nodesNaturalCoordinates;
+        FEATK_EXPORT static featkIntegrationRuleInterface<Dimension>* integrationRule;
+        FEATK_EXPORT static const NodesNaturalCoordinatesMatrixType nodesNaturalCoordinates;
 };
 
 template<unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int NaturalDimension=Dimension>
@@ -270,6 +272,24 @@ typename featkElement<Dimension, Nodes, Boundaries, NaturalDimension>::DMatrixTy
     QMatrixType<Order> q = this->getQMatrix<Order>(nodeAttributeID);
 
     return b*q;
+}
+
+template<unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int NaturalDimension=Dimension>
+template<unsigned int Order>
+typename featkElement<Dimension, Nodes, Boundaries, NaturalDimension>::DMatrixType<Order> featkElement<Dimension, Nodes, Boundaries, NaturalDimension>::getNodeCBQMatrix(featkNode<Dimension>* node, size_t elementAttributeID, size_t nodeAttributeID) const {
+
+    size_t nodeIndex = distance(this->nodes.begin(), find(this->nodes.begin(), this->nodes.end(), node));
+
+    CMatrixType<2*(Order+1)> c = this->getCMatrix<2*(Order+1)>(elementAttributeID);
+
+    ShapeFunctionNaturalDerivativeValuesMatrixType naturalDerivatives = this->getShapeFunctionNaturalDerivativeValues(this->nodesNaturalCoordinates.row(nodeIndex));
+    JacobianMatrixType jacobian = this->getJacobian(naturalDerivatives);
+    ShapeFunctionCartesianDerivativeValuesMatrixType cartesianDerivatives = this->getShapeFunctionCartesianDerivativeValues(naturalDerivatives, jacobian);
+    BMatrixType<Order> b = this->getBMatrix<Order>(cartesianDerivatives);
+
+    QMatrixType<Order> q = this->getQMatrix<Order>(nodeAttributeID);
+
+    return c*b*q;
 }
 
 template<unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int NaturalDimension=Dimension>

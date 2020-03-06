@@ -1,6 +1,7 @@
 #ifndef FEATKMESHTOVTKUNSTRUCTUREDGRIDFILTER_H
 #define FEATKMESHTOVTKUNSTRUCTUREDGRIDFILTER_H
 
+#include <featk/core/featkGlobal.h>
 #include <featk/geometry/featkMesh.h>
 
 #include <vtkCellData.h>
@@ -20,7 +21,7 @@ class featkMeshToVTKUnstructuredGridFilter {
 
         vtkSmartPointer<vtkUnstructuredGrid> getOutputVTKUnstructuredGrid();
         void setInputMesh(featkMesh<Dimension>* mesh);
-        void update();
+        FEATK_EXPORT void update();
 
     private:
 

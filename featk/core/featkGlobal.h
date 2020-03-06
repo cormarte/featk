@@ -27,7 +27,7 @@
 #ifndef FEATKGLOBAL_H
 #define FEATKGLOBAL_H
 
-#if defined(FEATK_LIBRARY)
+#if defined(FEATK_BUILD)
 #  define FEATK_EXPORT __declspec(dllexport)
 #else
 #  define FEATK_EXPORT __declspec(dllimport)

@@ -1,6 +1,7 @@
 #ifndef FEATKVTKUNSTRUCTUREDGRIDTOMESHFILTER_H
 #define FEATKVTKUNSTRUCTUREDGRIDTOMESHFILTER_H
 
+#include <featk/core/featkGlobal.h>
 #include <featk/geometry/featkMesh.h>
 
 #include <set>
@@ -22,7 +23,7 @@ class featkVTKUnstructuredGridToMeshFilter {
         void setInputVTKUnstructuredGrid(vtkSmartPointer<vtkUnstructuredGrid> mesh);
         void setNodeAttributesToPass(std::set<std::string> attributes);
         void setPassAllAttributes(bool pass);
-        void update();
+        FEATK_EXPORT void update();
 
     private:
 

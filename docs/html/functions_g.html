@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -199,10 +206,16 @@ $(function() {
 : <a class="el" href="classfeatk_element.html#ae9ada170cff15b7ef15e5ebb1baa3dab">featkElement&lt; Dimension, Nodes, Boundaries, NaturalDimension &gt;</a>
 </li>
 <li>getNodeBQVector()
-: <a class="el" href="classfeatk_element_interface.html#ad776a8f6173292bcaed1060fc40899e2">featkElementInterface</a>
+: <a class="el" href="classfeatk_element_interface.html#a0dd3c56a3340c801136d10cea7ada4b5">featkElementInterface</a>
 </li>
 <li>getNodeCartesianCoordinates()
 : <a class="el" href="classfeatk_element.html#a729b1eb24b72be76dbaf5f90aa35b802">featkElement&lt; Dimension, Nodes, Boundaries, NaturalDimension &gt;</a>
+</li>
+<li>getNodeCBQMatrix()
+: <a class="el" href="classfeatk_element.html#a755c4a3d465eaf25d6ff33faea140f3a">featkElement&lt; Dimension, Nodes, Boundaries, NaturalDimension &gt;</a>
+</li>
+<li>getNodeCBQVector()
+: <a class="el" href="classfeatk_element_interface.html#ada7ec6c7b99ebe7efbb45e20db6d04a7">featkElementInterface</a>
 </li>
 <li>getNodes()
 : <a class="el" href="classfeatk_element_interface.html#a869f4ad8da56a9d9bfccf60b74773072">featkElementInterface</a>
@@ -247,7 +260,8 @@ $(function() {
 : <a class="el" href="classfeatk_mesh.html#a7ae1f371e97200c7c1e8d2f1991b88d6">featkMesh&lt; Dimension &gt;</a>
 </li>
 <li>getOutputMesh()
-: <a class="el" href="classfeatk_v_t_k_unstructured_grid_to_mesh_filter.html#a04a8f507685d3bd0ab58eba82070047f">featkVTKUnstructuredGridToMeshFilter&lt; Dimension &gt;</a>
+: <a class="el" href="classfeatk_mesh_producer_base.html#a38b76ab9d01fb8da9f0d723910c374d5">featkMeshProducerBase&lt; Dimension &gt;</a>
+, <a class="el" href="classfeatk_v_t_k_unstructured_grid_to_mesh_filter.html#a04a8f507685d3bd0ab58eba82070047f">featkVTKUnstructuredGridToMeshFilter&lt; Dimension &gt;</a>
 </li>
 <li>getOutputVTKUnstructuredGrid()
 : <a class="el" href="classfeatk_mesh_to_v_t_k_unstructured_grid_filter.html#a662252f99aec3b3bab8e2d56ee3d18d3">featkMeshToVTKUnstructuredGridFilter&lt; Dimension &gt;</a>

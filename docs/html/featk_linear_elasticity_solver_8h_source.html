@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEATK: featk/solve/featkLinearElasticitySolver.h Source File</title>
+<title>FEATK: D:/Documents de Corentin/Programmation/C++/featk/src/featk/solve/featkLinearElasticitySolver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -147,9 +154,24 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classfeatk_linear_elasticity_solver.html#a69689ca0159d83c7477b99a1c59fa829">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_linear_elasticity_solver.html#a69689ca0159d83c7477b99a1c59fa829">featkLinearElasticitySolver&lt;Dimension&gt;::postProcess</a>(<span class="keyword">const</span> VectorXd&amp; u) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    this-&gt;mesh-&gt;setNodeAttributeFromValues(this-&gt;outputAttributeName, 1, u);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // FEATKLINEARELASTICITYSOLVER_H</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    this-&gt;mesh-&gt;computeNodeCBQ&lt;1&gt;(this-&gt;stiffnessAttributeName, this-&gt;outputAttributeName, <span class="stringliteral">&quot;Stress Tensor&quot;</span>);  <span class="comment">// Compute this before moving nodes!</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    this-&gt;mesh-&gt;addNodeAttributeFromValues(<span class="stringliteral">&quot;Cartesian Coordinates&quot;</span>, 1, u);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::vector&lt;featkNode&lt;3&gt;*&gt; nodes = this-&gt;mesh-&gt;getNodes();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    MatrixXd values(nodes.size(), 1);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">size_t</span> <span class="keywordtype">id</span> = this-&gt;mesh-&gt;getNodeAttributeID(<span class="stringliteral">&quot;Stress Tensor&quot;</span>, 2);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> n=0; n!=nodes.size(); n++) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        MatrixXd s = nodes[n]-&gt;getAttributeValue(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        values(n, 0) = sqrt(0.5*((s(0,0)-s(1,1))*(s(0,0)-s(1,1)) + (s(1,1)-s(2,2))*(s(1,1)-s(2,2)) + (s(2,2)-s(0,0))*(s(2,2)-s(0,0))) + 3.0*(s(0,1)*s(1,0) + s(1,2)*s(2,1) + s(2,0)*s(0,2)));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    this-&gt;mesh-&gt;setNodeAttributeFromValues(<span class="stringliteral">&quot;Von Mises Stresses&quot;</span>, 0, values);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // FEATKLINEARELASTICITYSOLVER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassfeatk_linear_elasticity_solver_html_a8d14fe2e242299e11d0b727bf9359368"><div class="ttname"><a href="classfeatk_linear_elasticity_solver.html#a8d14fe2e242299e11d0b727bf9359368">featkLinearElasticitySolver::getGlobalSystemMatrix</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; getGlobalSystemMatrix()</div><div class="ttdef"><b>Definition:</b> featkLinearElasticitySolver.h:72</div></div>
 <div class="ttc" id="aclassfeatk_linear_elasticity_solver_html_a69689ca0159d83c7477b99a1c59fa829"><div class="ttname"><a href="classfeatk_linear_elasticity_solver.html#a69689ca0159d83c7477b99a1c59fa829">featkLinearElasticitySolver::postProcess</a></div><div class="ttdeci">void postProcess(const VectorXd &amp;u)</div><div class="ttdef"><b>Definition:</b> featkLinearElasticitySolver.h:88</div></div>

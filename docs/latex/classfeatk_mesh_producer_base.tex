@@ -1,0 +1,98 @@
+\hypertarget{classfeatk_mesh_producer_base}{}\doxysection{featk\+Mesh\+Producer\+Base$<$ Dimension $>$ Class Template Reference}
+\label{classfeatk_mesh_producer_base}\index{featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}}
+
+
+Base class for mesh producing algorithms.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Mesh\+Producer\+Base.\+h$>$}
+
+Inheritance diagram for featk\+Mesh\+Producer\+Base$<$ Dimension $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfeatk_mesh_producer_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfeatk_mesh_producer_base_a17bbf6881e69c1147c321239a9372267}{$\sim$featk\+Mesh\+Producer\+Base}} ()
+\item 
+\mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$ $\ast$ \mbox{\hyperlink{classfeatk_mesh_producer_base_a38b76ab9d01fb8da9f0d723910c374d5}{get\+Output\+Mesh}} (unsigned int port=0) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeatk_mesh_producer_base_ada53ee34d47e4313cb7d29945e02d27b}{featk\+Mesh\+Producer\+Base}} ()
+\item 
+void \mbox{\hyperlink{classfeatk_mesh_producer_base_a055b0248d348910f1854b50d600e74bb}{set\+Number\+Of\+Output\+Meshes}} (unsigned int number)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classfeatk_mesh_producer_base_a33dffb5dfbacb37154793ee0219effb3}{output\+Meshes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension$>$\newline
+class featk\+Mesh\+Producer\+Base$<$ Dimension $>$}
+
+Base class for mesh producing algorithms. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the algorithm. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfeatk_mesh_producer_base_a17bbf6881e69c1147c321239a9372267}\label{classfeatk_mesh_producer_base_a17bbf6881e69c1147c321239a9372267}} 
+\index{featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}!````~featkMeshProducerBase@{$\sim$featkMeshProducerBase}}
+\index{````~featkMeshProducerBase@{$\sim$featkMeshProducerBase}!featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$featkMeshProducerBase()}{~featkMeshProducerBase()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}$<$ Dimension $>$\+::$\sim$\mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classfeatk_mesh_producer_base_ada53ee34d47e4313cb7d29945e02d27b}\label{classfeatk_mesh_producer_base_ada53ee34d47e4313cb7d29945e02d27b}} 
+\index{featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}!featkMeshProducerBase@{featkMeshProducerBase}}
+\index{featkMeshProducerBase@{featkMeshProducerBase}!featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{featkMeshProducerBase()}{featkMeshProducerBase()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}$<$ Dimension $>$\+::\mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_mesh_producer_base_a38b76ab9d01fb8da9f0d723910c374d5}\label{classfeatk_mesh_producer_base_a38b76ab9d01fb8da9f0d723910c374d5}} 
+\index{featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}!getOutputMesh@{getOutputMesh}}
+\index{getOutputMesh@{getOutputMesh}!featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{getOutputMesh()}{getOutputMesh()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+\mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$ $\ast$ \mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}$<$ Dimension $>$\+::get\+Output\+Mesh (\begin{DoxyParamCaption}\item[{unsigned int}]{port = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classfeatk_mesh_producer_base_a055b0248d348910f1854b50d600e74bb}\label{classfeatk_mesh_producer_base_a055b0248d348910f1854b50d600e74bb}} 
+\index{featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}!setNumberOfOutputMeshes@{setNumberOfOutputMeshes}}
+\index{setNumberOfOutputMeshes@{setNumberOfOutputMeshes}!featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{setNumberOfOutputMeshes()}{setNumberOfOutputMeshes()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}$<$ Dimension $>$\+::set\+Number\+Of\+Output\+Meshes (\begin{DoxyParamCaption}\item[{unsigned int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeatk_mesh_producer_base_a33dffb5dfbacb37154793ee0219effb3}\label{classfeatk_mesh_producer_base_a33dffb5dfbacb37154793ee0219effb3}} 
+\index{featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}!outputMeshes@{outputMeshes}}
+\index{outputMeshes@{outputMeshes}!featkMeshProducerBase$<$ Dimension $>$@{featkMeshProducerBase$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{outputMeshes}{outputMeshes}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$Dimension$>$$\ast$$>$ \mbox{\hyperlink{classfeatk_mesh_producer_base}{featk\+Mesh\+Producer\+Base}}$<$ Dimension $>$\+::output\+Meshes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/algorithm/\mbox{\hyperlink{featk_mesh_producer_base_8h}{featk\+Mesh\+Producer\+Base.\+h}}\end{DoxyCompactItemize}

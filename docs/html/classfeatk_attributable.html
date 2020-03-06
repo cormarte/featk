@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -90,6 +97,8 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9f81c4d17c432ab01ca1659cf7438bb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">featkAttributable</a> ()</td></tr>
 <tr class="separator:a9f81c4d17c432ab01ca1659cf7438bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046b79da694a68f2f2882757a59cd848"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">addAttribute</a> (size_t id, std::shared_ptr&lt; MatrixXd &gt; attribute)</td></tr>
+<tr class="separator:a046b79da694a68f2f2882757a59cd848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1548f3bc69eb35dd474a72a2cf94c507"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">setAttribute</a> (size_t id, std::shared_ptr&lt; MatrixXd &gt; attribute)</td></tr>
 <tr class="separator:a1548f3bc69eb35dd474a72a2cf94c507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -158,6 +167,44 @@ template&lt;unsigned int Dimension&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a046b79da694a68f2f2882757a59cd848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046b79da694a68f2f2882757a59cd848">&#9670;&nbsp;</a></span>addAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int Dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classfeatk_attributable.html">featkAttributable</a>&lt; Dimension &gt;::addAttribute </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; MatrixXd &gt;&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a56a7593089dd60442bb497c178bcbecd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56a7593089dd60442bb497c178bcbecd">&#9670;&nbsp;</a></span>getAttributeValue()</h2>
 
@@ -267,7 +314,7 @@ template&lt;unsigned int Dimension&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>featk/geometry/<a class="el" href="featk_attributable_8h_source.html">featkAttributable.h</a></li>
+<li>D:/Documents de Corentin/Programmation/C++/featk/src/featk/geometry/<a class="el" href="featk_attributable_8h_source.html">featkAttributable.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -111,6 +111,9 @@
 \setcounter{secnumdepth}{5}
 \makeindex
 
+% Packages requested by user
+\usepackage{amsmath}
+
 \usepackage{newunicodechar}
   \newunicodechar{⁻}{${}^{-}$}% Superscript minus
   \newunicodechar{²}{${}^{2}$}% Superscript two
@@ -178,7 +181,10 @@
 \chapter{File Index}
 \input{files}
 \chapter{Class Documentation}
+\input{classfeatk3_d_beam_source}
+\input{classfeatk_algorithm_base}
 \input{classfeatk_attributable}
+\input{classfeatk_beam_source3_d}
 \input{classfeatk_boundary_conditions}
 \input{classfeatk_dynamic_solver_base}
 \input{classfeatk_element}
@@ -192,6 +198,8 @@
 \input{classfeatk_linear_elasticity_solver}
 \input{classfeatk_material_base}
 \input{classfeatk_mesh}
+\input{classfeatk_mesh_consumer_base}
+\input{classfeatk_mesh_producer_base}
 \input{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}
 \input{classfeatk_node}
 \input{classfeatk_product_gaussian_quadrature_integration_rule}
@@ -200,6 +208,12 @@
 \input{classfeatk_static_solver_base}
 \input{classfeatk_v_t_k_unstructured_grid_to_mesh_filter}
 \chapter{File Documentation}
+\input{featk3_d_beam_source_8cpp}
+\input{featk3_d_beam_source_8h}
+\input{featk_algorithm_base_8cpp}
+\input{featk_algorithm_base_8h}
+\input{featk_mesh_consumer_base_8h}
+\input{featk_mesh_producer_base_8h}
 \input{featk_defines_8h}
 \input{featk_global_8h}
 \input{featk_utils_8h}

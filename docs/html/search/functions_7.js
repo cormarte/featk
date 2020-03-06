@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_28_29_393',['operator()',['../classfeatk_global_system_matrix_pruner.html#abc6da5d8a33356e801c354759535bfc4',1,'featkGlobalSystemMatrixPruner']]]
+  ['log_444',['LOG',['../featk_utils_8h.html#a1e6f5da44a02fa7160064a4c73bbbe55',1,'featkUtils.h']]]
 ];

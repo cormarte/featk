@@ -6,7 +6,7 @@
 #include <featk/material/featkIsotropicLinearElastic3DMaterial.h>
 #include <featk/solve/featkBoundaryConditions.h>
 #include <featk/solve/featkLinearElasticitySolver.h>
-#include <featk/tests/featkTests.h>
+#include <featk/test/featkTests.h>
 
 #include <vector>
 

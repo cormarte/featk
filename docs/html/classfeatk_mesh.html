@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -79,9 +86,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a95a90b6f12c6417ac607146e422f53e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c03a5f112e5543894764ba350ff9f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a80c03a5f112e5543894764ba350ff9f0">~featkMesh</a> ()</td></tr>
 <tr class="separator:a80c03a5f112e5543894764ba350ff9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3e207b39412fa797dd7f53cef5931f1"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
-<tr class="memitem:ac3e207b39412fa797dd7f53cef5931f1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ac3e207b39412fa797dd7f53cef5931f1">computeNodeBQ</a> (std::string inputName, std::string outputName)</td></tr>
-<tr class="separator:ac3e207b39412fa797dd7f53cef5931f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dfa0f19184cad70de56ebd2354b9a93"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
+<tr class="memitem:a4dfa0f19184cad70de56ebd2354b9a93"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a4dfa0f19184cad70de56ebd2354b9a93">computeNodeBQ</a> (std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td></tr>
+<tr class="separator:a4dfa0f19184cad70de56ebd2354b9a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2eb40ca401545d690fe98c78b4e0a2e"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
+<tr class="memitem:ac2eb40ca401545d690fe98c78b4e0a2e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ac2eb40ca401545d690fe98c78b4e0a2e">computeNodeCBQ</a> (std::string elementAttributeName, std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td></tr>
+<tr class="separator:ac2eb40ca401545d690fe98c78b4e0a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa642e18f5542be2db2a5a2cdd47b4c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#aa642e18f5542be2db2a5a2cdd47b4c21">addNodeAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
+<tr class="separator:aa642e18f5542be2db2a5a2cdd47b4c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d28e3dbffebb9894fee1cf2a650bb66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a9d28e3dbffebb9894fee1cf2a650bb66">getElement</a> (size_t index) const</td></tr>
 <tr class="separator:a9d28e3dbffebb9894fee1cf2a650bb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19777ed921b5800dea41c208da01a87a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a19777ed921b5800dea41c208da01a87a">getElementAttributeID</a> (std::string name, unsigned int order) const</td></tr>
@@ -163,8 +175,44 @@ template&lt;unsigned int Dimension&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac3e207b39412fa797dd7f53cef5931f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3e207b39412fa797dd7f53cef5931f1">&#9670;&nbsp;</a></span>computeNodeBQ()</h2>
+<a id="aa642e18f5542be2db2a5a2cdd47b4c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa642e18f5542be2db2a5a2cdd47b4c21">&#9670;&nbsp;</a></span>addNodeAttributeFromValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int Dimension&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::addNodeAttributeFromValues </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4dfa0f19184cad70de56ebd2354b9a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dfa0f19184cad70de56ebd2354b9a93">&#9670;&nbsp;</a></span>computeNodeBQ()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,13 +225,51 @@ template&lt;unsigned int Order&gt; </div>
           <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::computeNodeBQ </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>inputName</em>, </td>
+          <td class="paramname"><em>inputNodeAttributeName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>outputName</em>&#160;</td>
+          <td class="paramname"><em>outputNodeAttributeName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2eb40ca401545d690fe98c78b4e0a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2eb40ca401545d690fe98c78b4e0a2e">&#9670;&nbsp;</a></span>computeNodeCBQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int Dimension&gt; </div>
+<div class="memtemplate">
+template&lt;unsigned int Order&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::computeNodeCBQ </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>elementAttributeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>inputNodeAttributeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>outputNodeAttributeName</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -596,8 +682,8 @@ template&lt;unsigned int Dimension&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>featk/geometry/<a class="el" href="featk_attributable_8h_source.html">featkAttributable.h</a></li>
-<li>featk/geometry/<a class="el" href="featk_mesh_8h_source.html">featkMesh.h</a></li>
+<li>D:/Documents de Corentin/Programmation/C++/featk/src/featk/geometry/<a class="el" href="featk_attributable_8h_source.html">featkAttributable.h</a></li>
+<li>D:/Documents de Corentin/Programmation/C++/featk/src/featk/geometry/<a class="el" href="featk_mesh_8h_source.html">featkMesh.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

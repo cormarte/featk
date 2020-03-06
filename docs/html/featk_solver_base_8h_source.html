@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEATK: featk/solve/featkSolverBase.h Source File</title>
+<title>FEATK: D:/Documents de Corentin/Programmation/C++/featk/src/featk/solve/featkSolverBase.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -388,7 +395,7 @@ $(function() {
 <div class="ttc" id="afeatk_global_system_matrix_pruner_8h_html"><div class="ttname"><a href="featk_global_system_matrix_pruner_8h.html">featkGlobalSystemMatrixPruner.h</a></div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_ad43c59b5d0d0dd7e829b8930786463ea"><div class="ttname"><a href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">featkSolverBase::numberOfDOFs</a></div><div class="ttdeci">size_t numberOfDOFs</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:59</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_af3f9d6456e8514fe688bd4a9bdff49f8"><div class="ttname"><a href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">featkSolverBase::applyEBCToGlobalSystemMatrix</a></div><div class="ttdeci">void applyEBCToGlobalSystemMatrix(SparseMatrix&lt; double &gt; &amp;k)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:155</div></div>
-<div class="ttc" id="aclassfeatk_node_html"><div class="ttname"><a href="classfeatk_node.html">featkNode</a></div><div class="ttdoc">element node with its attributes including cartesian coordinates.</div><div class="ttdef"><b>Definition:</b> featkElement.h:63</div></div>
+<div class="ttc" id="aclassfeatk_node_html"><div class="ttname"><a href="classfeatk_node.html">featkNode</a></div><div class="ttdoc">element node with its attributes including cartesian coordinates.</div><div class="ttdef"><b>Definition:</b> featkElement.h:64</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_ab93ed757fa4093bdda04c50faa0d7a81"><div class="ttname"><a href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">featkSolverBase::getElementBtBIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementBtBIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:63</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a4dfe15b97477ec9dd3c3e929b639cbdb"><div class="ttname"><a href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">featkSolverBase::naturalBoundaryConditions</a></div><div class="ttdeci">featkBoundaryConditions&lt; Dimension, Order &gt; * naturalBoundaryConditions</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:58</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a4aea0c1bae6c8e52fee47fe2931cdc24"><div class="ttname"><a href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">featkSolverBase::essentialBoundaryConditions</a></div><div class="ttdeci">featkBoundaryConditions&lt; Dimension, Order &gt; * essentialBoundaryConditions</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:56</div></div>
@@ -406,7 +413,7 @@ $(function() {
 <div class="ttc" id="aclassfeatk_solver_base_html_a0041283d0bbb41b0955e511469ce3b65"><div class="ttname"><a href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">featkSolverBase::initialize</a></div><div class="ttdeci">virtual void initialize()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:283</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_a799fbae238800d29db63f1f66d9db396"><div class="ttname"><a href="classfeatk_element_interface.html#a799fbae238800d29db63f1f66d9db396">featkElementInterface::getNtCNQNQIntegralVector</a></div><div class="ttdeci">VectorXd getNtCNQNQIntegralVector(size_t elementAttributeID, size_t nodeAttributeID) const</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a883aec10ce056013213544e3fe8f83f6"><div class="ttname"><a href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">featkSolverBase::getElementBtCBIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementBtCBIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:69</div></div>
-<div class="ttc" id="aclassfeatk_mesh_html_ab54337bbbb65ff81b59fcacd31c41ecd"><div class="ttname"><a href="classfeatk_mesh.html#ab54337bbbb65ff81b59fcacd31c41ecd">featkMesh::getElements</a></div><div class="ttdeci">const std::vector&lt; featkElementInterface&lt; Dimension &gt; * &gt; &amp; getElements() const</div><div class="ttdef"><b>Definition:</b> featkMesh.h:304</div></div>
+<div class="ttc" id="aclassfeatk_mesh_html_ab54337bbbb65ff81b59fcacd31c41ecd"><div class="ttname"><a href="classfeatk_mesh.html#ab54337bbbb65ff81b59fcacd31c41ecd">featkMesh::getElements</a></div><div class="ttdeci">const std::vector&lt; featkElementInterface&lt; Dimension &gt; * &gt; &amp; getElements() const</div><div class="ttdef"><b>Definition:</b> featkMesh.h:375</div></div>
 <div class="ttc" id="afeatk_boundary_conditions_8h_html"><div class="ttname"><a href="featk_boundary_conditions_8h.html">featkBoundaryConditions.h</a></div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_a06fe4aa7abe91f2430a2e81e295c43c6"><div class="ttname"><a href="classfeatk_element_interface.html#a06fe4aa7abe91f2430a2e81e295c43c6">featkElementInterface::getBtCBIntegralMatrix</a></div><div class="ttdeci">MatrixXd getBtCBIntegralMatrix(size_t elementAttributeID) const</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a9715b26b63dbc80aa699fe764f2df2ed"><div class="ttname"><a href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">featkSolverBase::setNaturalBoundaryConditions</a></div><div class="ttdeci">void setNaturalBoundaryConditions(featkBoundaryConditions&lt; Dimension, Order &gt; *conditions)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:308</div></div>
@@ -416,7 +423,7 @@ $(function() {
 <div class="ttc" id="aclassfeatk_solver_base_html_a5397e507c22be3a8354d5b0948f287c7"><div class="ttname"><a href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">featkSolverBase::getGlobalVectorFromNBCs</a></div><div class="ttdeci">VectorXd getGlobalVectorFromNBCs()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:247</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a8ff2d3abd6a6d1b9cd6d6aecb43aa38d"><div class="ttname"><a href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">featkSolverBase::~featkSolverBase</a></div><div class="ttdeci">virtual ~featkSolverBase()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:115</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a01b35a8f420e87d2a4bdfe318cf5504c"><div class="ttname"><a href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">featkSolverBase::getEBCModifiedGlobalSystemMatrix</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; getEBCModifiedGlobalSystemMatrix(const SparseMatrix&lt; double &gt; &amp;matrix)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:188</div></div>
-<div class="ttc" id="aclassfeatk_mesh_html_a7ae1f371e97200c7c1e8d2f1991b88d6"><div class="ttname"><a href="classfeatk_mesh.html#a7ae1f371e97200c7c1e8d2f1991b88d6">featkMesh::getNumberOfNodes</a></div><div class="ttdeci">size_t getNumberOfNodes() const</div><div class="ttdef"><b>Definition:</b> featkMesh.h:346</div></div>
+<div class="ttc" id="aclassfeatk_mesh_html_a7ae1f371e97200c7c1e8d2f1991b88d6"><div class="ttname"><a href="classfeatk_mesh.html#a7ae1f371e97200c7c1e8d2f1991b88d6">featkMesh::getNumberOfNodes</a></div><div class="ttdeci">size_t getNumberOfNodes() const</div><div class="ttdef"><b>Definition:</b> featkMesh.h:417</div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_a0ee603c57d2d0c5e6f4494df6122cacb"><div class="ttname"><a href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">featkSolverBase::featkSolverBase</a></div><div class="ttdeci">featkSolverBase()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:106</div></div>
 <div class="ttc" id="afeatk_utils_8h_html"><div class="ttname"><a href="featk_utils_8h.html">featkUtils.h</a></div></div>
 <div class="ttc" id="aclassfeatk_solver_base_html_ab499bcda6e59b964dec72a98efa7f213"><div class="ttname"><a href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">featkSolverBase::getElementQVector</a></div><div class="ttdeci">static VectorXd getElementQVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:99</div></div>

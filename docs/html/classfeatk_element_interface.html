@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -88,9 +95,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06fe4aa7abe91f2430a2e81e295c43c6"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
 <tr class="memitem:a06fe4aa7abe91f2430a2e81e295c43c6"><td class="memTemplItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_element_interface.html#a06fe4aa7abe91f2430a2e81e295c43c6">getBtCBIntegralMatrix</a> (size_t elementAttributeID) const</td></tr>
 <tr class="separator:a06fe4aa7abe91f2430a2e81e295c43c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad776a8f6173292bcaed1060fc40899e2"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
-<tr class="memitem:ad776a8f6173292bcaed1060fc40899e2"><td class="memTemplItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_element_interface.html#ad776a8f6173292bcaed1060fc40899e2">getNodeBQVector</a> (<a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; *node, size_t elementAttributeID) const</td></tr>
-<tr class="separator:ad776a8f6173292bcaed1060fc40899e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd3c56a3340c801136d10cea7ada4b5"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
+<tr class="memitem:a0dd3c56a3340c801136d10cea7ada4b5"><td class="memTemplItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_element_interface.html#a0dd3c56a3340c801136d10cea7ada4b5">getNodeBQVector</a> (<a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; *node, size_t nodeAttributeID) const</td></tr>
+<tr class="separator:a0dd3c56a3340c801136d10cea7ada4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada7ec6c7b99ebe7efbb45e20db6d04a7"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
+<tr class="memitem:ada7ec6c7b99ebe7efbb45e20db6d04a7"><td class="memTemplItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_element_interface.html#ada7ec6c7b99ebe7efbb45e20db6d04a7">getNodeCBQVector</a> (<a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; *node, size_t elementAttributeID, size_t nodeAttributeID) const</td></tr>
+<tr class="separator:ada7ec6c7b99ebe7efbb45e20db6d04a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0c093072ff1b0e0fc29434a1f95e181"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
 <tr class="memitem:ab0c093072ff1b0e0fc29434a1f95e181"><td class="memTemplItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_element_interface.html#ab0c093072ff1b0e0fc29434a1f95e181">getNtCNIntegralMatrix</a> (size_t elementAttributeID) const</td></tr>
 <tr class="separator:ab0c093072ff1b0e0fc29434a1f95e181"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,8 +293,8 @@ template&lt;unsigned int Order&gt; </div>
 
 </div>
 </div>
-<a id="ad776a8f6173292bcaed1060fc40899e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad776a8f6173292bcaed1060fc40899e2">&#9670;&nbsp;</a></span>getNodeBQVector()</h2>
+<a id="a0dd3c56a3340c801136d10cea7ada4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd3c56a3340c801136d10cea7ada4b5">&#9670;&nbsp;</a></span>getNodeBQVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +311,43 @@ template&lt;unsigned int Order&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>elementAttributeID</em>&#160;</td>
+          <td class="paramname"><em>nodeAttributeID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada7ec6c7b99ebe7efbb45e20db6d04a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada7ec6c7b99ebe7efbb45e20db6d04a7">&#9670;&nbsp;</a></span>getNodeCBQVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int Order&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd featkElementInterface::getNodeCBQVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>elementAttributeID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nodeAttributeID</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -505,8 +551,8 @@ template&lt;unsigned int Order&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>featk/geometry/<a class="el" href="featk_element_8h_source.html">featkElement.h</a></li>
-<li>featk/geometry/<a class="el" href="featk_element_interface_8h_source.html">featkElementInterface.h</a></li>
+<li>D:/Documents de Corentin/Programmation/C++/featk/src/featk/geometry/<a class="el" href="featk_element_8h_source.html">featkElement.h</a></li>
+<li>D:/Documents de Corentin/Programmation/C++/featk/src/featk/geometry/<a class="el" href="featk_element_interface_8h_source.html">featkElementInterface.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -70,7 +77,9 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classfeatk_mesh.html#ac3e207b39412fa797dd7f53cef5931f1">computeNodeBQ</a>(std::string inputName, std::string outputName)</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_mesh.html#aa642e18f5542be2db2a5a2cdd47b4c21">addNodeAttributeFromValues</a>(std::string name, unsigned int order, const MatrixXd &amp;values)</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfeatk_mesh.html#a4dfa0f19184cad70de56ebd2354b9a93">computeNodeBQ</a>(std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfeatk_mesh.html#ac2eb40ca401545d690fe98c78b4e0a2e">computeNodeCBQ</a>(std::string elementAttributeName, std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfeatk_mesh.html#a95a90b6f12c6417ac607146e422f53e6">featkMesh</a>(std::vector&lt; featkNode&lt; Dimension &gt; * &gt; nodes, std::vector&lt; featkElementInterface&lt; Dimension &gt; * &gt; elements)</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfeatk_mesh.html#a9d28e3dbffebb9894fee1cf2a650bb66">getElement</a>(size_t index) const</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfeatk_mesh.html#a19777ed921b5800dea41c208da01a87a">getElementAttributeID</a>(std::string name, unsigned int order) const</td><td class="entry"><a class="el" href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></td><td class="entry"></td></tr>
