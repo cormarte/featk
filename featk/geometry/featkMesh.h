@@ -1,3 +1,39 @@
+/*==========================================================================
+
+  Program:   Finite Element Analysis Toolkit
+  Module:    featkMesh.h
+
+  Copyright (c) Corentin Martens
+  All rights reserved.
+
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+     NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR
+     ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR
+     OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
+     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     OTHER DEALINGS IN THE SOFTWARE.
+
+==========================================================================*/
+
+/**
+
+ * @class featkMesh
+ *
+ * @brief Mesh in Dimension dimensions with its elements and nodes.
+ *
+ * featkMesh gather featkElement and featkNode objects defining the
+ * geometry of a finite element problem.
+ *
+ * featkMesh manages featkElement and featkNode attributes by assigning a
+ * unique id to each attribute and keeping records of the attribute order
+ * and name.
+ *
+ * @tparam The cartesian dimension of the mesh.
+ *
+ */
+
 #ifndef FEATKMESH_H
 #define FEATKMESH_H
 

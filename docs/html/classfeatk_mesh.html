@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEATK: featkMesh&lt; Dimension &gt; Class Template Reference</title>
+<title>FEATK: featkMesh Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -74,70 +74,81 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classfeatk_mesh-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">featkMesh&lt; Dimension &gt; Class Template Reference</div>  </div>
+<div class="title">featkMesh Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Mesh in Dimension dimensions with its elements and nodes.  
+ <a href="classfeatk_mesh.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="featk_attributable_8h_source.html">featkAttributable.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95a90b6f12c6417ac607146e422f53e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a95a90b6f12c6417ac607146e422f53e6">featkMesh</a> (std::vector&lt; <a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * &gt; nodes, std::vector&lt; <a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; * &gt; elements)</td></tr>
-<tr class="separator:a95a90b6f12c6417ac607146e422f53e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80c03a5f112e5543894764ba350ff9f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a80c03a5f112e5543894764ba350ff9f0">~featkMesh</a> ()</td></tr>
-<tr class="separator:a80c03a5f112e5543894764ba350ff9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dfa0f19184cad70de56ebd2354b9a93"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
-<tr class="memitem:a4dfa0f19184cad70de56ebd2354b9a93"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a4dfa0f19184cad70de56ebd2354b9a93">computeNodeBQ</a> (std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td></tr>
-<tr class="separator:a4dfa0f19184cad70de56ebd2354b9a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2eb40ca401545d690fe98c78b4e0a2e"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
-<tr class="memitem:ac2eb40ca401545d690fe98c78b4e0a2e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ac2eb40ca401545d690fe98c78b4e0a2e">computeNodeCBQ</a> (std::string elementAttributeName, std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td></tr>
-<tr class="separator:ac2eb40ca401545d690fe98c78b4e0a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa642e18f5542be2db2a5a2cdd47b4c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#aa642e18f5542be2db2a5a2cdd47b4c21">addNodeAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
-<tr class="separator:aa642e18f5542be2db2a5a2cdd47b4c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d28e3dbffebb9894fee1cf2a650bb66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a9d28e3dbffebb9894fee1cf2a650bb66">getElement</a> (size_t index) const</td></tr>
-<tr class="separator:a9d28e3dbffebb9894fee1cf2a650bb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19777ed921b5800dea41c208da01a87a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a19777ed921b5800dea41c208da01a87a">getElementAttributeID</a> (std::string name, unsigned int order) const</td></tr>
-<tr class="separator:a19777ed921b5800dea41c208da01a87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ac84c9230c985aca62db7251a021d26"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::pair&lt; size_t, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a5ac84c9230c985aca62db7251a021d26">getElementAttributeTable</a> () const</td></tr>
-<tr class="separator:a5ac84c9230c985aca62db7251a021d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6aabbca29c92ba0a951cb848e042775b"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a6aabbca29c92ba0a951cb848e042775b">getElementAttributeValues</a> (std::string name, unsigned int order) const</td></tr>
-<tr class="separator:a6aabbca29c92ba0a951cb848e042775b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54337bbbb65ff81b59fcacd31c41ecd"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ab54337bbbb65ff81b59fcacd31c41ecd">getElements</a> () const</td></tr>
-<tr class="separator:ab54337bbbb65ff81b59fcacd31c41ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecbc9c41c1f7bc740e6b6c2fb4325992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#aecbc9c41c1f7bc740e6b6c2fb4325992">getNode</a> (size_t index) const</td></tr>
-<tr class="separator:aecbc9c41c1f7bc740e6b6c2fb4325992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5df96fa38d93634c2a2dcf29803cf14c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a5df96fa38d93634c2a2dcf29803cf14c">getNodeAttributeID</a> (std::string name, unsigned int order) const</td></tr>
-<tr class="separator:a5df96fa38d93634c2a2dcf29803cf14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a456b13b3773636e28021644231b9767e"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::pair&lt; size_t, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a456b13b3773636e28021644231b9767e">getNodeAttributeTable</a> () const</td></tr>
-<tr class="separator:a456b13b3773636e28021644231b9767e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c6d19c05e6572040ccf30efe97f9bd8"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a3c6d19c05e6572040ccf30efe97f9bd8">getNodeAttributeValues</a> (std::string name, unsigned int order) const</td></tr>
-<tr class="separator:a3c6d19c05e6572040ccf30efe97f9bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac84744996cdc730d3c5837367bb5032b"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ac84744996cdc730d3c5837367bb5032b">getNodes</a> () const</td></tr>
-<tr class="separator:ac84744996cdc730d3c5837367bb5032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f0a80908f9956416f3922f6a856a2d3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a0f0a80908f9956416f3922f6a856a2d3">getNumberOfElements</a> () const</td></tr>
-<tr class="separator:a0f0a80908f9956416f3922f6a856a2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ae1f371e97200c7c1e8d2f1991b88d6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a7ae1f371e97200c7c1e8d2f1991b88d6">getNumberOfNodes</a> () const</td></tr>
-<tr class="separator:a7ae1f371e97200c7c1e8d2f1991b88d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cd71690a2ccb7a027ceaef894d4ad4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a0cd71690a2ccb7a027ceaef894d4ad4e">setElementAttributes</a> (std::string name, unsigned int order, const std::vector&lt; std::shared_ptr&lt; MatrixXd &gt;&gt; &amp;attributes)</td></tr>
-<tr class="separator:a0cd71690a2ccb7a027ceaef894d4ad4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f016aa970634c0922c1ef44f6a5fb7a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a4f016aa970634c0922c1ef44f6a5fb7a">setElementAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
-<tr class="separator:a4f016aa970634c0922c1ef44f6a5fb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae75932562e1d3f6f4f58852b9adfaa91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ae75932562e1d3f6f4f58852b9adfaa91">setNodeAttributes</a> (std::string name, unsigned int order, const std::vector&lt; std::shared_ptr&lt; MatrixXd &gt;&gt; &amp;attributes)</td></tr>
-<tr class="separator:ae75932562e1d3f6f4f58852b9adfaa91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3b6be8d7e93f5b5bd4d8508cdf78e23"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ac3b6be8d7e93f5b5bd4d8508cdf78e23">setNodeAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
-<tr class="separator:ac3b6be8d7e93f5b5bd4d8508cdf78e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad1148d98e093af7604b5ea781d7b40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a2ad1148d98e093af7604b5ea781d7b40">featkMesh</a> (std::vector&lt; <a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * &gt; nodes, std::vector&lt; <a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; * &gt; elements)</td></tr>
+<tr class="separator:a2ad1148d98e093af7604b5ea781d7b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75bed612592fb9c9086feb5926b5499d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a75bed612592fb9c9086feb5926b5499d">~featkMesh</a> ()</td></tr>
+<tr class="separator:a75bed612592fb9c9086feb5926b5499d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672d6032407c091f61d97355f84b227a"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
+<tr class="memitem:a672d6032407c091f61d97355f84b227a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a672d6032407c091f61d97355f84b227a">computeNodeBQ</a> (std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td></tr>
+<tr class="separator:a672d6032407c091f61d97355f84b227a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdff68fe0bfcbc9efce49fb18d4e7e8d"><td class="memTemplParams" colspan="2">template&lt;unsigned int Order&gt; </td></tr>
+<tr class="memitem:abdff68fe0bfcbc9efce49fb18d4e7e8d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#abdff68fe0bfcbc9efce49fb18d4e7e8d">computeNodeCBQ</a> (std::string elementAttributeName, std::string inputNodeAttributeName, std::string outputNodeAttributeName)</td></tr>
+<tr class="separator:abdff68fe0bfcbc9efce49fb18d4e7e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa12c404720dc1fe63f4398bdde962bba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#aa12c404720dc1fe63f4398bdde962bba">addNodeAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
+<tr class="separator:aa12c404720dc1fe63f4398bdde962bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1dbe6e7a6c63012ee9621e5f798208"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a8c1dbe6e7a6c63012ee9621e5f798208">getElement</a> (size_t index) const</td></tr>
+<tr class="separator:a8c1dbe6e7a6c63012ee9621e5f798208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84ab4d101a0297a20c753f17d8e6a3a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ab84ab4d101a0297a20c753f17d8e6a3a">getElementAttributeID</a> (std::string name, unsigned int order) const</td></tr>
+<tr class="separator:ab84ab4d101a0297a20c753f17d8e6a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8bcb4612fce71d5cda41544e5fd573"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::pair&lt; size_t, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a2c8bcb4612fce71d5cda41544e5fd573">getElementAttributeTable</a> () const</td></tr>
+<tr class="separator:a2c8bcb4612fce71d5cda41544e5fd573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacc3bfcf2768c08a6fa59b1dfffe010"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#afacc3bfcf2768c08a6fa59b1dfffe010">getElementAttributeValues</a> (std::string name, unsigned int order) const</td></tr>
+<tr class="separator:afacc3bfcf2768c08a6fa59b1dfffe010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b8afe36ac6f2bfb537e20f8bc0cc86"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a95b8afe36ac6f2bfb537e20f8bc0cc86">getElements</a> () const</td></tr>
+<tr class="separator:a95b8afe36ac6f2bfb537e20f8bc0cc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a5444f80afc155d93cad9fd6ca35871"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a8a5444f80afc155d93cad9fd6ca35871">getNode</a> (size_t index) const</td></tr>
+<tr class="separator:a8a5444f80afc155d93cad9fd6ca35871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98ca5542b39a3afeba1998964b02b89"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ab98ca5542b39a3afeba1998964b02b89">getNodeAttributeID</a> (std::string name, unsigned int order) const</td></tr>
+<tr class="separator:ab98ca5542b39a3afeba1998964b02b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec6716e6cd328245de03cf523c43e42"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::pair&lt; size_t, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#abec6716e6cd328245de03cf523c43e42">getNodeAttributeTable</a> () const</td></tr>
+<tr class="separator:abec6716e6cd328245de03cf523c43e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae283587be7cb8d9e116e99cb57d8e06e"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ae283587be7cb8d9e116e99cb57d8e06e">getNodeAttributeValues</a> (std::string name, unsigned int order) const</td></tr>
+<tr class="separator:ae283587be7cb8d9e116e99cb57d8e06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef075d038ac40465863cee14ca1215e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a1ef075d038ac40465863cee14ca1215e">getNodes</a> () const</td></tr>
+<tr class="separator:a1ef075d038ac40465863cee14ca1215e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd3f3c02d6dc477324c3f725db06a577"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#afd3f3c02d6dc477324c3f725db06a577">getNumberOfElements</a> () const</td></tr>
+<tr class="separator:afd3f3c02d6dc477324c3f725db06a577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab880c3fac2edb84a8c5093094f3652ad"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#ab880c3fac2edb84a8c5093094f3652ad">getNumberOfNodes</a> () const</td></tr>
+<tr class="separator:ab880c3fac2edb84a8c5093094f3652ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d445a2e2e32bfb99104003ddffc6b4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a4d445a2e2e32bfb99104003ddffc6b4a">setElementAttributes</a> (std::string name, unsigned int order, const std::vector&lt; std::shared_ptr&lt; MatrixXd &gt;&gt; &amp;attributes)</td></tr>
+<tr class="separator:a4d445a2e2e32bfb99104003ddffc6b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967105e23509c63f1eec646398de7171"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a967105e23509c63f1eec646398de7171">setElementAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
+<tr class="separator:a967105e23509c63f1eec646398de7171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a23794ce9f21afed387e6e4c3f6592"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#a08a23794ce9f21afed387e6e4c3f6592">setNodeAttributes</a> (std::string name, unsigned int order, const std::vector&lt; std::shared_ptr&lt; MatrixXd &gt;&gt; &amp;attributes)</td></tr>
+<tr class="separator:a08a23794ce9f21afed387e6e4c3f6592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedffb2b1506d98834f6a6f11831bccd0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh.html#aedffb2b1506d98834f6a6f11831bccd0">setNodeAttributeFromValues</a> (std::string name, unsigned int order, const MatrixXd &amp;values)</td></tr>
+<tr class="separator:aedffb2b1506d98834f6a6f11831bccd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a95a90b6f12c6417ac607146e422f53e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95a90b6f12c6417ac607146e422f53e6">&#9670;&nbsp;</a></span>featkMesh()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Mesh in Dimension dimensions with its elements and nodes. </p>
+<p><a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> gather <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a> and <a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> objects defining the geometry of a finite element problem.</p>
+<p><a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> manages <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a> and <a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> attributes by assigning a unique id to each attribute and keeping records of the attribute order and name.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">The</td><td>cartesian dimension of the mesh. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2ad1148d98e093af7604b5ea781d7b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad1148d98e093af7604b5ea781d7b40">&#9670;&nbsp;</a></span>featkMesh()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::<a class="el" href="classfeatk_mesh.html">featkMesh</a> </td>
+          <td class="memname">featkMesh::featkMesh </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * &gt;&#160;</td>
           <td class="paramname"><em>nodes</em>, </td>
@@ -158,16 +169,17 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a80c03a5f112e5543894764ba350ff9f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80c03a5f112e5543894764ba350ff9f0">&#9670;&nbsp;</a></span>~featkMesh()</h2>
+<a id="a75bed612592fb9c9086feb5926b5499d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75bed612592fb9c9086feb5926b5499d">&#9670;&nbsp;</a></span>~featkMesh()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::~<a class="el" href="classfeatk_mesh.html">featkMesh</a></td>
+          <td class="memname">featkMesh::~featkMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -175,16 +187,14 @@ template&lt;unsigned int Dimension&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa642e18f5542be2db2a5a2cdd47b4c21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa642e18f5542be2db2a5a2cdd47b4c21">&#9670;&nbsp;</a></span>addNodeAttributeFromValues()</h2>
+<a id="aa12c404720dc1fe63f4398bdde962bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa12c404720dc1fe63f4398bdde962bba">&#9670;&nbsp;</a></span>addNodeAttributeFromValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::addNodeAttributeFromValues </td>
+          <td class="memname">void featkMesh::addNodeAttributeFromValues </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -211,18 +221,16 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a4dfa0f19184cad70de56ebd2354b9a93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dfa0f19184cad70de56ebd2354b9a93">&#9670;&nbsp;</a></span>computeNodeBQ()</h2>
+<a id="a672d6032407c091f61d97355f84b227a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a672d6032407c091f61d97355f84b227a">&#9670;&nbsp;</a></span>computeNodeBQ()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
-<div class="memtemplate">
 template&lt;unsigned int Order&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::computeNodeBQ </td>
+          <td class="memname">void featkMesh::computeNodeBQ </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>inputNodeAttributeName</em>, </td>
@@ -243,18 +251,16 @@ template&lt;unsigned int Order&gt; </div>
 
 </div>
 </div>
-<a id="ac2eb40ca401545d690fe98c78b4e0a2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2eb40ca401545d690fe98c78b4e0a2e">&#9670;&nbsp;</a></span>computeNodeCBQ()</h2>
+<a id="abdff68fe0bfcbc9efce49fb18d4e7e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdff68fe0bfcbc9efce49fb18d4e7e8d">&#9670;&nbsp;</a></span>computeNodeCBQ()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
-<div class="memtemplate">
 template&lt;unsigned int Order&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::computeNodeCBQ </td>
+          <td class="memname">void featkMesh::computeNodeCBQ </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>elementAttributeName</em>, </td>
@@ -281,16 +287,14 @@ template&lt;unsigned int Order&gt; </div>
 
 </div>
 </div>
-<a id="a9d28e3dbffebb9894fee1cf2a650bb66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d28e3dbffebb9894fee1cf2a650bb66">&#9670;&nbsp;</a></span>getElement()</h2>
+<a id="a8c1dbe6e7a6c63012ee9621e5f798208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1dbe6e7a6c63012ee9621e5f798208">&#9670;&nbsp;</a></span>getElement()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; * <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getElement </td>
+          <td class="memname"><a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt;Dimension&gt;* featkMesh::getElement </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -301,16 +305,14 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a19777ed921b5800dea41c208da01a87a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19777ed921b5800dea41c208da01a87a">&#9670;&nbsp;</a></span>getElementAttributeID()</h2>
+<a id="ab84ab4d101a0297a20c753f17d8e6a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84ab4d101a0297a20c753f17d8e6a3a">&#9670;&nbsp;</a></span>getElementAttributeID()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getElementAttributeID </td>
+          <td class="memname">size_t featkMesh::getElementAttributeID </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -331,32 +333,31 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a5ac84c9230c985aca62db7251a021d26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ac84c9230c985aca62db7251a021d26">&#9670;&nbsp;</a></span>getElementAttributeTable()</h2>
+<a id="a2c8bcb4612fce71d5cda41544e5fd573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8bcb4612fce71d5cda41544e5fd573">&#9670;&nbsp;</a></span>getElementAttributeTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, std::pair&lt; size_t, unsigned int &gt; &gt; <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getElementAttributeTable</td>
+          <td class="memname">std::map&lt;std::string, std::pair&lt;size_t, unsigned int&gt; &gt; featkMesh::getElementAttributeTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a6aabbca29c92ba0a951cb848e042775b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6aabbca29c92ba0a951cb848e042775b">&#9670;&nbsp;</a></span>getElementAttributeValues()</h2>
+<a id="afacc3bfcf2768c08a6fa59b1dfffe010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afacc3bfcf2768c08a6fa59b1dfffe010">&#9670;&nbsp;</a></span>getElementAttributeValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getElementAttributeValues </td>
+          <td class="memname">MatrixXd featkMesh::getElementAttributeValues </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -377,32 +378,31 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="ab54337bbbb65ff81b59fcacd31c41ecd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54337bbbb65ff81b59fcacd31c41ecd">&#9670;&nbsp;</a></span>getElements()</h2>
+<a id="a95b8afe36ac6f2bfb537e20f8bc0cc86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b8afe36ac6f2bfb537e20f8bc0cc86">&#9670;&nbsp;</a></span>getElements()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; * &gt; &amp; <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getElements</td>
+          <td class="memname">const std::vector&lt;<a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt;Dimension&gt;*&gt;&amp; featkMesh::getElements </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aecbc9c41c1f7bc740e6b6c2fb4325992"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecbc9c41c1f7bc740e6b6c2fb4325992">&#9670;&nbsp;</a></span>getNode()</h2>
+<a id="a8a5444f80afc155d93cad9fd6ca35871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5444f80afc155d93cad9fd6ca35871">&#9670;&nbsp;</a></span>getNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNode </td>
+          <td class="memname"><a class="el" href="classfeatk_node.html">featkNode</a>&lt;Dimension&gt;* featkMesh::getNode </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -413,16 +413,14 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a5df96fa38d93634c2a2dcf29803cf14c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5df96fa38d93634c2a2dcf29803cf14c">&#9670;&nbsp;</a></span>getNodeAttributeID()</h2>
+<a id="ab98ca5542b39a3afeba1998964b02b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab98ca5542b39a3afeba1998964b02b89">&#9670;&nbsp;</a></span>getNodeAttributeID()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNodeAttributeID </td>
+          <td class="memname">size_t featkMesh::getNodeAttributeID </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -443,32 +441,31 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a456b13b3773636e28021644231b9767e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a456b13b3773636e28021644231b9767e">&#9670;&nbsp;</a></span>getNodeAttributeTable()</h2>
+<a id="abec6716e6cd328245de03cf523c43e42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abec6716e6cd328245de03cf523c43e42">&#9670;&nbsp;</a></span>getNodeAttributeTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, std::pair&lt; size_t, unsigned int &gt; &gt; <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNodeAttributeTable</td>
+          <td class="memname">std::map&lt;std::string, std::pair&lt;size_t, unsigned int&gt; &gt; featkMesh::getNodeAttributeTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3c6d19c05e6572040ccf30efe97f9bd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c6d19c05e6572040ccf30efe97f9bd8">&#9670;&nbsp;</a></span>getNodeAttributeValues()</h2>
+<a id="ae283587be7cb8d9e116e99cb57d8e06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae283587be7cb8d9e116e99cb57d8e06e">&#9670;&nbsp;</a></span>getNodeAttributeValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNodeAttributeValues </td>
+          <td class="memname">MatrixXd featkMesh::getNodeAttributeValues </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -489,64 +486,65 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="ac84744996cdc730d3c5837367bb5032b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac84744996cdc730d3c5837367bb5032b">&#9670;&nbsp;</a></span>getNodes()</h2>
+<a id="a1ef075d038ac40465863cee14ca1215e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ef075d038ac40465863cee14ca1215e">&#9670;&nbsp;</a></span>getNodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classfeatk_node.html">featkNode</a>&lt; Dimension &gt; * &gt; &amp; <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNodes</td>
+          <td class="memname">const std::vector&lt;<a class="el" href="classfeatk_node.html">featkNode</a>&lt;Dimension&gt;*&gt;&amp; featkMesh::getNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a0f0a80908f9956416f3922f6a856a2d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f0a80908f9956416f3922f6a856a2d3">&#9670;&nbsp;</a></span>getNumberOfElements()</h2>
+<a id="afd3f3c02d6dc477324c3f725db06a577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd3f3c02d6dc477324c3f725db06a577">&#9670;&nbsp;</a></span>getNumberOfElements()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNumberOfElements</td>
+          <td class="memname">size_t featkMesh::getNumberOfElements </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7ae1f371e97200c7c1e8d2f1991b88d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ae1f371e97200c7c1e8d2f1991b88d6">&#9670;&nbsp;</a></span>getNumberOfNodes()</h2>
+<a id="ab880c3fac2edb84a8c5093094f3652ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab880c3fac2edb84a8c5093094f3652ad">&#9670;&nbsp;</a></span>getNumberOfNodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::getNumberOfNodes</td>
+          <td class="memname">size_t featkMesh::getNumberOfNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a4f016aa970634c0922c1ef44f6a5fb7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f016aa970634c0922c1ef44f6a5fb7a">&#9670;&nbsp;</a></span>setElementAttributeFromValues()</h2>
+<a id="a967105e23509c63f1eec646398de7171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967105e23509c63f1eec646398de7171">&#9670;&nbsp;</a></span>setElementAttributeFromValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::setElementAttributeFromValues </td>
+          <td class="memname">size_t featkMesh::setElementAttributeFromValues </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -573,16 +571,14 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="a0cd71690a2ccb7a027ceaef894d4ad4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cd71690a2ccb7a027ceaef894d4ad4e">&#9670;&nbsp;</a></span>setElementAttributes()</h2>
+<a id="a4d445a2e2e32bfb99104003ddffc6b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d445a2e2e32bfb99104003ddffc6b4a">&#9670;&nbsp;</a></span>setElementAttributes()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::setElementAttributes </td>
+          <td class="memname">void featkMesh::setElementAttributes </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -609,16 +605,14 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="ac3b6be8d7e93f5b5bd4d8508cdf78e23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3b6be8d7e93f5b5bd4d8508cdf78e23">&#9670;&nbsp;</a></span>setNodeAttributeFromValues()</h2>
+<a id="aedffb2b1506d98834f6a6f11831bccd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedffb2b1506d98834f6a6f11831bccd0">&#9670;&nbsp;</a></span>setNodeAttributeFromValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::setNodeAttributeFromValues </td>
+          <td class="memname">size_t featkMesh::setNodeAttributeFromValues </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -645,16 +639,14 @@ template&lt;unsigned int Dimension&gt; </div>
 
 </div>
 </div>
-<a id="ae75932562e1d3f6f4f58852b9adfaa91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75932562e1d3f6f4f58852b9adfaa91">&#9670;&nbsp;</a></span>setNodeAttributes()</h2>
+<a id="a08a23794ce9f21afed387e6e4c3f6592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a23794ce9f21afed387e6e4c3f6592">&#9670;&nbsp;</a></span>setNodeAttributes()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;unsigned int Dimension&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt;::setNodeAttributes </td>
+          <td class="memname">void featkMesh::setNodeAttributes </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>

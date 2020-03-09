@@ -51,9 +51,9 @@ using \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Sha
 \item 
 \mbox{\hyperlink{classfeatk_element_a5c7a1346d902b55f2c41099d0a5fa7e0}{$\sim$featk\+Element}} ()
 \item 
-\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}{get\+Shape\+Function\+Natural\+Derivative\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a843d80b2a0198a054dfbeadb2005a644}{get\+Shape\+Function\+Natural\+Derivative\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
 \item 
-\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}{get\+Shape\+Function\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
+\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element_adbdf8f2ee4f6ad9cb427a016e8eb0fb9}{get\+Shape\+Function\+Values}} (const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&point) const
 \item 
 {\footnotesize template$<$unsigned int Order$>$ }\\\mbox{\hyperlink{classfeatk_element_ad323a1c382a7b74ceeae75b3093652e6}{B\+Matrix\+Type}}$<$ Order $>$ \mbox{\hyperlink{classfeatk_element_a726ae6afae08839ae4fe9909c9b42379}{get\+B\+Matrix}} (const \mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \&cartesian\+Derivatives) const
 \item 
@@ -107,11 +107,9 @@ class featk\+Element$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$}
 
 Concrete implementation of a \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}}. 
 
-See Flaherty. Finite Element Analysis, ch.\+4, p.\+24. (\href{http://www.cs.rpi.edu/~flaherje/pdf/fea4.pdf}{\texttt{ http\+://www.\+cs.\+rpi.\+edu/$\sim$flaherje/pdf/fea4.\+pdf}}) for paramertization.
-
 \mbox{\hyperlink{classfeatk_element}{featk\+Element}} is a the concrete implementation of an element with its attributes, nodes, shape function values and derivatives and integration rule. \mbox{\hyperlink{classfeatk_element}{featk\+Element}} provides routine member functions for numerical integration of usual quantities found in finite element problems.
 
-\mbox{\hyperlink{classfeatk_element}{featk\+Element}} is templated over unsigned integers Dimension, Nodes, Boundaries and Natural\+Dimension (see definitions below). A given combination of these template parameters univoquely defines an element type. Member variables featk\+Element\+::integration\+Rule and featk\+Element\+::nodes\+Natural\+Coordinates and member functions \mbox{\hyperlink{classfeatk_element_a7f0ec045cecf67927669ab28bf244345}{featk\+Element\+::featk\+Element()}}, \mbox{\hyperlink{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}{featk\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values()}} and \mbox{\hyperlink{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}{featk\+Element\+::get\+Shape\+Function\+Values()}} have no default implementation and must be reimplemented for each template specialization.
+\mbox{\hyperlink{classfeatk_element}{featk\+Element}} is templated over unsigned integers Dimension, Nodes, Boundaries and Natural\+Dimension (see definitions below). A given combination of these template parameters univoquely defines an element type. Member variables featk\+Element\+::integration\+Rule and featk\+Element\+::nodes\+Natural\+Coordinates and member functions \mbox{\hyperlink{classfeatk_element_a7f0ec045cecf67927669ab28bf244345}{featk\+Element\+::featk\+Element()}}, \mbox{\hyperlink{classfeatk_element_a843d80b2a0198a054dfbeadb2005a644}{featk\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values()}} and \mbox{\hyperlink{classfeatk_element_adbdf8f2ee4f6ad9cb427a016e8eb0fb9}{featk\+Element\+::get\+Shape\+Function\+Values()}} have no default implementation and must be reimplemented for each template specialization.
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -397,19 +395,19 @@ See Felippa. 2017. Advanced Finite Element Methods. Ch.\+11 p.\+7. and Filomeno 
 {\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
 \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::\mbox{\hyperlink{classfeatk_element_a7f29491b08d77a8dc506356586180ca9}{Shape\+Function\+Cartesian\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Shape\+Function\+Cartesian\+Derivative\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \&}]{natural\+Derivatives,  }\item[{const \mbox{\hyperlink{classfeatk_element_a8fb912575534cd34b00bb037f9fe7f35}{Jacobian\+Matrix\+Type}} \&}]{jacobian }\end{DoxyParamCaption}) const}
 
-See Felippa. 2017. Advanced Finite Element Methods. Ch.\+11 p.\+7. and Filomeno Coelho and Pyl. 2014. Structural Analysis and Finite Elements, p.\+71.\mbox{\Hypertarget{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}\label{classfeatk_element_ab507f2098df688b01aa71eb4b8f27d11}} 
+See Felippa. 2017. Advanced Finite Element Methods. Ch.\+11 p.\+7. and Filomeno Coelho and Pyl. 2014. Structural Analysis and Finite Elements, p.\+71.\mbox{\Hypertarget{classfeatk_element_a843d80b2a0198a054dfbeadb2005a644}\label{classfeatk_element_a843d80b2a0198a054dfbeadb2005a644}} 
 \index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getShapeFunctionNaturalDerivativeValues@{getShapeFunctionNaturalDerivativeValues}}
 \index{getShapeFunctionNaturalDerivativeValues@{getShapeFunctionNaturalDerivativeValues}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
 \doxysubsubsection{\texorpdfstring{getShapeFunctionNaturalDerivativeValues()}{getShapeFunctionNaturalDerivativeValues()}}
 {\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
-\mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{featk\+Tet4\+Element\+::\+Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} featk\+Tet4\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} \mbox{\hyperlink{classfeatk_element_abd937eda1455af93affea83afd8159e3}{Shape\+Function\+Natural\+Derivative\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Shape\+Function\+Natural\+Derivative\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}\label{classfeatk_element_a624833b78153e6fe4127380cfa7a554f}} 
+\mbox{\Hypertarget{classfeatk_element_adbdf8f2ee4f6ad9cb427a016e8eb0fb9}\label{classfeatk_element_adbdf8f2ee4f6ad9cb427a016e8eb0fb9}} 
 \index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!getShapeFunctionValues@{getShapeFunctionValues}}
 \index{getShapeFunctionValues@{getShapeFunctionValues}!featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}}
 \doxysubsubsection{\texorpdfstring{getShapeFunctionValues()}{getShapeFunctionValues()}}
 {\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Nodes, unsigned int Boundaries, unsigned int Natural\+Dimension = Dimension$>$ \\
-\mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{featk\+Tet4\+Element\+::\+Shape\+Function\+Values\+Matrix\+Type}} featk\+Tet4\+Element\+::get\+Shape\+Function\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} \mbox{\hyperlink{classfeatk_element_a3bd04be04b0ba14bac3ea2cc89491568}{Shape\+Function\+Values\+Matrix\+Type}} \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, Boundaries, Natural\+Dimension $>$\+::get\+Shape\+Function\+Values (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfeatk_element_a601d3f4196c3f9c6fcf9edfb5a477349}{Natural\+Coordinates\+Matrix\+Type}} \&}]{point }\end{DoxyParamCaption}) const}
 
 \mbox{\Hypertarget{classfeatk_element_aacef94b33d0dd23bb58bf837dab10bc2}\label{classfeatk_element_aacef94b33d0dd23bb58bf837dab10bc2}} 
 \index{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$@{featkElement$<$ Dimension, Nodes, Boundaries, NaturalDimension $>$}!setIntegrationRule@{setIntegrationRule}}
@@ -420,7 +418,6 @@ void \mbox{\hyperlink{classfeatk_element}{featk\+Element}}$<$ Dimension, Nodes, 
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/geometry/\mbox{\hyperlink{featk_element_8h}{featk\+Element.\+h}}\item 
-D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/geometry/\mbox{\hyperlink{featk_tet4_element_8cpp}{featk\+Tet4\+Element.\+cpp}}\end{DoxyCompactItemize}
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/geometry/\mbox{\hyperlink{featk_element_8h}{featk\+Element.\+h}}\end{DoxyCompactItemize}

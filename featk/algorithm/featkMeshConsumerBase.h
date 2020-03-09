@@ -23,6 +23,12 @@
  *
  * @brief Base class for mesh consuming algorithms.
  *
+ * featkMeshConsumerBase is a base class for featkMesh consuming
+ * featkAlgorithm objects.
+ *
+ * featkMeshConsumerBase stores featkMesh objects used as input by the
+ * featkAlgorithm.
+ *
  * @tparam Dimension The cartesian dimension of the algorithm.
  *
  */
@@ -48,7 +54,35 @@ class featkMeshConsumerBase : public featkAlgorithmBase {
 
         featkMeshConsumerBase();
 
+        void setNumberOfInputMeshes(unsigned int number);
+
         std::vector<featkMesh<Dimension>*> inputMeshes;
 };
+
+template<unsigned int Dimension>
+featkMeshConsumerBase<Dimension>::featkMeshConsumerBase() {
+
+    this->setNumberOfInputMeshes(1);
+}
+
+template<unsigned int Dimension>
+featkMeshConsumerBase<Dimension>::~featkMeshConsumerBase() {
+
+}
+
+template<unsigned int Dimension>
+void featkMeshConsumerBase<Dimension>::setNumberOfInputMeshes(unsigned int number) {
+
+    this->inputMeshes = std::vector<featkMesh<Dimension>*>(number);
+}
+
+template<unsigned int Dimension>
+void featkMeshConsumerBase<Dimension>::setInputMesh(featkMesh<Dimension>* mesh, unsigned int port=0) {
+
+    if (port < this->inputMeshes.size()) {
+
+        this->inputMeshes[port] = mesh;
+    }
+}
 
 #endif // FEATKMESHCONSUMERBASE_H

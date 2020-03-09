@@ -24,7 +24,7 @@
  * @brief Specialization of a 8-node hexahedral featkElement.
  *
  * featkHex8Element is a specialization of featkElement representing an
- * isoparametric tetrahedron in Dimension 3 with 8 Nodes, 6 Boundaries
+ * isoparametric hexahedron in Dimension 3 with 8 Nodes, 6 Boundaries
  * parametrized in NaturalDimension 3. featkHex8Element provides
  * implementations for the specialization of member variables
  * featkElement::integrationRule and featkElement::nodesNaturalCoordinates
@@ -32,7 +32,7 @@
  * featkElement::getShapeFunctionNaturalDerivativeValues() and
  * featkElement::getShapeFunctionValues().
  *
- * featkHex8Element is parametrization used as follows:
+ * featkHex8Element is parametrized as follows:
  *
  *
  *         (7)-------(6)
@@ -58,18 +58,24 @@
  * |  (7)   | −1  | +1  | +1  |
  *
  *
- *  N0(ξ, η, ζ) = (1/8)*(1−ξ)*(1−η)*(1−ζ)\n
- *  N1(ξ, η, ζ) = (1/8)*(1+ξ)*(1−η)*(1−ζ)\n
- *  N2(ξ, η, ζ) = (1/8)*(1+ξ)*(1+η)*(1−ζ)\n
- *  N3(ξ, η, ζ) = (1/8)*(1−ξ)*(1+η)*(1−ζ)\n
- *  N4(ξ, η, ζ) = (1/8)*(1−ξ)*(1−η)*(1+ζ)\n
- *  N5(ξ, η, ζ) = (1/8)*(1+ξ)*(1−η)*(1+ζ)\n
- *  N6(ξ, η, ζ) = (1/8)*(1+ξ)*(1+η)*(1+ζ)\n
- *  N7(ξ, η, ζ) = (1/8)*(1−ξ)*(1+η)*(1+ζ)\n
+ * \f[
+ *
+ * \begin{align}
+ * N_0(\xi, \eta, \zeta) &= \frac{1}{8}(1−\xi)(1−\eta)(1−\zeta)\\
+ * N_1(\xi, \eta, \zeta) &= \frac{1}{8}(1+\xi)(1−\eta)(1−\zeta)\\
+ * N_2(\xi, \eta, \zeta) &= \frac{1}{8}(1+\xi)(1+\eta)(1−\zeta)\\
+ * N_3(\xi, \eta, \zeta) &= \frac{1}{8}(1−\xi)(1+\eta)(1−\zeta)\\
+ * N_4(\xi, \eta, \zeta) &= \frac{1}{8}(1−\xi)(1−\eta)(1+\zeta)\\
+ * N_5(\xi, \eta, \zeta) &= \frac{1}{8}(1+\xi)(1−\eta)(1+\zeta)\\
+ * N_6(\xi, \eta, \zeta) &= \frac{1}{8}(1+\xi)(1+\eta)(1+\zeta)\\
+ * N_7(\xi, \eta, \zeta) &= \frac{1}{8}(1−\xi)(1+\eta)(1+\zeta)\\
+ * \end{align}
+ *
+ * \f]
  *
  *
  * See C. Felippa, Advanced Finite Element Methods: Chapter 11 - The 8-Node
- * Hexahedron, p. 4, Tables 11.1-2, 2017.
+ * Hexahedron, p.4, Tables 11.1-2, 2017.
  *
  */
 

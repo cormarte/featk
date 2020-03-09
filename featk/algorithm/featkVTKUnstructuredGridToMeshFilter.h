@@ -1,6 +1,7 @@
 #ifndef FEATKVTKUNSTRUCTUREDGRIDTOMESHFILTER_H
 #define FEATKVTKUNSTRUCTUREDGRIDTOMESHFILTER_H
 
+#include <featk/algorithm/featkMeshProducerBase.h>
 #include <featk/core/featkGlobal.h>
 #include <featk/geometry/featkMesh.h>
 
@@ -9,28 +10,26 @@
 #include <vtkUnstructuredGrid.h>
 
 template<unsigned int Dimension>
-class featkVTKUnstructuredGridToMeshFilter {
+class featkVTKUnstructuredGridToMeshFilter : public featkMeshProducerBase<3> {
 
     public:
 
         featkVTKUnstructuredGridToMeshFilter();
         ~featkVTKUnstructuredGridToMeshFilter();
 
-        featkMesh<Dimension>* getOutputMesh();
         void passAllAttributesOff();
         void passAllAttributesOn();
         void setElementAttributesToPass(std::set<std::string> attributes);
         void setInputVTKUnstructuredGrid(vtkSmartPointer<vtkUnstructuredGrid> mesh);
         void setNodeAttributesToPass(std::set<std::string> attributes);
         void setPassAllAttributes(bool pass);
-        FEATK_EXPORT void update();
+        FEATK_EXPORT void execute();
 
     private:
 
         std::set<std::string> elementAttributesToPass;
         vtkSmartPointer<vtkUnstructuredGrid> input;
         std::set<std::string> nodeAttributesToPass;
-        featkMesh<Dimension>* output;
         bool passAllAttributes;
 };
 
@@ -38,19 +37,12 @@ template<unsigned int Dimension>
 featkVTKUnstructuredGridToMeshFilter<Dimension>::featkVTKUnstructuredGridToMeshFilter() {
 
     this->input = nullptr;
-    this->output = nullptr;
     this->passAllAttributes = true;
 }
 
 template<unsigned int Dimension>
 featkVTKUnstructuredGridToMeshFilter<Dimension>::~featkVTKUnstructuredGridToMeshFilter() {
 
-}
-
-template<unsigned int Dimension>
-featkMesh<Dimension>* featkVTKUnstructuredGridToMeshFilter<Dimension>::getOutputMesh() {
-
-    return this->output;
 }
 
 template<unsigned int Dimension>

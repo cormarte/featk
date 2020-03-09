@@ -1,15 +1,17 @@
-#include <featk/io/featkMeshToVTKUnstructuredGridFilter.h>
+#include <featk/algorithm/featkMeshToVTKUnstructuredGridFilter.h>
 
-void featkMeshToVTKUnstructuredGridFilter<3>::update() {
+void featkMeshToVTKUnstructuredGridFilter<3>::execute() {
 
     vtkSmartPointer<vtkUnstructuredGrid> unstructuredGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
 
-    if (this->input != nullptr) {
+    featkMesh<3>* inputMesh = this->inputMeshes[0];
+
+    if (inputMesh != nullptr) {
 
 
         // Nodes allocation
 
-        std::vector<featkNode<Dimension>*> nodes = this->input->getNodes();
+        std::vector<featkNode<3>*> nodes = inputMesh->getNodes();
 
         vtkSmartPointer<vtkPoints> points = vtkPoints::New();
         points->SetNumberOfPoints(nodes.size());
@@ -19,12 +21,12 @@ void featkMeshToVTKUnstructuredGridFilter<3>::update() {
 
         std::vector<std::pair<size_t, vtkSmartPointer<vtkDoubleArray>>> nodeAttributes;
 
-        for (const auto& pair : this->input->getNodeAttributeTable()) {
+        for (const auto& pair : inputMesh->getNodeAttributeTable()) {
 
             std::string name = pair.first;
             size_t id = pair.second.first;
             unsigned int order = pair.second.second;
-            unsigned int components = POWER(Dimension, order);
+            unsigned int components = POWER(3, order);
 
             vtkSmartPointer<vtkDoubleArray> attributeArray = vtkDoubleArray::New();
             attributeArray->SetName(name.c_str());
@@ -42,12 +44,12 @@ void featkMeshToVTKUnstructuredGridFilter<3>::update() {
 
         for (vtkIdType n=0; n!=nodes.size(); n++) {
 
-            featkNode<Dimension>* node = nodes[n];
+            featkNode<3>* node = nodes[n];
 
 
             // Insertion
 
-            AttributeValueType<Dimension, 1> coordinates = node->getCoordinates();
+            AttributeValueType<3, 1> coordinates = node->getCoordinates();
             points->SetPoint(n, coordinates(0, 0), coordinates(1, 0), coordinates(2, 0));
             map[node->getID()] = n;
 
@@ -88,7 +90,7 @@ void featkMeshToVTKUnstructuredGridFilter<3>::update() {
 
         // Elements allocation
 
-        std::vector<featkElementInterface<Dimension>*> elements = this->input->getElements();
+        std::vector<featkElementInterface<3>*> elements = inputMesh->getElements();
 
         unstructuredGrid->Allocate(elements.size());
 
@@ -97,12 +99,12 @@ void featkMeshToVTKUnstructuredGridFilter<3>::update() {
 
         std::vector<std::pair<size_t, vtkSmartPointer<vtkDoubleArray>>> elementAttributes;
 
-        for (const auto& pair : this->input->getElementAttributeTable()) {
+        for (const auto& pair : inputMesh->getElementAttributeTable()) {
 
             std::string name = pair.first;
             size_t id = pair.second.first;
             unsigned int order = pair.second.second;
-            unsigned int components = POWER(Dimension, order);
+            unsigned int components = POWER(3, order);
 
             vtkSmartPointer<vtkDoubleArray> attributeArray = vtkDoubleArray::New();
             attributeArray->SetName(name.c_str());
@@ -118,7 +120,7 @@ void featkMeshToVTKUnstructuredGridFilter<3>::update() {
 
         for (vtkIdType e=0; e!=elements.size(); e++) {
 
-            featkElementInterface<Dimension>* element = elements[e];
+            featkElementInterface<3>* element = elements[e];
 
 
             // Cell type
@@ -141,7 +143,7 @@ void featkMeshToVTKUnstructuredGridFilter<3>::update() {
 
             // Insertion
 
-            std::vector<featkNode<Dimension>*> elementNodes = element->getNodes();
+            std::vector<featkNode<3>*> elementNodes = element->getNodes();
 
             vtkSmartPointer<vtkIdList> pointIDs = vtkIdList::New();
             pointIDs->SetNumberOfIds(elementNodes.size());

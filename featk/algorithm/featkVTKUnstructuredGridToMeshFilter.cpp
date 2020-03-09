@@ -1,14 +1,14 @@
+#include <featk/algorithm/featkVTKUnstructuredGridToMeshFilter.h>
 #include <featk/core/featkDefines.h>
 #include <featk/geometry/featkHex8Element.h>
 #include <featk/geometry/featkTet4Element.h>
-#include <featk/io/featkVTKUnstructuredGridToMeshFilter.h>
 
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkPointData.h>
 #include <vtkPoints.h>
 
-void featkVTKUnstructuredGridToMeshFilter<3>::update() {
+void featkVTKUnstructuredGridToMeshFilter<3>::execute() {
 
     if (this->input != nullptr) {
 
@@ -186,6 +186,6 @@ void featkVTKUnstructuredGridToMeshFilter<3>::update() {
 
         // Output
 
-        this->output = mesh;
+        this->outputMeshes[0] = mesh;
     }
 }

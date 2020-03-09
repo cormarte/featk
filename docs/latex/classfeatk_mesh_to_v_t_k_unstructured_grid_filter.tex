@@ -4,6 +4,12 @@
 
 {\ttfamily \#include $<$featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter.\+h$>$}
 
+Inheritance diagram for featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter$<$ Dimension $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,10 +19,9 @@
 \item 
 vtk\+Smart\+Pointer$<$ vtk\+Unstructured\+Grid $>$ \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a662252f99aec3b3bab8e2d56ee3d18d3}{get\+Output\+V\+T\+K\+Unstructured\+Grid}} ()
 \item 
-void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_aa6dca148bb36979153e312438c6f1073}{set\+Input\+Mesh}} (\mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$ $\ast$mesh)
-\item 
-\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_ab5299a168a530ff9b46c9d16e5f13d58}{update}} ()
+\mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a7dbc927ce00cf6af34a626a6b0afea08}{execute}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -37,6 +42,17 @@ void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_aa6dca14
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a7dbc927ce00cf6af34a626a6b0afea08}\label{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a7dbc927ce00cf6af34a626a6b0afea08}} 
+\index{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}!execute@{execute}}
+\index{execute@{execute}!featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
+void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}}$<$ Dimension $>$\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classfeatk_algorithm_base_a4a92c0618999746ef041b2830616eee0}{featk\+Algorithm\+Base}}.
+
 \mbox{\Hypertarget{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a662252f99aec3b3bab8e2d56ee3d18d3}\label{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a662252f99aec3b3bab8e2d56ee3d18d3}} 
 \index{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}!getOutputVTKUnstructuredGrid@{getOutputVTKUnstructuredGrid}}
 \index{getOutputVTKUnstructuredGrid@{getOutputVTKUnstructuredGrid}!featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}}
@@ -44,23 +60,9 @@ void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_aa6dca14
 {\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
 vtk\+Smart\+Pointer$<$ vtk\+Unstructured\+Grid $>$ \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}}$<$ Dimension $>$\+::get\+Output\+V\+T\+K\+Unstructured\+Grid}
 
-\mbox{\Hypertarget{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_aa6dca148bb36979153e312438c6f1073}\label{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_aa6dca148bb36979153e312438c6f1073}} 
-\index{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}!setInputMesh@{setInputMesh}}
-\index{setInputMesh@{setInputMesh}!featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}}
-\doxysubsubsection{\texorpdfstring{setInputMesh()}{setInputMesh()}}
-{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
-void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}}$<$ Dimension $>$\+::set\+Input\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}$<$ Dimension $>$ $\ast$}]{mesh }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_ab5299a168a530ff9b46c9d16e5f13d58}\label{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_ab5299a168a530ff9b46c9d16e5f13d58}} 
-\index{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}!update@{update}}
-\index{update@{update}!featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily template$<$unsigned int Dimension$>$ \\
-void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}}$<$ Dimension $>$\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/io/\mbox{\hyperlink{featk_mesh_to_v_t_k_unstructured_grid_filter_8h}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter.\+h}}\item 
-D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/io/\mbox{\hyperlink{featk_mesh_to_v_t_k_unstructured_grid_filter_8cpp}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter.\+cpp}}\end{DoxyCompactItemize}
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/algorithm/\mbox{\hyperlink{featk_mesh_to_v_t_k_unstructured_grid_filter_8h}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter.\+h}}\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/algorithm/\mbox{\hyperlink{featk_mesh_to_v_t_k_unstructured_grid_filter_8cpp}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter.\+cpp}}\end{DoxyCompactItemize}

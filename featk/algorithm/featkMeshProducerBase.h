@@ -23,6 +23,12 @@
  *
  * @brief Base class for mesh producing algorithms.
  *
+ * featkMeshProducerBase is a base class for featkMesh producing
+ * featkAlgorithm objects.
+ *
+ * featkMeshProducerBase stores featkMesh objects produced by the
+ * featkAlgorithm.
+ *
  * @tparam Dimension The cartesian dimension of the algorithm.
  *
  */

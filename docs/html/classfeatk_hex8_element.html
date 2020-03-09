@@ -81,8 +81,8 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="featk_hex8_element_8h_source.html">featkHex8Element.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Specialization of a 8-node hexahedral <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a>. </p>
-<p><a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> is a specialization of <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a> representing an isoparametric tetrahedron in Dimension 3 with 8 Nodes, 6 Boundaries parametrized in NaturalDimension 3. <a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> provides implementations for the specialization of member variables featkElement::integrationRule and featkElement::nodesNaturalCoordinates and member functions <a class="el" href="classfeatk_element.html#a7f0ec045cecf67927669ab28bf244345">featkElement::featkElement()</a>, <a class="el" href="classfeatk_element.html#ab507f2098df688b01aa71eb4b8f27d11">featkElement::getShapeFunctionNaturalDerivativeValues()</a> and <a class="el" href="classfeatk_element.html#a624833b78153e6fe4127380cfa7a554f">featkElement::getShapeFunctionValues()</a>.</p>
-<p><a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> is parametrization used as follows:</p>
+<p><a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> is a specialization of <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a> representing an isoparametric hexahedron in Dimension 3 with 8 Nodes, 6 Boundaries parametrized in NaturalDimension 3. <a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> provides implementations for the specialization of member variables featkElement::integrationRule and featkElement::nodesNaturalCoordinates and member functions <a class="el" href="classfeatk_element.html#a7f0ec045cecf67927669ab28bf244345">featkElement::featkElement()</a>, <a class="el" href="classfeatk_element.html#a843d80b2a0198a054dfbeadb2005a644">featkElement::getShapeFunctionNaturalDerivativeValues()</a> and <a class="el" href="classfeatk_element.html#adbdf8f2ee4f6ad9cb427a016e8eb0fb9">featkElement::getShapeFunctionValues()</a>.</p>
+<p><a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> is parametrized as follows:</p>
 <pre class="fragment">    (7)-------(6)
     /|        /|
    / |       / |      ζ
@@ -112,16 +112,10 @@ $(function() {
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">(7) </td><td class="markdownTableBodyCenter">−1 </td><td class="markdownTableBodyCenter">+1 </td><td class="markdownTableBodyCenter">+1  </td></tr>
 </table>
-<p>N0(ξ, η, ζ) = (1/8)*(1−ξ)*(1−η)*(1−ζ)<br  />
- N1(ξ, η, ζ) = (1/8)*(1+ξ)*(1−η)*(1−ζ)<br  />
- N2(ξ, η, ζ) = (1/8)*(1+ξ)*(1+η)*(1−ζ)<br  />
- N3(ξ, η, ζ) = (1/8)*(1−ξ)*(1+η)*(1−ζ)<br  />
- N4(ξ, η, ζ) = (1/8)*(1−ξ)*(1−η)*(1+ζ)<br  />
- N5(ξ, η, ζ) = (1/8)*(1+ξ)*(1−η)*(1+ζ)<br  />
- N6(ξ, η, ζ) = (1/8)*(1+ξ)*(1+η)*(1+ζ)<br  />
- N7(ξ, η, ζ) = (1/8)*(1−ξ)*(1+η)*(1+ζ)<br  />
+<p class="formulaDsp">
+\[ \begin{align} N_0(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1−\xi)(1−\eta)(1−\zeta)\\ N_1(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1+\xi)(1−\eta)(1−\zeta)\\ N_2(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1+\xi)(1+\eta)(1−\zeta)\\ N_3(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1−\xi)(1+\eta)(1−\zeta)\\ N_4(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1−\xi)(1−\eta)(1+\zeta)\\ N_5(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1+\xi)(1−\eta)(1+\zeta)\\ N_6(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1+\xi)(1+\eta)(1+\zeta)\\ N_7(\xi, \eta, \zeta) &amp;= \frac{1}{8}(1−\xi)(1+\eta)(1+\zeta)\\ \end{align} \]
 </p>
-<p>See C. Felippa, Advanced Finite Element Methods: Chapter 11 - The 8-Node Hexahedron, p. 4, Tables 11.1-2, 2017. </p>
+<p>See C. Felippa, Advanced Finite Element Methods: Chapter 11 - The 8-Node Hexahedron, p.4, Tables 11.1-2, 2017. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/Documents de Corentin/Programmation/C++/featk/src/featk/geometry/<a class="el" href="featk_hex8_element_8h_source.html">featkHex8Element.h</a></li>
 </ul>

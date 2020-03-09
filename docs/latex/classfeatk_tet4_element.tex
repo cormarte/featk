@@ -1,0 +1,54 @@
+\hypertarget{classfeatk_tet4_element}{}\doxysection{featk\+Tet4\+Element Class Reference}
+\label{classfeatk_tet4_element}\index{featkTet4Element@{featkTet4Element}}
+
+
+Specialization of a 4-\/node tetrahedral \mbox{\hyperlink{classfeatk_element}{featk\+Element}}.  
+
+
+
+
+{\ttfamily \#include $<$featk\+Tet4\+Element.\+h$>$}
+
+
+
+\doxysubsection{Detailed Description}
+Specialization of a 4-\/node tetrahedral \mbox{\hyperlink{classfeatk_element}{featk\+Element}}. 
+
+\mbox{\hyperlink{classfeatk_tet4_element}{featk\+Tet4\+Element}} is a specialization of \mbox{\hyperlink{classfeatk_element}{featk\+Element}} representing an isoparametric tetrahedron in Dimension 3 with 4 Nodes, 4 Boundaries parametrized in Natural\+Dimension 3. \mbox{\hyperlink{classfeatk_tet4_element}{featk\+Tet4\+Element}} provides implementations for the specialization of member variables featk\+Element\+::integration\+Rule and featk\+Element\+::nodes\+Natural\+Coordinates and member functions \mbox{\hyperlink{classfeatk_element_a7f0ec045cecf67927669ab28bf244345}{featk\+Element\+::featk\+Element()}}, \mbox{\hyperlink{classfeatk_element_a843d80b2a0198a054dfbeadb2005a644}{featk\+Element\+::get\+Shape\+Function\+Natural\+Derivative\+Values()}} and \mbox{\hyperlink{classfeatk_element_adbdf8f2ee4f6ad9cb427a016e8eb0fb9}{featk\+Element\+::get\+Shape\+Function\+Values()}}.
+
+\mbox{\hyperlink{classfeatk_tet4_element}{featk\+Tet4\+Element}} is parametrized as follows\+:
+
+\begin{DoxyVerb}(3)
+ |\ \(2)
+ | \ //\
+ |  /\//\         ζ
+ | ///\//\        | η
+ |//////\/\       |/
+(0)-------(1)     o----ξ
+\end{DoxyVerb}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Node }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ξ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ η }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ζ  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Node }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ξ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ η }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ζ  }\\\cline{1-4}
+\endhead
+\PBS\centering (0) &\PBS\centering 0 &\PBS\centering 0 &\PBS\centering 0  \\\cline{1-4}
+\PBS\centering (1) &\PBS\centering 1 &\PBS\centering 0 &\PBS\centering 0  \\\cline{1-4}
+\PBS\centering (2) &\PBS\centering 0 &\PBS\centering 1 &\PBS\centering 0  \\\cline{1-4}
+\PBS\centering (3) &\PBS\centering 0 &\PBS\centering 0 &\PBS\centering 1  \\\cline{1-4}
+\end{longtabu}
+
+
+\[ \begin{align} N_0(\xi, \eta, \zeta) &= 1−\xi-\eta-\zeta\\ N_1(\xi, \eta, \zeta) &= \xi\\ N_2(\xi, \eta, \zeta) &= \eta\\ N_3(\xi, \eta, \zeta) &= \zeta\\ \end{align} \]
+
+See J. E. Flaherty, Finite Element Analysis\+: Chapter 4 -\/ Finite Element Approximation, p.\+24, Figure 4.\+5.\+2. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents de Corentin/\+Programmation/\+C++/featk/src/featk/geometry/\mbox{\hyperlink{featk_tet4_element_8h}{featk\+Tet4\+Element.\+h}}\end{DoxyCompactItemize}

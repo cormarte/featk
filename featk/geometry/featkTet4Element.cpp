@@ -1,17 +1,6 @@
 #include <featk/geometry/featkTet4Element.h>
 #include <featk/integration/featkKeastIntegrationRule.h>
 
-/**
- *
- *     (3)
- *      |   (2)
- *      |   /|\         ζ
- *      |  //|\\        | η
- *      | ///|\\\       |/
- *      (0)-----(1)     o----ξ
- *
- */
-
 const featkTet4Element::NodesNaturalCoordinatesMatrixType featkTet4Element::nodesNaturalCoordinates = (featkTet4Element::NodesNaturalCoordinatesMatrixType() << 0.0, 0.0, 0.0,
                                                                                                                                                                 1.0, 0.0, 0.0,
                                                                                                                                                                 0.0, 1.0, 0.0,
