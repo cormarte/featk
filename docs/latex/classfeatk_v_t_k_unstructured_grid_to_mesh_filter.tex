@@ -2,6 +2,11 @@
 \label{classfeatk_v_t_k_unstructured_grid_to_mesh_filter}\index{featkVTKUnstructuredGridToMeshFilter$<$ Dimension $>$@{featkVTKUnstructuredGridToMeshFilter$<$ Dimension $>$}}
 
 
+Filter for converting a vtk\+Unstructured\+Grid into a \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}.  
+
+
+
+
 {\ttfamily \#include $<$featk\+V\+T\+K\+Unstructured\+Grid\+To\+Mesh\+Filter.\+h$>$}
 
 Inheritance diagram for featk\+V\+T\+K\+Unstructured\+Grid\+To\+Mesh\+Filter$<$ Dimension $>$\+:\begin{figure}[H]
@@ -32,6 +37,26 @@ void \mbox{\hyperlink{classfeatk_v_t_k_unstructured_grid_to_mesh_filter_a65762c3
 \mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} void \mbox{\hyperlink{classfeatk_v_t_k_unstructured_grid_to_mesh_filter_a987f72038f7fa9dbff00bd5ff6ec7933}{execute}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension$>$\newline
+class featk\+V\+T\+K\+Unstructured\+Grid\+To\+Mesh\+Filter$<$ Dimension $>$}
+
+Filter for converting a vtk\+Unstructured\+Grid into a \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}. 
+
+\mbox{\hyperlink{classfeatk_v_t_k_unstructured_grid_to_mesh_filter}{featk\+V\+T\+K\+Unstructured\+Grid\+To\+Mesh\+Filter}} is a filter that produces a \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} from a vtk\+Unstructured\+Grid.
+
+\mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}} translates vtk\+Points into \mbox{\hyperlink{classfeatk_node}{featk\+Node}} coordinates, vtk\+Cell into \mbox{\hyperlink{classfeatk_element}{featk\+Element}} node connectivity, and vtk\+Point\+Data and vtk\+Cell\+Data arrays into \mbox{\hyperlink{classfeatk_node}{featk\+Node}} and \mbox{\hyperlink{classfeatk_element}{featk\+Element}} attributes respectively.
+
+\begin{DoxyWarning}{Warning}
+For now, only 3D vtk\+Unstructured\+Grid with V\+T\+K\+\_\+\+T\+E\+T\+RA and/or V\+T\+K\+\_\+\+H\+E\+X\+A\+H\+E\+D\+R\+ON cells are supported.
+\end{DoxyWarning}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the filter. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}

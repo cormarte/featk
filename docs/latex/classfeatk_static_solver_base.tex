@@ -2,6 +2,11 @@
 \label{classfeatk_static_solver_base}\index{featkStaticSolverBase$<$ Dimension, Order $>$@{featkStaticSolverBase$<$ Dimension, Order $>$}}
 
 
+Base class for static finite element solvers.  
+
+
+
+
 {\ttfamily \#include $<$featk\+Static\+Solver\+Base.\+h$>$}
 
 Inheritance diagram for featk\+Static\+Solver\+Base$<$ Dimension, Order $>$\+:\begin{figure}[H]
@@ -29,6 +34,27 @@ virtual Vector\+Xd \mbox{\hyperlink{classfeatk_static_solver_base_a54aa1950c22a7
 virtual void \mbox{\hyperlink{classfeatk_static_solver_base_a6257c58cd9ec094aa45f30850cf85552}{post\+Process}} (const Vector\+Xd \&solution)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension, unsigned int Order$>$\newline
+class featk\+Static\+Solver\+Base$<$ Dimension, Order $>$}
+
+Base class for static finite element solvers. 
+
+\mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}} is a base class for static finite element solvers.
+
+\mbox{\hyperlink{classfeatk_static_solver_base}{featk\+Static\+Solver\+Base}} solves finite element problems expressed as $Kq=f$, where $K$ is the global system matrix returned by the \mbox{\hyperlink{classfeatk_static_solver_base_aac33015020924e2912b3f7ce241df22a}{get\+Global\+System\+Matrix()}} function and $f$ is the global system vector returned by the \mbox{\hyperlink{classfeatk_static_solver_base_aac33015020924e2912b3f7ce241df22a}{get\+Global\+System\+Matrix()}} function.
+
+Derived classes must reimplement the \mbox{\hyperlink{classfeatk_solver_base_acddf99bbfc1908f9a5e84c22a23e9f36}{featk\+Solver\+Base\+::get\+Global\+System\+Matrix()}}, \mbox{\hyperlink{classfeatk_static_solver_base_a54aa1950c22a71bdc5ad62619fabc720}{featk\+Static\+Solver\+Base\+::get\+Global\+System\+Vector()}}, and \mbox{\hyperlink{classfeatk_solver_base_a1062d8f689866f75771e19349f27ae0a}{featk\+Solver\+Base\+::post\+Process()}} functions.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the problem.\\
+\hline
+{\em Order} & The order of the variable the system is solved for. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}

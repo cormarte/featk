@@ -2,6 +2,11 @@
 \label{classfeatk_reaction_diffusion_solver}\index{featkReactionDiffusionSolver$<$ Dimension $>$@{featkReactionDiffusionSolver$<$ Dimension $>$}}
 
 
+Dynamic finite element solver for reaction-\/diffusion problems in Dimension dimensions.  
+
+
+
+
 {\ttfamily \#include $<$featk\+Reaction\+Diffusion\+Solver.\+h$>$}
 
 Inheritance diagram for featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$\+:\begin{figure}[H]
@@ -50,6 +55,27 @@ Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solv
 Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a1d66b9d32c98152f798f95ce4d3042aa}{r}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension$>$\newline
+class featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}
+
+Dynamic finite element solver for reaction-\/diffusion problems in Dimension dimensions. 
+
+\mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}} is a dynamic finite element solver for reaction-\/diffusion problems with a logistic reaction term in Dimension dimensions.
+
+\mbox{\hyperlink{classfeatk_reaction_diffusion_solver}{featk\+Reaction\+Diffusion\+Solver}} solves
+
+\[ \begin{equation} \begin{cases} & \frac{\partial u(\bar{r}, t)}{\partial t} &= \bar{\nabla} \cdot \left( \bar{\bar{D}}(\bar{r}) \bar{\nabla} u(\bar{r}, t) \right) + \rho(\bar{r}) u(\bar{r}, t) \left( 1-u(\bar{r}, t) \right) \\ & u(\bar{r}, 0) &= u_0(\bar{r}) \quad \forall \bar{r} \in \Omega \\ & \left( \bar{\bar{D}}(\bar{r}) \bar{\nabla} u(\bar{r}, t) \right) \cdot \bar{n} &= 0 \quad \forall \bar{r} \in \partial \Omega \end{cases} \end{equation} \]
+
+where $u(\bar{r}, t)$ is a normalized function of cartesian position $\bar{r}$ and time $t$ such that $u: \Omega \times \left[ 0, T \right] \to \left[ 0, 1 \right]; (\bar{r}, t) \mapsto u(\bar{r}, t)$ where $\Omega \subset \mathbb{R}^{N}$ is the solving spatial domain and $T$ is the simulated time; $\bar{\bar{D}}(\bar{r})$ and $\rho(\bar{r})$ are respectively the value of the diffusion tensor and proliferation rate at position $\bar{r}$; $\partial\Omega$ is the boundary of $\Omega$; and $\bar{n}$ is the unit normal vector on $\partial \Omega$.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the problem. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}

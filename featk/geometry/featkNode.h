@@ -1,4 +1,4 @@
-/*=========================================================================
+/*==========================================================================
 
   Program:   Finite Element Analysis Toolkit
   Module:    featkNode.h
@@ -6,34 +6,42 @@
   Copyright (c) Corentin Martens
   All rights reserved.
 
-     This software is distributed WITHOUT ANY WARRANTY; without even
-     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-     PURPOSE.  See the above copyright notice for more information.
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+     NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR
+     ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR
+     OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
+     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     OTHER DEALINGS IN THE SOFTWARE.
 
-=========================================================================*/
+==========================================================================*/
 
 /**
+ *
  * @class featkNode
- * @brief element node with its attributes including cartesian coordinates.
  *
- * featkNode encapsulates element node attributes including its cartesian
- * coordinates in a Dimension dimensional space.
+ * @brief Node with its attributes including coordinates in Dimension
+ * cartesian dimensions.
  *
- * Attributes are stored as Eigen::MatrixXd objects for ease but are
- * accessed through Eigen::Matrix objects whose dimensions are fixed at
- * compile time given the attribute order (0 for scalars, 1 for vectors, n
- * for nth-order tensor). This ensures the adequacy of most Eigen::Matrix
- * dimensions at compile time, limiting the risk of run time errors while
- * benefiting from the template construction of Eigen.
+ * featkNode is the implementation of a node with its attributes including
+ * coordinates in Dimension cartesian dimensions.
  *
- * featkNode object also store a pointer to each featkIElement it belongs
- * to for computational efficiency.
+ * featkNode stores a pointer to each featkElementInterface it belongs to
+ * for computational efficiency when evaluating node derivative quantities
+ * that need to be averaged over elements sharing this node.
  *
- * Each node must be given a unique id at construction time whose uniqueness
- * is ensured by the user.
+ * Each featkNode must be given a unique id at construction time whose
+ * uniqueness is ensured by the user.
  *
- * @tparam Dimension the number of cartesian dimensions
- * of the node (1, 2, or 3).
+ * @warning featkNode cartesian coordinates are automatically registered
+ * as a node attribute in the featkMesh constructor under name "Cartesian
+ * Coordinates". Make sure not to assign node attribute of order 1 with
+ * name "Cartesian Coordinates" to featkMesh objects except if you intend
+ * to modify the featkMesh geometry.
+ *
+ * @tparam Dimension The cartesian dimension of the node.
+ *
  */
 
 #ifndef FEATKNODE_H

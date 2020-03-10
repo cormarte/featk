@@ -78,6 +78,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Filter for converting a <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> into a vtkUnstructuredGrid.  
+ <a href="classfeatk_mesh_to_v_t_k_unstructured_grid_filter.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="featk_mesh_to_v_t_k_unstructured_grid_filter_8h_source.html">featkMeshToVTKUnstructuredGridFilter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for featkMeshToVTKUnstructuredGridFilter&lt; Dimension &gt;:</div>
@@ -127,7 +130,21 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aab523515f68a60f2872d63ac510eaea6 inherit pro_attribs_classfeatk_mesh_consumer_base"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classfeatk_mesh.html">featkMesh</a>&lt; Dimension &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_mesh_consumer_base.html#aab523515f68a60f2872d63ac510eaea6">inputMeshes</a></td></tr>
 <tr class="separator:aab523515f68a60f2872d63ac510eaea6 inherit pro_attribs_classfeatk_mesh_consumer_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;unsigned int Dimension&gt;<br />
+class featkMeshToVTKUnstructuredGridFilter&lt; Dimension &gt;</h3>
+
+<p>Filter for converting a <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> into a vtkUnstructuredGrid. </p>
+<p><a class="el" href="classfeatk_mesh_to_v_t_k_unstructured_grid_filter.html" title="Filter for converting a featkMesh into a vtkUnstructuredGrid.">featkMeshToVTKUnstructuredGridFilter</a> is a filter that produces a vtkUnstructuredGrid from a <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a>.</p>
+<p><a class="el" href="classfeatk_mesh_to_v_t_k_unstructured_grid_filter.html" title="Filter for converting a featkMesh into a vtkUnstructuredGrid.">featkMeshToVTKUnstructuredGridFilter</a> translates <a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> coordinates into vtkPoints, <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a> node connectivity into vtkCell, and <a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> and <a class="el" href="classfeatk_element.html" title="Concrete implementation of a featkElementInterface.">featkElement</a> attributes into vtkDoubleArray which are respectively assigned to the vtkPointData and vtkCellData of the output vtkUnstructuredGrid.</p>
+<dl class="section warning"><dt>Warning</dt><dd>For now, only 3D <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> with <a class="el" href="classfeatk_tet4_element.html" title="Specialization of a 4-node tetrahedral featkElement.">featkTet4Element</a> and/or <a class="el" href="classfeatk_hex8_element.html" title="Specialization of a 8-node hexahedral featkElement.">featkHex8Element</a> are supported.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Dimension</td><td>The cartesian dimension of the filter. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2c055a7a4c2e87d43fe0cb4e11b7ee8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c055a7a4c2e87d43fe0cb4e11b7ee8f">&#9670;&nbsp;</a></span>featkMeshToVTKUnstructuredGridFilter()</h2>
 

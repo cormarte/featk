@@ -80,6 +80,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.  
+ <a href="classfeatk_reaction_diffusion_solver.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="featk_reaction_diffusion_solver_8h_source.html">featkReactionDiffusionSolver.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for featkReactionDiffusionSolver&lt; Dimension &gt;:</div>
@@ -88,7 +91,7 @@ Inheritance diagram for featkReactionDiffusionSolver&lt; Dimension &gt;:</div>
   <img src="classfeatk_reaction_diffusion_solver.png" usemap="#featkReactionDiffusionSolver_3C_20Dimension_20_3E_map" alt=""/>
   <map id="featkReactionDiffusionSolver_3C_20Dimension_20_3E_map" name="featkReactionDiffusionSolver_3C_20Dimension_20_3E_map">
 <area href="classfeatk_dynamic_solver_base.html" alt="featkDynamicSolverBase&lt; Dimension, 0 &gt;" shape="rect" coords="0,56,257,80"/>
-<area href="classfeatk_solver_base.html" alt="featkSolverBase&lt; Dimension, Order &gt;" shape="rect" coords="0,0,257,24"/>
+<area href="classfeatk_solver_base.html" title="Base class for finite element solvers in Dimension dimensions." alt="featkSolverBase&lt; Dimension, Order &gt;" shape="rect" coords="0,0,257,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -228,7 +231,24 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab499bcda6e59b964dec72a98efa7f213 inherit pro_static_methods_classfeatk_solver_base"><td class="memItemLeft" align="right" valign="top">static VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">getElementQVector</a> (<a class="el" href="classfeatk_element_interface.html">featkElementInterface</a>&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</td></tr>
 <tr class="separator:ab499bcda6e59b964dec72a98efa7f213 inherit pro_static_methods_classfeatk_solver_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;unsigned int Dimension&gt;<br />
+class featkReactionDiffusionSolver&lt; Dimension &gt;</h3>
+
+<p>Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions. </p>
+<p><a class="el" href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.">featkReactionDiffusionSolver</a> is a dynamic finite element solver for reaction-diffusion problems with a logistic reaction term in Dimension dimensions.</p>
+<p><a class="el" href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.">featkReactionDiffusionSolver</a> solves</p>
+<p class="formulaDsp">
+\[ \begin{equation} \begin{cases} &amp; \frac{\partial u(\bar{r}, t)}{\partial t} &amp;= \bar{\nabla} \cdot \left( \bar{\bar{D}}(\bar{r}) \bar{\nabla} u(\bar{r}, t) \right) + \rho(\bar{r}) u(\bar{r}, t) \left( 1-u(\bar{r}, t) \right) \\ &amp; u(\bar{r}, 0) &amp;= u_0(\bar{r}) \quad \forall \bar{r} \in \Omega \\ &amp; \left( \bar{\bar{D}}(\bar{r}) \bar{\nabla} u(\bar{r}, t) \right) \cdot \bar{n} &amp;= 0 \quad \forall \bar{r} \in \partial \Omega \end{cases} \end{equation} \]
+</p>
+<p>where \(u(\bar{r}, t)\) is a normalized function of cartesian position \(\bar{r}\) and time \(t\) such that \(u: \Omega \times \left[ 0, T \right] \to \left[ 0, 1 \right]; (\bar{r}, t) \mapsto u(\bar{r}, t)\) where \(\Omega \subset \mathbb{R}^{N}\) is the solving spatial domain and \(T\) is the simulated time; \(\bar{\bar{D}}(\bar{r})\) and \(\rho(\bar{r})\) are respectively the value of the diffusion tensor and proliferation rate at position \(\bar{r}\); \(\partial\Omega\) is the boundary of \(\Omega\); and \(\bar{n}\) is the unit normal vector on \(\partial \Omega\).</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Dimension</td><td>The cartesian dimension of the problem. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aacad8b93910ea0f7bbbc3e30f623fd1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aacad8b93910ea0f7bbbc3e30f623fd1d">&#9670;&nbsp;</a></span>featkReactionDiffusionSolver()</h2>
 

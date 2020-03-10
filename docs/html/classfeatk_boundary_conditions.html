@@ -110,7 +110,7 @@ class featkBoundaryConditions&lt; Dimension, Order &gt;</h3>
 
 <p>Boundary conditions for finite element problems. </p>
 <p><a class="el" href="classfeatk_boundary_conditions.html" title="Boundary conditions for finite element problems.">featkBoundaryConditions</a> stores the ids of the fixed degrees of freedom of finite element problems along with their prescribed values.</p>
-<p>For efficiency reasons during the assembly process (see <a class="el" href="classfeatk_solver_base.html">featkSolverBase</a>), distinction is made between zero prescrided values, for which the global system vector can be trivially modified, and non-zero prescrided values, involving iteration over non-zeros entries of the global system matrix.</p>
+<p>For efficiency reasons during the assembly process (see <a class="el" href="classfeatk_solver_base.html" title="Base class for finite element solvers in Dimension dimensions.">featkSolverBase</a>), distinction is made between zero prescrided values, for which the global system vector can be trivially modified, and non-zero prescrided values, involving iteration over non-zeros entries of the global system matrix.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Dimension</td><td>The cartesian dimension of the problem.</td></tr>

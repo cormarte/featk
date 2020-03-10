@@ -82,6 +82,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for finite element solvers in Dimension dimensions.  
+ <a href="classfeatk_solver_base.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="featk_solver_base_8h_source.html">featkSolverBase.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for featkSolverBase&lt; Dimension, Order &gt;:</div>
@@ -91,10 +94,10 @@ Inheritance diagram for featkSolverBase&lt; Dimension, Order &gt;:</div>
   <map id="featkSolverBase_3C_20Dimension_2C_20Order_20_3E_map" name="featkSolverBase_3C_20Dimension_2C_20Order_20_3E_map">
 <area href="classfeatk_dynamic_solver_base.html" title="Base class for dynamic finite element solvers." alt="featkDynamicSolverBase&lt; Dimension, Order &gt;" shape="rect" coords="0,56,278,80"/>
 <area href="classfeatk_dynamic_solver_base.html" alt="featkDynamicSolverBase&lt; Dimension, 0 &gt;" shape="rect" coords="288,56,566,80"/>
-<area href="classfeatk_static_solver_base.html" alt="featkStaticSolverBase&lt; Dimension, Order &gt;" shape="rect" coords="576,56,854,80"/>
+<area href="classfeatk_static_solver_base.html" title="Base class for static finite element solvers." alt="featkStaticSolverBase&lt; Dimension, Order &gt;" shape="rect" coords="576,56,854,80"/>
 <area href="classfeatk_static_solver_base.html" alt="featkStaticSolverBase&lt; Dimension, 1 &gt;" shape="rect" coords="864,56,1142,80"/>
-<area href="classfeatk_reaction_diffusion_solver.html" alt="featkReactionDiffusionSolver&lt; Dimension &gt;" shape="rect" coords="288,112,566,136"/>
-<area href="classfeatk_linear_elasticity_solver.html" title="Finite element solver for linear elasticity problems in Dimension dimensions." alt="featkLinearElasticitySolver&lt; Dimension &gt;" shape="rect" coords="864,112,1142,136"/>
+<area href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions." alt="featkReactionDiffusionSolver&lt; Dimension &gt;" shape="rect" coords="288,112,566,136"/>
+<area href="classfeatk_linear_elasticity_solver.html" title="Static finite element solver for linear elasticity problems in Dimension dimensions." alt="featkLinearElasticitySolver&lt; Dimension &gt;" shape="rect" coords="864,112,1142,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -173,7 +176,24 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ad43c59b5d0d0dd7e829b8930786463ea"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">numberOfDOFs</a></td></tr>
 <tr class="separator:ad43c59b5d0d0dd7e829b8930786463ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;unsigned int Dimension, unsigned int Order&gt;<br />
+class featkSolverBase&lt; Dimension, Order &gt;</h3>
+
+<p>Base class for finite element solvers in Dimension dimensions. </p>
+<p><a class="el" href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.">featkReactionDiffusionSolver</a> is base class for finite element solvers in Dimension dimensions. <a class="el" href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.">featkReactionDiffusionSolver</a> gathers <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> and featkBoundaryCondition objects involved in a finite element problem.</p>
+<p><a class="el" href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.">featkReactionDiffusionSolver</a> provides functions for assembling global matrices and vectors from <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects in Dimension cartesian dimensions.">featkElementInterface</a> quantities getters as well as for applyingy essential boundary conditions to the global system matrix and vector.</p>
+<p><a class="el" href="classfeatk_reaction_diffusion_solver.html" title="Dynamic finite element solver for reaction-diffusion problems in Dimension dimensions.">featkReactionDiffusionSolver</a> also defines the <a class="el" href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">update()</a> routine as the sucession of calls to <a class="el" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">initialize()</a> and <a class="el" href="classfeatk_solver_base.html#a616415cf09df676e1ba6bb139d54ea8c">solve()</a> functions. The <a class="el" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">initialize()</a> function is used to initialize matrices and vectors that are not subject to change throughout the solving process. The <a class="el" href="classfeatk_solver_base.html#a616415cf09df676e1ba6bb139d54ea8c">solve()</a> function solves the probleù itself, at once or iteratively. The <a class="el" href="classfeatk_solver_base.html#a1062d8f689866f75771e19349f27ae0a">postProcess()</a> function is called at the end of the solve routine to assign solution and derivative quantities to the input <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a>.</p>
+<p>Derived classes must reimplement the <a class="el" href="classfeatk_solver_base.html#a616415cf09df676e1ba6bb139d54ea8c">featkSolverBase::solve()</a>, <a class="el" href="classfeatk_solver_base.html#acddf99bbfc1908f9a5e84c22a23e9f36">featkSolverBase::getGlobalSystemMatrix()</a>, and <a class="el" href="classfeatk_solver_base.html#a1062d8f689866f75771e19349f27ae0a">featkSolverBase::postProcess()</a> functions and may reimplement the <a class="el" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">featkSolverBase::initialize()</a> function if needed.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Make <a class="el" href="classfeatk_solver_base.html" title="Base class for finite element solvers in Dimension dimensions.">featkSolverBase</a> inherit from <a class="el" href="classfeatk_mesh_consumer_base.html" title="Base class for mesh consuming algorithms.">featkMeshConsumerBase</a>.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Dimension</td><td>The cartesian dimension of the problem.</td></tr>
+    <tr><td class="paramname">Order</td><td>The order of the variable the system is solved for. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ff2d3abd6a6d1b9cd6d6aecb43aa38d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">&#9670;&nbsp;</a></span>~featkSolverBase()</h2>
 
@@ -722,7 +742,7 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classfeatk_dynamic_solver_base.html#a9010f2ac534f4790f9f9aab8c8493196">featkDynamicSolverBase&lt; Dimension, Order &gt;</a>, <a class="el" href="classfeatk_dynamic_solver_base.html#a9010f2ac534f4790f9f9aab8c8493196">featkDynamicSolverBase&lt; Dimension, 0 &gt;</a>, <a class="el" href="classfeatk_static_solver_base.html#aac33015020924e2912b3f7ce241df22a">featkStaticSolverBase&lt; Dimension, Order &gt;</a>, <a class="el" href="classfeatk_static_solver_base.html#aac33015020924e2912b3f7ce241df22a">featkStaticSolverBase&lt; Dimension, 1 &gt;</a>, <a class="el" href="classfeatk_linear_elasticity_solver.html#a8d14fe2e242299e11d0b727bf9359368">featkLinearElasticitySolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk_reaction_diffusion_solver.html#a8736dd765d52ad3c5f987ae895365138">featkReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classfeatk_dynamic_solver_base.html#a9010f2ac534f4790f9f9aab8c8493196">featkDynamicSolverBase&lt; Dimension, Order &gt;</a>, <a class="el" href="classfeatk_dynamic_solver_base.html#a9010f2ac534f4790f9f9aab8c8493196">featkDynamicSolverBase&lt; Dimension, 0 &gt;</a>, <a class="el" href="classfeatk_static_solver_base.html#aac33015020924e2912b3f7ce241df22a">featkStaticSolverBase&lt; Dimension, Order &gt;</a>, <a class="el" href="classfeatk_static_solver_base.html#aac33015020924e2912b3f7ce241df22a">featkStaticSolverBase&lt; Dimension, 1 &gt;</a>, <a class="el" href="classfeatk_reaction_diffusion_solver.html#a8736dd765d52ad3c5f987ae895365138">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk_linear_elasticity_solver.html#a8d14fe2e242299e11d0b727bf9359368">featkLinearElasticitySolver&lt; Dimension &gt;</a>.</p>
 
 </div>
 </div>
@@ -840,7 +860,7 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classfeatk_linear_elasticity_solver.html#a69689ca0159d83c7477b99a1c59fa829">featkLinearElasticitySolver&lt; Dimension &gt;</a>, <a class="el" href="classfeatk_reaction_diffusion_solver.html#a584b380a23746a317d1054cc1089314f">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, <a class="el" href="classfeatk_dynamic_solver_base.html#a4598fd4c6e61fad82cade009411eed70">featkDynamicSolverBase&lt; Dimension, Order &gt;</a>, <a class="el" href="classfeatk_dynamic_solver_base.html#a4598fd4c6e61fad82cade009411eed70">featkDynamicSolverBase&lt; Dimension, 0 &gt;</a>, <a class="el" href="classfeatk_static_solver_base.html#a6257c58cd9ec094aa45f30850cf85552">featkStaticSolverBase&lt; Dimension, Order &gt;</a>, and <a class="el" href="classfeatk_static_solver_base.html#a6257c58cd9ec094aa45f30850cf85552">featkStaticSolverBase&lt; Dimension, 1 &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a584b380a23746a317d1054cc1089314f">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, <a class="el" href="classfeatk_linear_elasticity_solver.html#a69689ca0159d83c7477b99a1c59fa829">featkLinearElasticitySolver&lt; Dimension &gt;</a>, <a class="el" href="classfeatk_dynamic_solver_base.html#a4598fd4c6e61fad82cade009411eed70">featkDynamicSolverBase&lt; Dimension, Order &gt;</a>, <a class="el" href="classfeatk_dynamic_solver_base.html#a4598fd4c6e61fad82cade009411eed70">featkDynamicSolverBase&lt; Dimension, 0 &gt;</a>, <a class="el" href="classfeatk_static_solver_base.html#a6257c58cd9ec094aa45f30850cf85552">featkStaticSolverBase&lt; Dimension, Order &gt;</a>, and <a class="el" href="classfeatk_static_solver_base.html#a6257c58cd9ec094aa45f30850cf85552">featkStaticSolverBase&lt; Dimension, 1 &gt;</a>.</p>
 
 </div>
 </div>

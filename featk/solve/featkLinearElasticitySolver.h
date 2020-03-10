@@ -21,10 +21,10 @@
  *
  * @class featkLinearElasticitySolver
  *
- * @brief Finite element solver for linear elasticity problems in Dimension
- * dimensions.
+ * @brief Static finite element solver for linear elasticity problems in
+ * Dimension dimensions.
  *
- * featkLinearElasticitySolver is a finite element solver for linear
+ * featkLinearElasticitySolver is a static finite element solver for linear
  * elasticity problems in Dimension dimensions.
  *
  * @tparam Dimension The cartesian dimension of the problem.

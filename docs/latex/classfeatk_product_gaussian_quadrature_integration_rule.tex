@@ -2,6 +2,11 @@
 \label{classfeatk_product_gaussian_quadrature_integration_rule}\index{featkProductGaussianQuadratureIntegrationRule$<$ NaturalDimension, Points $>$@{featkProductGaussianQuadratureIntegrationRule$<$ NaturalDimension, Points $>$}}
 
 
+Product Gaussian quadrature rule for numerical integration over a reference element.  
+
+
+
+
 {\ttfamily \#include $<$featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule.\+h$>$}
 
 Inheritance diagram for featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule$<$ Natural\+Dimension, Points $>$\+:\begin{figure}[H]
@@ -18,6 +23,30 @@ Inheritance diagram for featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule$
 \mbox{\hyperlink{classfeatk_product_gaussian_quadrature_integration_rule_a4932d94dbd88993c322f11e1e3c7934f}{$\sim$featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Natural\+Dimension, unsigned int Points$>$\newline
+class featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule$<$ Natural\+Dimension, Points $>$}
+
+Product Gaussian quadrature rule for numerical integration over a reference element. 
+
+\mbox{\hyperlink{classfeatk_product_gaussian_quadrature_integration_rule}{featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule}} implements product Gaussian quadrature rule for numerical integration over a reference element in natural coordinates. Integration points and weights are defined in Natural\+Dimension 1 and are computed using the product rule for Natural\+Dimension $>$ 1.
+
+Constructor of \mbox{\hyperlink{classfeatk_product_gaussian_quadrature_integration_rule}{featk\+Product\+Gaussian\+Quadrature\+Integration\+Rule}} specializations initialize the inheritted member variable \mbox{\hyperlink{classfeatk_integration_rule_interface_a83d4c1ba06e35dd8f30efcfa0fba362b}{featk\+Integration\+Rule\+Interface\+::points\+And\+Weights}} according to their template parameter values.
+
+See C. Felippa, Advanced Finite Element Methods\+: Chapter 11 -\/ The 8-\/Node Hexahedron, p. 10-\/11, 2017.
+
+\begin{DoxyWarning}{Warning}
+For a given Natural\+Dimension template parameter value, the Points template parameter value can only be 1, 2, 3, 4 or 5 to the power of Natural\+Dimension.
+\end{DoxyWarning}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Natural\+Dimension} & The natural dimension of the rule integration points.\\
+\hline
+{\em Points} & The number of integration points of the rule. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}

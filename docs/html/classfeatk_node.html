@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>element node with its attributes including cartesian coordinates.  
+<p>Node with its attributes including coordinates in Dimension cartesian dimensions.  
  <a href="classfeatk_node.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="featk_element_8h_source.html">featkElement.h</a>&gt;</code></p>
@@ -99,14 +99,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9a1a17bbc94ad109aee989244249d985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>element node with its attributes including cartesian coordinates. </p>
-<p><a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> encapsulates element node attributes including its cartesian coordinates in a Dimension dimensional space.</p>
-<p>Attributes are stored as Eigen::MatrixXd objects for ease but are accessed through Eigen::Matrix objects whose dimensions are fixed at compile time given the attribute order (0 for scalars, 1 for vectors, n for nth-order tensor). This ensures the adequacy of most Eigen::Matrix dimensions at compile time, limiting the risk of run time errors while benefiting from the template construction of Eigen.</p>
-<p><a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> object also store a pointer to each featkIElement it belongs to for computational efficiency.</p>
-<p>Each node must be given a unique id at construction time whose uniqueness is ensured by the user.</p>
+<div class="textblock"><p>Node with its attributes including coordinates in Dimension cartesian dimensions. </p>
+<p><a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> is the implementation of a node with its attributes including coordinates in Dimension cartesian dimensions.</p>
+<p><a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> stores a pointer to each <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects in Dimension cartesian dimensions.">featkElementInterface</a> it belongs to for computational efficiency when evaluating node derivative quantities that need to be averaged over elements sharing this node.</p>
+<p>Each <a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> must be given a unique id at construction time whose uniqueness is ensured by the user.</p>
+<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> cartesian coordinates are automatically registered as a node attribute in the <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> constructor under name "Cartesian
+Coordinates". Make sure not to assign node attribute of order 1 with name "Cartesian Coordinates" to <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> objects except if you intend to modify the <a class="el" href="classfeatk_mesh.html" title="Mesh in Dimension dimensions with its elements and nodes.">featkMesh</a> geometry.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Dimension</td><td>the number of cartesian dimensions of the node (1, 2, or 3). </td></tr>
+    <tr><td class="paramname">Dimension</td><td>The cartesian dimension of the node. </td></tr>
   </table>
   </dd>
 </dl>

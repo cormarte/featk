@@ -2,6 +2,11 @@
 \label{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}\index{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$@{featkMeshToVTKUnstructuredGridFilter$<$ Dimension $>$}}
 
 
+Filter for converting a \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} into a vtk\+Unstructured\+Grid.  
+
+
+
+
 {\ttfamily \#include $<$featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter.\+h$>$}
 
 Inheritance diagram for featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter$<$ Dimension $>$\+:\begin{figure}[H]
@@ -22,6 +27,26 @@ vtk\+Smart\+Pointer$<$ vtk\+Unstructured\+Grid $>$ \mbox{\hyperlink{classfeatk_m
 \mbox{\hyperlink{featk_global_8h_a5f4372de0b65ec06faebbdc500ff9e8e}{F\+E\+A\+T\+K\+\_\+\+E\+X\+P\+O\+RT}} void \mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter_a7dbc927ce00cf6af34a626a6b0afea08}{execute}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int Dimension$>$\newline
+class featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter$<$ Dimension $>$}
+
+Filter for converting a \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} into a vtk\+Unstructured\+Grid. 
+
+\mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}} is a filter that produces a vtk\+Unstructured\+Grid from a \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}}.
+
+\mbox{\hyperlink{classfeatk_mesh_to_v_t_k_unstructured_grid_filter}{featk\+Mesh\+To\+V\+T\+K\+Unstructured\+Grid\+Filter}} translates \mbox{\hyperlink{classfeatk_node}{featk\+Node}} coordinates into vtk\+Points, \mbox{\hyperlink{classfeatk_element}{featk\+Element}} node connectivity into vtk\+Cell, and \mbox{\hyperlink{classfeatk_node}{featk\+Node}} and \mbox{\hyperlink{classfeatk_element}{featk\+Element}} attributes into vtk\+Double\+Array which are respectively assigned to the vtk\+Point\+Data and vtk\+Cell\+Data of the output vtk\+Unstructured\+Grid.
+
+\begin{DoxyWarning}{Warning}
+For now, only 3D \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} with \mbox{\hyperlink{classfeatk_tet4_element}{featk\+Tet4\+Element}} and/or \mbox{\hyperlink{classfeatk_hex8_element}{featk\+Hex8\+Element}} are supported.
+\end{DoxyWarning}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dimension} & The cartesian dimension of the filter. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}

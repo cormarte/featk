@@ -1,3 +1,58 @@
+/*==========================================================================
+
+  Program:   Finite Element Analysis Toolkit
+  Module:    featkSolverBase.h
+
+  Copyright (c) Corentin Martens
+  All rights reserved.
+
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+     NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR
+     ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR
+     OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
+     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     OTHER DEALINGS IN THE SOFTWARE.
+
+==========================================================================*/
+
+/**
+
+ * @class featkSolverBase
+ *
+ * @brief Base class for finite element solvers in Dimension dimensions.
+ *
+ * featkReactionDiffusionSolver is base class for finite element solvers in
+ * Dimension dimensions. featkReactionDiffusionSolver gathers featkMesh and
+ * featkBoundaryCondition objects involved in a finite element problem.
+ *
+ * featkReactionDiffusionSolver provides functions for assembling global
+ * matrices and vectors from featkElementInterface quantities getters as
+ * well as for applyingy essential boundary conditions to the global system
+ * matrix and vector.
+ *
+ * featkReactionDiffusionSolver also defines the update() routine as the
+ * sucession of calls to initialize() and solve() functions.
+ * The initialize() function is used to initialize matrices and vectors that
+ * are not subject to change throughout the solving process. The solve()
+ * function solves the probleù itself, at once or iteratively. The
+ * postProcess() function is called at the end of the solve routine to
+ * assign solution and derivative quantities to the input featkMesh.
+ *
+ * Derived classes must reimplement the featkSolverBase::solve(),
+ * featkSolverBase::getGlobalSystemMatrix(), and
+ * featkSolverBase::postProcess() functions and may reimplement the
+ * featkSolverBase::initialize() function if needed.
+ *
+ * @todo Make featkSolverBase inherit from featkMeshConsumerBase.
+ *
+ * @tparam Dimension The cartesian dimension of the problem.
+ *
+ * @tparam Order The order of the variable the system is solved for.
+ *
+ */
+
 #ifndef FEATKSOLVERBASE_H
 #define FEATKSOLVERBASE_H
 

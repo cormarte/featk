@@ -78,366 +78,385 @@ $(function() {
 <div class="title">featkSolverBase.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="featk_solver_base_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FEATKSOLVERBASE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FEATKSOLVERBASE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_utils_8h.html">featk/core/featkUtils.h</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_mesh_8h.html">featk/geometry/featkMesh.h</a>&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_boundary_conditions_8h.html">featk/solve/featkBoundaryConditions.h</a>&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_global_system_matrix_pruner_8h.html">featk/solve/featkGlobalSystemMatrixPruner.h</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Eigen/Sparse&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfeatk_solver_base.html">featkSolverBase</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classfeatk_solver_base.html">featkSolverBase</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> initialize();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> solve()=0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> setEssentialBoundaryConditions(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> setInputMesh(<a class="code" href="classfeatk_mesh.html">featkMesh&lt;Dimension&gt;</a>* mesh);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> setNaturalBoundaryConditions(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a6b457a6d1d2bc8ba9d0129f5cef40701">   29</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dofsPerNode = <a class="code" href="featk_utils_8h.html#a9f2f94eb8cb9804cf3c8b90780b8b8f7">POWER</a>(Dimension, Order);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">static</span> MatrixXd getElementBtBIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">static</span> MatrixXd getElementBtCBIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">static</span> MatrixXd getElementNtCNIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">static</span> VectorXd getElementNtCNQNQIntegralVector(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> MatrixXd getElementNtNIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">static</span> VectorXd getElementNtNQIntegralVector(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">static</span> VectorXd getElementQVector(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classfeatk_solver_base.html">featkSolverBase</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">virtual</span> SparseMatrix&lt;double&gt; getGlobalSystemMatrix()=0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> postProcess(<span class="keyword">const</span> VectorXd&amp; solution)=0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> applyEBC(SparseMatrix&lt;double&gt;&amp; k, VectorXd&amp; f);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> applyEBCToGlobalSystemVector(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; globalStiffnessMatrix, VectorXd&amp; f);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> applyEBCToGlobalSystemMatrix(SparseMatrix&lt;double&gt;&amp; k);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        VectorXd getEBCModifiedGlobalSystemVector(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; k, <span class="keyword">const</span> VectorXd&amp; vector);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        SparseMatrix&lt;double&gt; getEBCModifiedGlobalSystemMatrix(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; matrix);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        SparseMatrix&lt;double&gt; getGlobalMatrixFromElements(MatrixXd (*getElementMatrix)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;size_t&gt;), std::vector&lt;size_t&gt; attributeIDs);           <span class="comment">// Assembles global matrix from element matrix getter</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// void getGlobalMatrixFromElements(MatrixXd (*getElementMatrix)(featkElementInterface&lt;Dimensions&gt;*), SparseMatrix&lt;double&gt;&amp; k);  // Check if performs faster (i.e. if NRVO is not applied to Eigen::SparseMatrix)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        VectorXd getGlobalVectorFromNBCs();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        VectorXd getGlobalVectorFromElements(VectorXd (*getElementVector)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;size_t&gt;), std::vector&lt;size_t&gt; attributeIDs);                        <span class="comment">// Assembles global vector from element vector getter</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">   56</a></span>&#160;        <a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* <a class="code" href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">essentialBoundaryConditions</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a8adc2ca6eb0b50f7ddf99b031150f5a5">   57</a></span>&#160;        <a class="code" href="classfeatk_mesh.html">featkMesh&lt;Dimension&gt;</a>* <a class="code" href="classfeatk_solver_base.html#a8adc2ca6eb0b50f7ddf99b031150f5a5">mesh</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">   58</a></span>&#160;        <a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* <a class="code" href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">naturalBoundaryConditions</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">   59</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">numberOfDOFs</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">   63</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">featkSolverBase&lt;Dimension, Order&gt;::getElementBtBIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#ab201d50b27a255076054ebd0625267b9">getBtBIntegralMatrix</a>&lt;Order&gt;();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">   69</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">featkSolverBase&lt;Dimension, Order&gt;::getElementBtCBIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a06fe4aa7abe91f2430a2e81e295c43c6">getBtCBIntegralMatrix</a>&lt;Order&gt;(attributeIDs[0]);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<a href="featk_solver_base_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*==========================================================================</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">  Program:   Finite Element Analysis Toolkit</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  Module:    featkSolverBase.h</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  Copyright (c) Corentin Martens</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  All rights reserved.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">     THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">     NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">     ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">     OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">     OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">==========================================================================*/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifndef FEATKSOLVERBASE_H</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define FEATKSOLVERBASE_H</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_utils_8h.html">featk/core/featkUtils.h</a>&gt;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_mesh_8h.html">featk/geometry/featkMesh.h</a>&gt;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_boundary_conditions_8h.html">featk/solve/featkBoundaryConditions.h</a>&gt;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="featk_global_system_matrix_pruner_8h.html">featk/solve/featkGlobalSystemMatrixPruner.h</a>&gt;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &lt;Eigen/Sparse&gt;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html">   70</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfeatk_solver_base.html">featkSolverBase</a> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#aded936225715319a2085db1832f23258">   75</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#aded936225715319a2085db1832f23258">featkSolverBase&lt;Dimension, Order&gt;::getElementNtCNIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#ab0c093072ff1b0e0fc29434a1f95e181">getNtCNIntegralMatrix</a>&lt;Order&gt;(attributeIDs[0]);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#aba8221a496b3916d584f513e1ba04711">   81</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#aba8221a496b3916d584f513e1ba04711">featkSolverBase&lt;Dimension, Order&gt;::getElementNtNIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a399f19e184c3deda54bc6b86f5a1d8af">getNtNIntegralMatrix</a>&lt;Order&gt;();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classfeatk_solver_base.html">featkSolverBase</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> initialize();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> solve()=0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> setEssentialBoundaryConditions(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> setInputMesh(<a class="code" href="classfeatk_mesh.html">featkMesh&lt;Dimension&gt;</a>* mesh);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> setNaturalBoundaryConditions(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a6b457a6d1d2bc8ba9d0129f5cef40701">   84</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dofsPerNode = <a class="code" href="featk_utils_8h.html#a9f2f94eb8cb9804cf3c8b90780b8b8f7">POWER</a>(Dimension, Order);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a431ebf925af4f4284e2cddda68ff01bc">   87</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a431ebf925af4f4284e2cddda68ff01bc">featkSolverBase&lt;Dimension, Order&gt;::getElementNtNQIntegralVector</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a6f6aef4f187940116b6e71ea80a6763f">getNtNQIntegralVector</a>&lt;Order&gt;(attributeIDs[0]);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a9e81f8244afefc5f3fe183c3de12a19f">   93</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a9e81f8244afefc5f3fe183c3de12a19f">featkSolverBase&lt;Dimension, Order&gt;::getElementNtCNQNQIntegralVector</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a799fbae238800d29db63f1f66d9db396">getNtCNQNQIntegralVector</a>&lt;Order&gt;(attributeIDs[0], attributeIDs[1]);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">static</span> MatrixXd getElementBtBIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">static</span> MatrixXd getElementBtCBIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">static</span> MatrixXd getElementNtCNIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">static</span> VectorXd getElementNtCNQNQIntegralVector(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">static</span> MatrixXd getElementNtNIntegralMatrix(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">static</span> VectorXd getElementNtNQIntegralVector(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">static</span> VectorXd getElementQVector(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classfeatk_solver_base.html">featkSolverBase</a>();</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">   99</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">featkSolverBase&lt;Dimension, Order&gt;::getElementQVector</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">virtual</span> SparseMatrix&lt;double&gt; getGlobalSystemMatrix()=0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> postProcess(<span class="keyword">const</span> VectorXd&amp; solution)=0;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#af673d2064cfcf0ce55f5ea22c8e2afb4">getQVector</a>&lt;Order&gt;(attributeIDs[0]);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">  106</a></span>&#160;<a class="code" href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">featkSolverBase&lt;Dimension, Order&gt;::featkSolverBase</a>() {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    this-&gt; essentialBoundaryConditions = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    this-&gt;mesh = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    this-&gt;naturalBoundaryConditions = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    this-&gt;numberOfDOFs = 0;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">  115</a></span>&#160;<a class="code" href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">featkSolverBase&lt;Dimension, Order&gt;::~featkSolverBase</a>() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> applyEBC(SparseMatrix&lt;double&gt;&amp; k, VectorXd&amp; f);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> applyEBCToGlobalSystemVector(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; globalStiffnessMatrix, VectorXd&amp; f);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> applyEBCToGlobalSystemMatrix(SparseMatrix&lt;double&gt;&amp; k);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        VectorXd getEBCModifiedGlobalSystemVector(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; k, <span class="keyword">const</span> VectorXd&amp; vector);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        SparseMatrix&lt;double&gt; getEBCModifiedGlobalSystemMatrix(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; matrix);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        SparseMatrix&lt;double&gt; getGlobalMatrixFromElements(MatrixXd (*getElementMatrix)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;size_t&gt;), std::vector&lt;size_t&gt; attributeIDs);           <span class="comment">// Assembles global matrix from element matrix getter</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// void getGlobalMatrixFromElements(MatrixXd (*getElementMatrix)(featkElementInterface&lt;Dimensions&gt;*), SparseMatrix&lt;double&gt;&amp; k);  // Check if performs faster (i.e. if NRVO is not applied to Eigen::SparseMatrix)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        VectorXd getGlobalVectorFromNBCs();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        VectorXd getGlobalVectorFromElements(VectorXd (*getElementVector)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;size_t&gt;), std::vector&lt;size_t&gt; attributeIDs);                        <span class="comment">// Assembles global vector from element vector getter</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">  111</a></span>&#160;        <a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* <a class="code" href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">essentialBoundaryConditions</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a8adc2ca6eb0b50f7ddf99b031150f5a5">  112</a></span>&#160;        <a class="code" href="classfeatk_mesh.html">featkMesh&lt;Dimension&gt;</a>* <a class="code" href="classfeatk_solver_base.html#a8adc2ca6eb0b50f7ddf99b031150f5a5">mesh</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">  113</a></span>&#160;        <a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* <a class="code" href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">naturalBoundaryConditions</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">  114</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">numberOfDOFs</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">  118</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">featkSolverBase&lt;Dimension, Order&gt;::getElementBtBIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a705c3c0af6828c5502c26ba6b6dcaff7">  121</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a705c3c0af6828c5502c26ba6b6dcaff7">featkSolverBase&lt;Dimension, Order&gt;::applyEBC</a>(SparseMatrix&lt;double&gt;&amp; k, VectorXd&amp; f) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#ab201d50b27a255076054ebd0625267b9">getBtBIntegralMatrix</a>&lt;Order&gt;();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    this-&gt;applyEBCToGlobalSystemVector(k, f);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    this-&gt;applyEBCToGlobalSystemMatrix(k);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a5fc391413272656fb781bfb2ca726164">  128</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a5fc391413272656fb781bfb2ca726164">featkSolverBase&lt;Dimension, Order&gt;::applyEBCToGlobalSystemVector</a>(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; k, VectorXd&amp; f) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    std::map&lt;size_t, double&gt; allDOFValues = this-&gt;essentialBoundaryConditions-&gt;getAllDOFValues();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    std::map&lt;size_t, double&gt; nonZeroDOFValues = this-&gt;essentialBoundaryConditions-&gt;getNonZeroDOFValues();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;featkSolverBase: Info: System has &quot;</span> &lt;&lt; nonZeroDOFValues.size() &lt;&lt; <span class="stringliteral">&quot; non-zero essential boundary conditions.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : allDOFValues) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        f(pair.first, 0) = pair.second;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span> (nonZeroDOFValues.size()!=0) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">  124</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">featkSolverBase&lt;Dimension, Order&gt;::getElementBtCBIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a06fe4aa7abe91f2430a2e81e295c43c6">getBtCBIntegralMatrix</a>&lt;Order&gt;(attributeIDs[0]);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#aded936225715319a2085db1832f23258">  130</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#aded936225715319a2085db1832f23258">featkSolverBase&lt;Dimension, Order&gt;::getElementNtCNIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#ab0c093072ff1b0e0fc29434a1f95e181">getNtCNIntegralMatrix</a>&lt;Order&gt;(attributeIDs[0]);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#aba8221a496b3916d584f513e1ba04711">  136</a></span>&#160;MatrixXd <a class="code" href="classfeatk_solver_base.html#aba8221a496b3916d584f513e1ba04711">featkSolverBase&lt;Dimension, Order&gt;::getElementNtNIntegralMatrix</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a399f19e184c3deda54bc6b86f5a1d8af">getNtNIntegralMatrix</a>&lt;Order&gt;();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i!=k.outerSize(); i++) {  <span class="comment">// Iterate over all non zero entries of the sparse matrix</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">for</span> (SparseMatrix&lt;double&gt;::InnerIterator it(k, i); it; ++it) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">if</span> (allDOFValues.count(it.row()) == 0 &amp;&amp; nonZeroDOFValues.count(it.col()) != 0) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a431ebf925af4f4284e2cddda68ff01bc">  142</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a431ebf925af4f4284e2cddda68ff01bc">featkSolverBase&lt;Dimension, Order&gt;::getElementNtNQIntegralVector</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a6f6aef4f187940116b6e71ea80a6763f">getNtNQIntegralVector</a>&lt;Order&gt;(attributeIDs[0]);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    f(it.row(), 0) -= it.value()*nonZeroDOFValues[it.col()];</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">  155</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">featkSolverBase&lt;Dimension, Order&gt;::applyEBCToGlobalSystemMatrix</a>(SparseMatrix&lt;double&gt;&amp; k) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    std::set&lt;size_t&gt; allDOFs = this-&gt;essentialBoundaryConditions-&gt;getAllDOFs();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;featkSolverBase: Info: System has &quot;</span> &lt;&lt; allDOFs.size() &lt;&lt; <span class="stringliteral">&quot; essential boundary conditions.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a9e81f8244afefc5f3fe183c3de12a19f">  148</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a9e81f8244afefc5f3fe183c3de12a19f">featkSolverBase&lt;Dimension, Order&gt;::getElementNtCNQNQIntegralVector</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#a799fbae238800d29db63f1f66d9db396">getNtCNQNQIntegralVector</a>&lt;Order&gt;(attributeIDs[0], attributeIDs[1]);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">  154</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">featkSolverBase&lt;Dimension, Order&gt;::getElementQVector</a>(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element, std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> element-&gt;<a class="code" href="classfeatk_element_interface.html#af673d2064cfcf0ce55f5ea22c8e2afb4">getQVector</a>&lt;Order&gt;(attributeIDs[0]);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i!=k.outerSize(); i++) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">for</span> (SparseMatrix&lt;double&gt;::InnerIterator it(k, i); it; ++it) {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordflow">if</span> (allDOFs.count(it.row()) != 0 &amp;&amp; it.row() == it.col()) {  <span class="comment">// Diagonal elements are always non zero or explicit zero, so first test if dof is fixed.</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                it.valueRef() = 1.0;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">/* The global stiffness matrix diagonal elements are non-zero or at least an explicit zero, so it is better</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">     * to first change their value to 1, and prune non-diagonal elements afterwards. Indeed, non-zero element</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">     * insertion into an Eigen::SparseMatrix is very expensive */</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">  161</a></span>&#160;<a class="code" href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">featkSolverBase&lt;Dimension, Order&gt;::featkSolverBase</a>() {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    this-&gt; essentialBoundaryConditions = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    this-&gt;mesh = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    this-&gt;naturalBoundaryConditions = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    this-&gt;numberOfDOFs = 0;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">  170</a></span>&#160;<a class="code" href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">featkSolverBase&lt;Dimension, Order&gt;::~featkSolverBase</a>() {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    k.prune(<a class="code" href="classfeatk_global_system_matrix_pruner.html">featkGlobalSystemMatrixPruner&lt;double&gt;</a>(allDOFs));</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a705c3c0af6828c5502c26ba6b6dcaff7">  176</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a705c3c0af6828c5502c26ba6b6dcaff7">featkSolverBase&lt;Dimension, Order&gt;::applyEBC</a>(SparseMatrix&lt;double&gt;&amp; k, VectorXd&amp; f) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a1b5ec078479de017ddcd37e4e03cec0b">  179</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a1b5ec078479de017ddcd37e4e03cec0b">featkSolverBase&lt;Dimension, Order&gt;::getEBCModifiedGlobalSystemVector</a>(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; k, <span class="keyword">const</span> VectorXd&amp; vector) {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    VectorXd f = vector;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    this-&gt;applyEBCToGlobalSystemVector(k, f);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> f;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">  188</a></span>&#160;SparseMatrix&lt;double&gt; <a class="code" href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">featkSolverBase&lt;Dimension, Order&gt;::getEBCModifiedGlobalSystemMatrix</a>(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; matrix) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    SparseMatrix&lt;double&gt; k = matrix;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    this-&gt;applyEBCToGlobalSystemMatrix(k);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> k;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    this-&gt;applyEBCToGlobalSystemVector(k, f);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    this-&gt;applyEBCToGlobalSystemMatrix(k);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a5fc391413272656fb781bfb2ca726164">  183</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a5fc391413272656fb781bfb2ca726164">featkSolverBase&lt;Dimension, Order&gt;::applyEBCToGlobalSystemVector</a>(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; k, VectorXd&amp; f) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    std::map&lt;size_t, double&gt; allDOFValues = this-&gt;essentialBoundaryConditions-&gt;getAllDOFValues();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    std::map&lt;size_t, double&gt; nonZeroDOFValues = this-&gt;essentialBoundaryConditions-&gt;getNonZeroDOFValues();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;featkSolverBase: Info: System has &quot;</span> &lt;&lt; nonZeroDOFValues.size() &lt;&lt; <span class="stringliteral">&quot; non-zero essential boundary conditions.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : allDOFValues) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        f(pair.first, 0) = pair.second;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span> (nonZeroDOFValues.size()!=0) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a1e647d7c36bd4de869d8a30b93808bdb">  197</a></span>&#160;SparseMatrix&lt;double&gt; <a class="code" href="classfeatk_solver_base.html#a1e647d7c36bd4de869d8a30b93808bdb">featkSolverBase&lt;Dimension, Order&gt;::getGlobalMatrixFromElements</a>(MatrixXd (*getElementMatrix)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;size_t&gt;), std::vector&lt;size_t&gt; attributeIDs) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    std::map&lt;size_t, std::map&lt;size_t, double&gt;&gt; coefficients;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element : this-&gt;mesh-&gt;<a class="code" href="classfeatk_mesh.html#a95b8afe36ac6f2bfb537e20f8bc0cc86">getElements</a>()) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        std::vector&lt;size_t&gt; elementDOFs;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classfeatk_node.html">featkNode&lt;Dimension&gt;</a>* node : element-&gt;getNodes()) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dof=0; dof!=this-&gt;dofsPerNode; dof++) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i!=k.outerSize(); i++) {  <span class="comment">// Iterate over all non zero entries of the sparse matrix</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">for</span> (SparseMatrix&lt;double&gt;::InnerIterator it(k, i); it; ++it) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="keywordflow">if</span> (allDOFValues.count(it.row()) == 0 &amp;&amp; nonZeroDOFValues.count(it.col()) != 0) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    f(it.row(), 0) -= it.value()*nonZeroDOFValues[it.col()];</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                elementDOFs.push_back(DOF_ID&lt;Dimension, Order&gt;(node-&gt;getID(), dof));</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        MatrixXd elementMatrix = getElementMatrix(element, attributeIDs);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">  210</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">featkSolverBase&lt;Dimension, Order&gt;::applyEBCToGlobalSystemMatrix</a>(SparseMatrix&lt;double&gt;&amp; k) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    std::set&lt;size_t&gt; allDOFs = this-&gt;essentialBoundaryConditions-&gt;getAllDOFs();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;featkSolverBase: Info: System has &quot;</span> &lt;&lt; allDOFs.size() &lt;&lt; <span class="stringliteral">&quot; essential boundary conditions.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i!=elementDOFs.size(); i++) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i!=k.outerSize(); i++) {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j!=elementDOFs.size(); j++) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">for</span> (SparseMatrix&lt;double&gt;::InnerIterator it(k, i); it; ++it) {</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordtype">size_t</span> k = elementDOFs[i];</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordtype">size_t</span> l = elementDOFs[j];</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                coefficients[k][l] += elementMatrix(i, j);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    std::vector&lt;Triplet&lt;double, size_t&gt;&gt; triplets;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;a : coefficients) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">size_t</span> i = a.first;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">if</span> (allDOFs.count(it.row()) != 0 &amp;&amp; it.row() == it.col()) {  <span class="comment">// Diagonal elements are always non zero or explicit zero, so first test if dof is fixed.</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                it.valueRef() = 1.0;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">/* The global stiffness matrix diagonal elements are non-zero or at least an explicit zero, so it is better</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">     * to first change their value to 1, and prune non-diagonal elements afterwards. Indeed, non-zero element</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">     * insertion into an Eigen::SparseMatrix is very expensive */</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    k.prune(<a class="code" href="classfeatk_global_system_matrix_pruner.html">featkGlobalSystemMatrixPruner&lt;double&gt;</a>(allDOFs));</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;b : a.second) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordtype">size_t</span> j = b.first;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            triplets.push_back(Triplet&lt;double, size_t&gt;(i, j, b.second));</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    SparseMatrix&lt;double&gt; k(this-&gt;numberOfDOFs, this-&gt;numberOfDOFs);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    k.setFromTriplets(triplets.begin(), triplets.end());</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> k;  <span class="comment">// Make sure NRVO is applied here to avoid copying a huge Eigen::SparseMatrix</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">  247</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">featkSolverBase&lt;Dimension, Order&gt;::getGlobalVectorFromNBCs</a>() {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    VectorXd f = VectorXd::Zero(this-&gt;numberOfDOFs);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a1b5ec078479de017ddcd37e4e03cec0b">  234</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a1b5ec078479de017ddcd37e4e03cec0b">featkSolverBase&lt;Dimension, Order&gt;::getEBCModifiedGlobalSystemVector</a>(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; k, <span class="keyword">const</span> VectorXd&amp; vector) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    VectorXd f = vector;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    this-&gt;applyEBCToGlobalSystemVector(k, f);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">  243</a></span>&#160;SparseMatrix&lt;double&gt; <a class="code" href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">featkSolverBase&lt;Dimension, Order&gt;::getEBCModifiedGlobalSystemMatrix</a>(<span class="keyword">const</span> SparseMatrix&lt;double&gt;&amp; matrix) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    SparseMatrix&lt;double&gt; k = matrix;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    this-&gt;applyEBCToGlobalSystemMatrix(k);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> k;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : this-&gt;naturalBoundaryConditions-&gt;getNonZeroDOFValues()) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        f(pair.first, 0) = pair.second;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a1e647d7c36bd4de869d8a30b93808bdb">  252</a></span>&#160;SparseMatrix&lt;double&gt; <a class="code" href="classfeatk_solver_base.html#a1e647d7c36bd4de869d8a30b93808bdb">featkSolverBase&lt;Dimension, Order&gt;::getGlobalMatrixFromElements</a>(MatrixXd (*getElementMatrix)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;size_t&gt;), std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    std::map&lt;size_t, std::map&lt;size_t, double&gt;&gt; coefficients;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> f;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ad034b3115e6c4dbc06fe1480b2c0d132">  260</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#ad034b3115e6c4dbc06fe1480b2c0d132">featkSolverBase&lt;Dimension, Order&gt;::getGlobalVectorFromElements</a>(VectorXd (*getElementVector)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;std::size_t&gt;), std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element : this-&gt;mesh-&gt;<a class="code" href="classfeatk_mesh.html#a95b8afe36ac6f2bfb537e20f8bc0cc86">getElements</a>()) {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        std::vector&lt;size_t&gt; elementDOFs;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classfeatk_node.html">featkNode&lt;Dimension&gt;</a>* node : element-&gt;getNodes()) {</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    VectorXd f = VectorXd::Zero(this-&gt;numberOfDOFs);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dof=0; dof!=this-&gt;dofsPerNode; dof++) {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element : this-&gt;mesh-&gt;<a class="code" href="classfeatk_mesh.html#a95b8afe36ac6f2bfb537e20f8bc0cc86">getElements</a>()) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        VectorXd elementVector = getElementVector(element, attributeIDs);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classfeatk_node.html">featkNode&lt;Dimension&gt;</a>* node : element-&gt;getNodes()) {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dof=0; dof!=this-&gt;dofsPerNode; dof++) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                f(DOF_ID&lt;Dimension, Order&gt;(node-&gt;getID(), dof), 0) += elementVector(i, 0);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                i++;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">return</span> f;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                elementDOFs.push_back(DOF_ID&lt;Dimension, Order&gt;(node-&gt;getID(), dof));</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        MatrixXd elementMatrix = getElementMatrix(element, attributeIDs);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i!=elementDOFs.size(); i++) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j!=elementDOFs.size(); j++) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordtype">size_t</span> k = elementDOFs[i];</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordtype">size_t</span> l = elementDOFs[j];</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                coefficients[k][l] += elementMatrix(i, j);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">  283</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">featkSolverBase&lt;Dimension, Order&gt;::initialize</a>() {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">  288</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">featkSolverBase&lt;Dimension, Order&gt;::update</a>() {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    std::vector&lt;Triplet&lt;double, size_t&gt;&gt; triplets;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;a : coefficients) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordtype">size_t</span> i = a.first;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;b : a.second) {</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    this-&gt;initialize();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    this-&gt;solve();</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">  295</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">featkSolverBase&lt;Dimension, Order&gt;::setEssentialBoundaryConditions</a>(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions) {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    this-&gt;essentialBoundaryConditions = conditions;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">  301</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">featkSolverBase&lt;Dimension, Order&gt;::setInputMesh</a>(<a class="code" href="classfeatk_mesh.html">featkMesh&lt;Dimension&gt;</a>* mesh) {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    this-&gt;mesh = mesh;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    this-&gt;numberOfDOFs = mesh-&gt;<a class="code" href="classfeatk_mesh.html#ab880c3fac2edb84a8c5093094f3652ad">getNumberOfNodes</a>()*this-&gt;dofsPerNode;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
-<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">  308</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">featkSolverBase&lt;Dimension, Order&gt;::setNaturalBoundaryConditions</a>(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions) {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    this-&gt;naturalBoundaryConditions = conditions;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif // FEATKSOLVERBASE_H</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordtype">size_t</span> j = b.first;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            triplets.push_back(Triplet&lt;double, size_t&gt;(i, j, b.second));</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    SparseMatrix&lt;double&gt; k(this-&gt;numberOfDOFs, this-&gt;numberOfDOFs);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    k.setFromTriplets(triplets.begin(), triplets.end());</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">return</span> k;  <span class="comment">// Make sure NRVO is applied here to avoid copying a huge Eigen::SparseMatrix</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">  302</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">featkSolverBase&lt;Dimension, Order&gt;::getGlobalVectorFromNBCs</a>() {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    VectorXd f = VectorXd::Zero(this-&gt;numberOfDOFs);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : this-&gt;naturalBoundaryConditions-&gt;getNonZeroDOFValues()) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        f(pair.first, 0) = pair.second;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#ad034b3115e6c4dbc06fe1480b2c0d132">  315</a></span>&#160;VectorXd <a class="code" href="classfeatk_solver_base.html#ad034b3115e6c4dbc06fe1480b2c0d132">featkSolverBase&lt;Dimension, Order&gt;::getGlobalVectorFromElements</a>(VectorXd (*getElementVector)(<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>*, std::vector&lt;std::size_t&gt;), std::vector&lt;size_t&gt; attributeIDs) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    VectorXd f = VectorXd::Zero(this-&gt;numberOfDOFs);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classfeatk_element_interface.html">featkElementInterface&lt;Dimension&gt;</a>* element : this-&gt;mesh-&gt;<a class="code" href="classfeatk_mesh.html#a95b8afe36ac6f2bfb537e20f8bc0cc86">getElements</a>()) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        VectorXd elementVector = getElementVector(element, attributeIDs);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classfeatk_node.html">featkNode&lt;Dimension&gt;</a>* node : element-&gt;getNodes()) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dof=0; dof!=this-&gt;dofsPerNode; dof++) {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                f(DOF_ID&lt;Dimension, Order&gt;(node-&gt;getID(), dof), 0) += elementVector(i, 0);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                i++;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">  338</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">featkSolverBase&lt;Dimension, Order&gt;::initialize</a>() {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">  343</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">featkSolverBase&lt;Dimension, Order&gt;::update</a>() {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    this-&gt;initialize();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    this-&gt;solve();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">  350</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">featkSolverBase&lt;Dimension, Order&gt;::setEssentialBoundaryConditions</a>(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions) {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    this-&gt;essentialBoundaryConditions = conditions;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">  356</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">featkSolverBase&lt;Dimension, Order&gt;::setInputMesh</a>(<a class="code" href="classfeatk_mesh.html">featkMesh&lt;Dimension&gt;</a>* mesh) {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    this-&gt;mesh = mesh;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    this-&gt;numberOfDOFs = mesh-&gt;<a class="code" href="classfeatk_mesh.html#ab880c3fac2edb84a8c5093094f3652ad">getNumberOfNodes</a>()*this-&gt;dofsPerNode;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Order&gt;</div>
+<div class="line"><a name="l00363"></a><span class="lineno"><a class="line" href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">  363</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">featkSolverBase&lt;Dimension, Order&gt;::setNaturalBoundaryConditions</a>(<a class="code" href="classfeatk_boundary_conditions.html">featkBoundaryConditions&lt;Dimension, Order&gt;</a>* conditions) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    this-&gt;naturalBoundaryConditions = conditions;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#endif // FEATKSOLVERBASE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="afeatk_global_system_matrix_pruner_8h_html"><div class="ttname"><a href="featk_global_system_matrix_pruner_8h.html">featkGlobalSystemMatrixPruner.h</a></div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_ad43c59b5d0d0dd7e829b8930786463ea"><div class="ttname"><a href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">featkSolverBase::numberOfDOFs</a></div><div class="ttdeci">size_t numberOfDOFs</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:59</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_af3f9d6456e8514fe688bd4a9bdff49f8"><div class="ttname"><a href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">featkSolverBase::applyEBCToGlobalSystemMatrix</a></div><div class="ttdeci">void applyEBCToGlobalSystemMatrix(SparseMatrix&lt; double &gt; &amp;k)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:155</div></div>
-<div class="ttc" id="aclassfeatk_node_html"><div class="ttname"><a href="classfeatk_node.html">featkNode</a></div><div class="ttdoc">element node with its attributes including cartesian coordinates.</div><div class="ttdef"><b>Definition:</b> featkElement.h:64</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_ab93ed757fa4093bdda04c50faa0d7a81"><div class="ttname"><a href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">featkSolverBase::getElementBtBIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementBtBIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:63</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a4dfe15b97477ec9dd3c3e929b639cbdb"><div class="ttname"><a href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">featkSolverBase::naturalBoundaryConditions</a></div><div class="ttdeci">featkBoundaryConditions&lt; Dimension, Order &gt; * naturalBoundaryConditions</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:58</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a4aea0c1bae6c8e52fee47fe2931cdc24"><div class="ttname"><a href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">featkSolverBase::essentialBoundaryConditions</a></div><div class="ttdeci">featkBoundaryConditions&lt; Dimension, Order &gt; * essentialBoundaryConditions</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:56</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_ad43c59b5d0d0dd7e829b8930786463ea"><div class="ttname"><a href="classfeatk_solver_base.html#ad43c59b5d0d0dd7e829b8930786463ea">featkSolverBase::numberOfDOFs</a></div><div class="ttdeci">size_t numberOfDOFs</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:114</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_af3f9d6456e8514fe688bd4a9bdff49f8"><div class="ttname"><a href="classfeatk_solver_base.html#af3f9d6456e8514fe688bd4a9bdff49f8">featkSolverBase::applyEBCToGlobalSystemMatrix</a></div><div class="ttdeci">void applyEBCToGlobalSystemMatrix(SparseMatrix&lt; double &gt; &amp;k)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:210</div></div>
+<div class="ttc" id="aclassfeatk_node_html"><div class="ttname"><a href="classfeatk_node.html">featkNode</a></div><div class="ttdoc">Node with its attributes including coordinates in Dimension cartesian dimensions.</div><div class="ttdef"><b>Definition:</b> featkElement.h:64</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_ab93ed757fa4093bdda04c50faa0d7a81"><div class="ttname"><a href="classfeatk_solver_base.html#ab93ed757fa4093bdda04c50faa0d7a81">featkSolverBase::getElementBtBIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementBtBIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:118</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a4dfe15b97477ec9dd3c3e929b639cbdb"><div class="ttname"><a href="classfeatk_solver_base.html#a4dfe15b97477ec9dd3c3e929b639cbdb">featkSolverBase::naturalBoundaryConditions</a></div><div class="ttdeci">featkBoundaryConditions&lt; Dimension, Order &gt; * naturalBoundaryConditions</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:113</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a4aea0c1bae6c8e52fee47fe2931cdc24"><div class="ttname"><a href="classfeatk_solver_base.html#a4aea0c1bae6c8e52fee47fe2931cdc24">featkSolverBase::essentialBoundaryConditions</a></div><div class="ttdeci">featkBoundaryConditions&lt; Dimension, Order &gt; * essentialBoundaryConditions</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:111</div></div>
 <div class="ttc" id="aclassfeatk_mesh_html_a95b8afe36ac6f2bfb537e20f8bc0cc86"><div class="ttname"><a href="classfeatk_mesh.html#a95b8afe36ac6f2bfb537e20f8bc0cc86">featkMesh::getElements</a></div><div class="ttdeci">const std::vector&lt; featkElementInterface&lt; Dimension &gt; * &gt; &amp; getElements() const</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a7fe7470913ee48379aded437886c9408"><div class="ttname"><a href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">featkSolverBase::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:288</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a7fe7470913ee48379aded437886c9408"><div class="ttname"><a href="classfeatk_solver_base.html#a7fe7470913ee48379aded437886c9408">featkSolverBase::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:343</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_a399f19e184c3deda54bc6b86f5a1d8af"><div class="ttname"><a href="classfeatk_element_interface.html#a399f19e184c3deda54bc6b86f5a1d8af">featkElementInterface::getNtNIntegralMatrix</a></div><div class="ttdeci">MatrixXd getNtNIntegralMatrix() const</div></div>
 <div class="ttc" id="aclassfeatk_global_system_matrix_pruner_html"><div class="ttname"><a href="classfeatk_global_system_matrix_pruner.html">featkGlobalSystemMatrixPruner</a></div><div class="ttdoc">Eigen::SparseMatrix pruner for EBC modification of the global system matrix.</div><div class="ttdef"><b>Definition:</b> featkGlobalSystemMatrixPruner.h:43</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html"><div class="ttname"><a href="classfeatk_element_interface.html">featkElementInterface&lt; Dimension &gt;</a></div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a1b5ec078479de017ddcd37e4e03cec0b"><div class="ttname"><a href="classfeatk_solver_base.html#a1b5ec078479de017ddcd37e4e03cec0b">featkSolverBase::getEBCModifiedGlobalSystemVector</a></div><div class="ttdeci">VectorXd getEBCModifiedGlobalSystemVector(const SparseMatrix&lt; double &gt; &amp;k, const VectorXd &amp;vector)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:179</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a9e81f8244afefc5f3fe183c3de12a19f"><div class="ttname"><a href="classfeatk_solver_base.html#a9e81f8244afefc5f3fe183c3de12a19f">featkSolverBase::getElementNtCNQNQIntegralVector</a></div><div class="ttdeci">static VectorXd getElementNtCNQNQIntegralVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:93</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a1b5ec078479de017ddcd37e4e03cec0b"><div class="ttname"><a href="classfeatk_solver_base.html#a1b5ec078479de017ddcd37e4e03cec0b">featkSolverBase::getEBCModifiedGlobalSystemVector</a></div><div class="ttdeci">VectorXd getEBCModifiedGlobalSystemVector(const SparseMatrix&lt; double &gt; &amp;k, const VectorXd &amp;vector)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:234</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a9e81f8244afefc5f3fe183c3de12a19f"><div class="ttname"><a href="classfeatk_solver_base.html#a9e81f8244afefc5f3fe183c3de12a19f">featkSolverBase::getElementNtCNQNQIntegralVector</a></div><div class="ttdeci">static VectorXd getElementNtCNQNQIntegralVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:148</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_ab201d50b27a255076054ebd0625267b9"><div class="ttname"><a href="classfeatk_element_interface.html#ab201d50b27a255076054ebd0625267b9">featkElementInterface::getBtBIntegralMatrix</a></div><div class="ttdeci">MatrixXd getBtBIntegralMatrix() const</div></div>
 <div class="ttc" id="afeatk_utils_8h_html_a9f2f94eb8cb9804cf3c8b90780b8b8f7"><div class="ttname"><a href="featk_utils_8h.html#a9f2f94eb8cb9804cf3c8b90780b8b8f7">POWER</a></div><div class="ttdeci">constexpr unsigned int POWER(const unsigned int a, const unsigned int b)</div><div class="ttdef"><b>Definition:</b> featkUtils.h:42</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a1e647d7c36bd4de869d8a30b93808bdb"><div class="ttname"><a href="classfeatk_solver_base.html#a1e647d7c36bd4de869d8a30b93808bdb">featkSolverBase::getGlobalMatrixFromElements</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; getGlobalMatrixFromElements(MatrixXd(*getElementMatrix)(featkElementInterface&lt; Dimension &gt; *, std::vector&lt; size_t &gt;), std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:197</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_ad034b3115e6c4dbc06fe1480b2c0d132"><div class="ttname"><a href="classfeatk_solver_base.html#ad034b3115e6c4dbc06fe1480b2c0d132">featkSolverBase::getGlobalVectorFromElements</a></div><div class="ttdeci">VectorXd getGlobalVectorFromElements(VectorXd(*getElementVector)(featkElementInterface&lt; Dimension &gt; *, std::vector&lt; size_t &gt;), std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:260</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a8adc2ca6eb0b50f7ddf99b031150f5a5"><div class="ttname"><a href="classfeatk_solver_base.html#a8adc2ca6eb0b50f7ddf99b031150f5a5">featkSolverBase::mesh</a></div><div class="ttdeci">featkMesh&lt; Dimension &gt; * mesh</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:57</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a0041283d0bbb41b0955e511469ce3b65"><div class="ttname"><a href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">featkSolverBase::initialize</a></div><div class="ttdeci">virtual void initialize()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:283</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a1e647d7c36bd4de869d8a30b93808bdb"><div class="ttname"><a href="classfeatk_solver_base.html#a1e647d7c36bd4de869d8a30b93808bdb">featkSolverBase::getGlobalMatrixFromElements</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; getGlobalMatrixFromElements(MatrixXd(*getElementMatrix)(featkElementInterface&lt; Dimension &gt; *, std::vector&lt; size_t &gt;), std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:252</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_ad034b3115e6c4dbc06fe1480b2c0d132"><div class="ttname"><a href="classfeatk_solver_base.html#ad034b3115e6c4dbc06fe1480b2c0d132">featkSolverBase::getGlobalVectorFromElements</a></div><div class="ttdeci">VectorXd getGlobalVectorFromElements(VectorXd(*getElementVector)(featkElementInterface&lt; Dimension &gt; *, std::vector&lt; size_t &gt;), std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:315</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a8adc2ca6eb0b50f7ddf99b031150f5a5"><div class="ttname"><a href="classfeatk_solver_base.html#a8adc2ca6eb0b50f7ddf99b031150f5a5">featkSolverBase::mesh</a></div><div class="ttdeci">featkMesh&lt; Dimension &gt; * mesh</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:112</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a0041283d0bbb41b0955e511469ce3b65"><div class="ttname"><a href="classfeatk_solver_base.html#a0041283d0bbb41b0955e511469ce3b65">featkSolverBase::initialize</a></div><div class="ttdeci">virtual void initialize()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:338</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_a799fbae238800d29db63f1f66d9db396"><div class="ttname"><a href="classfeatk_element_interface.html#a799fbae238800d29db63f1f66d9db396">featkElementInterface::getNtCNQNQIntegralVector</a></div><div class="ttdeci">VectorXd getNtCNQNQIntegralVector(size_t elementAttributeID, size_t nodeAttributeID) const</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a883aec10ce056013213544e3fe8f83f6"><div class="ttname"><a href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">featkSolverBase::getElementBtCBIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementBtCBIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:69</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a883aec10ce056013213544e3fe8f83f6"><div class="ttname"><a href="classfeatk_solver_base.html#a883aec10ce056013213544e3fe8f83f6">featkSolverBase::getElementBtCBIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementBtCBIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:124</div></div>
 <div class="ttc" id="afeatk_boundary_conditions_8h_html"><div class="ttname"><a href="featk_boundary_conditions_8h.html">featkBoundaryConditions.h</a></div></div>
 <div class="ttc" id="aclassfeatk_mesh_html_ab880c3fac2edb84a8c5093094f3652ad"><div class="ttname"><a href="classfeatk_mesh.html#ab880c3fac2edb84a8c5093094f3652ad">featkMesh::getNumberOfNodes</a></div><div class="ttdeci">size_t getNumberOfNodes() const</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_a06fe4aa7abe91f2430a2e81e295c43c6"><div class="ttname"><a href="classfeatk_element_interface.html#a06fe4aa7abe91f2430a2e81e295c43c6">featkElementInterface::getBtCBIntegralMatrix</a></div><div class="ttdeci">MatrixXd getBtCBIntegralMatrix(size_t elementAttributeID) const</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a9715b26b63dbc80aa699fe764f2df2ed"><div class="ttname"><a href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">featkSolverBase::setNaturalBoundaryConditions</a></div><div class="ttdeci">void setNaturalBoundaryConditions(featkBoundaryConditions&lt; Dimension, Order &gt; *conditions)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:308</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_afe343cdc42980d3d3719a142d3f3379e"><div class="ttname"><a href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">featkSolverBase::setEssentialBoundaryConditions</a></div><div class="ttdeci">void setEssentialBoundaryConditions(featkBoundaryConditions&lt; Dimension, Order &gt; *conditions)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:295</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html"><div class="ttname"><a href="classfeatk_solver_base.html">featkSolverBase</a></div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:15</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a9715b26b63dbc80aa699fe764f2df2ed"><div class="ttname"><a href="classfeatk_solver_base.html#a9715b26b63dbc80aa699fe764f2df2ed">featkSolverBase::setNaturalBoundaryConditions</a></div><div class="ttdeci">void setNaturalBoundaryConditions(featkBoundaryConditions&lt; Dimension, Order &gt; *conditions)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:363</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_afe343cdc42980d3d3719a142d3f3379e"><div class="ttname"><a href="classfeatk_solver_base.html#afe343cdc42980d3d3719a142d3f3379e">featkSolverBase::setEssentialBoundaryConditions</a></div><div class="ttdeci">void setEssentialBoundaryConditions(featkBoundaryConditions&lt; Dimension, Order &gt; *conditions)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:350</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html"><div class="ttname"><a href="classfeatk_solver_base.html">featkSolverBase</a></div><div class="ttdoc">Base class for finite element solvers in Dimension dimensions.</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:70</div></div>
 <div class="ttc" id="afeatk_mesh_8h_html"><div class="ttname"><a href="featk_mesh_8h.html">featkMesh.h</a></div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a5397e507c22be3a8354d5b0948f287c7"><div class="ttname"><a href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">featkSolverBase::getGlobalVectorFromNBCs</a></div><div class="ttdeci">VectorXd getGlobalVectorFromNBCs()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:247</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a8ff2d3abd6a6d1b9cd6d6aecb43aa38d"><div class="ttname"><a href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">featkSolverBase::~featkSolverBase</a></div><div class="ttdeci">virtual ~featkSolverBase()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:115</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a01b35a8f420e87d2a4bdfe318cf5504c"><div class="ttname"><a href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">featkSolverBase::getEBCModifiedGlobalSystemMatrix</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; getEBCModifiedGlobalSystemMatrix(const SparseMatrix&lt; double &gt; &amp;matrix)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:188</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a0ee603c57d2d0c5e6f4494df6122cacb"><div class="ttname"><a href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">featkSolverBase::featkSolverBase</a></div><div class="ttdeci">featkSolverBase()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:106</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a5397e507c22be3a8354d5b0948f287c7"><div class="ttname"><a href="classfeatk_solver_base.html#a5397e507c22be3a8354d5b0948f287c7">featkSolverBase::getGlobalVectorFromNBCs</a></div><div class="ttdeci">VectorXd getGlobalVectorFromNBCs()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:302</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a8ff2d3abd6a6d1b9cd6d6aecb43aa38d"><div class="ttname"><a href="classfeatk_solver_base.html#a8ff2d3abd6a6d1b9cd6d6aecb43aa38d">featkSolverBase::~featkSolverBase</a></div><div class="ttdeci">virtual ~featkSolverBase()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:170</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a01b35a8f420e87d2a4bdfe318cf5504c"><div class="ttname"><a href="classfeatk_solver_base.html#a01b35a8f420e87d2a4bdfe318cf5504c">featkSolverBase::getEBCModifiedGlobalSystemMatrix</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; getEBCModifiedGlobalSystemMatrix(const SparseMatrix&lt; double &gt; &amp;matrix)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:243</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a0ee603c57d2d0c5e6f4494df6122cacb"><div class="ttname"><a href="classfeatk_solver_base.html#a0ee603c57d2d0c5e6f4494df6122cacb">featkSolverBase::featkSolverBase</a></div><div class="ttdeci">featkSolverBase()</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:161</div></div>
 <div class="ttc" id="afeatk_utils_8h_html"><div class="ttname"><a href="featk_utils_8h.html">featkUtils.h</a></div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_ab499bcda6e59b964dec72a98efa7f213"><div class="ttname"><a href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">featkSolverBase::getElementQVector</a></div><div class="ttdeci">static VectorXd getElementQVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:99</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a5fc391413272656fb781bfb2ca726164"><div class="ttname"><a href="classfeatk_solver_base.html#a5fc391413272656fb781bfb2ca726164">featkSolverBase::applyEBCToGlobalSystemVector</a></div><div class="ttdeci">void applyEBCToGlobalSystemVector(const SparseMatrix&lt; double &gt; &amp;globalStiffnessMatrix, VectorXd &amp;f)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:128</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_ab499bcda6e59b964dec72a98efa7f213"><div class="ttname"><a href="classfeatk_solver_base.html#ab499bcda6e59b964dec72a98efa7f213">featkSolverBase::getElementQVector</a></div><div class="ttdeci">static VectorXd getElementQVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:154</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a5fc391413272656fb781bfb2ca726164"><div class="ttname"><a href="classfeatk_solver_base.html#a5fc391413272656fb781bfb2ca726164">featkSolverBase::applyEBCToGlobalSystemVector</a></div><div class="ttdeci">void applyEBCToGlobalSystemVector(const SparseMatrix&lt; double &gt; &amp;globalStiffnessMatrix, VectorXd &amp;f)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:183</div></div>
 <div class="ttc" id="aclassfeatk_boundary_conditions_html"><div class="ttname"><a href="classfeatk_boundary_conditions.html">featkBoundaryConditions</a></div><div class="ttdoc">Boundary conditions for finite element problems.</div><div class="ttdef"><b>Definition:</b> featkBoundaryConditions.h:49</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_aded936225715319a2085db1832f23258"><div class="ttname"><a href="classfeatk_solver_base.html#aded936225715319a2085db1832f23258">featkSolverBase::getElementNtCNIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementNtCNIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:75</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_aba8221a496b3916d584f513e1ba04711"><div class="ttname"><a href="classfeatk_solver_base.html#aba8221a496b3916d584f513e1ba04711">featkSolverBase::getElementNtNIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementNtNIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:81</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_aded936225715319a2085db1832f23258"><div class="ttname"><a href="classfeatk_solver_base.html#aded936225715319a2085db1832f23258">featkSolverBase::getElementNtCNIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementNtCNIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:130</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_aba8221a496b3916d584f513e1ba04711"><div class="ttname"><a href="classfeatk_solver_base.html#aba8221a496b3916d584f513e1ba04711">featkSolverBase::getElementNtNIntegralMatrix</a></div><div class="ttdeci">static MatrixXd getElementNtNIntegralMatrix(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:136</div></div>
 <div class="ttc" id="aclassfeatk_mesh_html"><div class="ttname"><a href="classfeatk_mesh.html">featkMesh&lt; Dimension &gt;</a></div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a431ebf925af4f4284e2cddda68ff01bc"><div class="ttname"><a href="classfeatk_solver_base.html#a431ebf925af4f4284e2cddda68ff01bc">featkSolverBase::getElementNtNQIntegralVector</a></div><div class="ttdeci">static VectorXd getElementNtNQIntegralVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:87</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a431ebf925af4f4284e2cddda68ff01bc"><div class="ttname"><a href="classfeatk_solver_base.html#a431ebf925af4f4284e2cddda68ff01bc">featkSolverBase::getElementNtNQIntegralVector</a></div><div class="ttdeci">static VectorXd getElementNtNQIntegralVector(featkElementInterface&lt; Dimension &gt; *element, std::vector&lt; size_t &gt; attributeIDs)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:142</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_af673d2064cfcf0ce55f5ea22c8e2afb4"><div class="ttname"><a href="classfeatk_element_interface.html#af673d2064cfcf0ce55f5ea22c8e2afb4">featkElementInterface::getQVector</a></div><div class="ttdeci">VectorXd getQVector(size_t nodeAttributeID) const</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_a705c3c0af6828c5502c26ba6b6dcaff7"><div class="ttname"><a href="classfeatk_solver_base.html#a705c3c0af6828c5502c26ba6b6dcaff7">featkSolverBase::applyEBC</a></div><div class="ttdeci">void applyEBC(SparseMatrix&lt; double &gt; &amp;k, VectorXd &amp;f)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:121</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_a705c3c0af6828c5502c26ba6b6dcaff7"><div class="ttname"><a href="classfeatk_solver_base.html#a705c3c0af6828c5502c26ba6b6dcaff7">featkSolverBase::applyEBC</a></div><div class="ttdeci">void applyEBC(SparseMatrix&lt; double &gt; &amp;k, VectorXd &amp;f)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:176</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_a6f6aef4f187940116b6e71ea80a6763f"><div class="ttname"><a href="classfeatk_element_interface.html#a6f6aef4f187940116b6e71ea80a6763f">featkElementInterface::getNtNQIntegralVector</a></div><div class="ttdeci">VectorXd getNtNQIntegralVector(size_t nodeAttributeID) const</div></div>
 <div class="ttc" id="aclassfeatk_element_interface_html_ab0c093072ff1b0e0fc29434a1f95e181"><div class="ttname"><a href="classfeatk_element_interface.html#ab0c093072ff1b0e0fc29434a1f95e181">featkElementInterface::getNtCNIntegralMatrix</a></div><div class="ttdeci">MatrixXd getNtCNIntegralMatrix(size_t elementAttributeID) const</div></div>
-<div class="ttc" id="aclassfeatk_solver_base_html_adc70d05c4b96b069053fcbbe91525dd8"><div class="ttname"><a href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">featkSolverBase::setInputMesh</a></div><div class="ttdeci">void setInputMesh(featkMesh&lt; Dimension &gt; *mesh)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:301</div></div>
+<div class="ttc" id="aclassfeatk_solver_base_html_adc70d05c4b96b069053fcbbe91525dd8"><div class="ttname"><a href="classfeatk_solver_base.html#adc70d05c4b96b069053fcbbe91525dd8">featkSolverBase::setInputMesh</a></div><div class="ttdeci">void setInputMesh(featkMesh&lt; Dimension &gt; *mesh)</div><div class="ttdef"><b>Definition:</b> featkSolverBase.h:356</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -65,7 +65,7 @@
  *
  *
  * See J. E. Flaherty, Finite Element Analysis: Chapter 4 - Finite Element
- * Approximation, p.24, Figure 4.5.2.
+ * Approximation, p. 24, Figure 4.5.2.
  *
  */
 

@@ -25,9 +25,10 @@
  *
  * featkIntegrationRuleBase is a base class for numerical integration rules.
  * featkIntegrationRuleBase is templated over unsigned integers NaturalCoordinates and
- * Points (see definitions below). Derived class constructor specializations
- * must initialize the inheritted member variable
- * featkIntegrationRuleInterface::pointsAndWeights accordingly.
+ * Points (see definitions below).
+ *
+ * Derived class constructor specializations must initialize the inheritted member
+ * variable featkIntegrationRuleInterface::pointsAndWeights accordingly.
  *
  * @tparam NaturalDimension The natural dimension of the rule integration
  * points.

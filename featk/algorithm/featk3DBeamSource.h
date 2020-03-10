@@ -1,7 +1,7 @@
 /*==========================================================================
 
   Program:   Finite Element Analysis Toolkit
-  Module:    featkBeamSource3D.h
+  Module:    featk3DBeamSource.h
 
   Copyright (c) Corentin Martens
   All rights reserved.
@@ -19,14 +19,14 @@
 
 /**
  *
- * @class featkBeamSource3D
+ * @class featk3DBeamSource
  *
  * @brief 3D beam mesh source.
  *
  */
 
-#ifndef FEATKBEAMSOURCE_H
-#define FEATKBEAMSOURCE_H
+#ifndef FEATK3DBEAMSOURCE_H
+#define FEATK3DBEAMSOURCE_H
 
 #include <featk/algorithm/featkMeshProducerBase.h>
 #include <featk/core/featkGlobal.h>
@@ -54,4 +54,4 @@ class FEATK_EXPORT featk3DBeamSource : public featkMeshProducerBase<3> {
         std::array<double, 3> spacing;
 };
 
-#endif // FEATKBEAMSOURCE_H
+#endif // FEATK3DBEAMSOURCE_H

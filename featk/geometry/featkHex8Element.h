@@ -75,7 +75,7 @@
  *
  *
  * See C. Felippa, Advanced Finite Element Methods: Chapter 11 - The 8-Node
- * Hexahedron, p.4, Tables 11.1-2, 2017.
+ * Hexahedron, p. 4, Tables 11.1-2, 2017.
  *
  */
 

@@ -2,7 +2,7 @@
 \label{classfeatk_node}\index{featkNode@{featkNode}}
 
 
-element node with its attributes including cartesian coordinates.  
+Node with its attributes including coordinates in Dimension cartesian dimensions.  
 
 
 
@@ -27,19 +27,21 @@ size\+\_\+t \mbox{\hyperlink{classfeatk_node_a9a1a17bbc94ad109aee989244249d985}{
 
 
 \doxysubsection{Detailed Description}
-element node with its attributes including cartesian coordinates. 
+Node with its attributes including coordinates in Dimension cartesian dimensions. 
 
-\mbox{\hyperlink{classfeatk_node}{featk\+Node}} encapsulates element node attributes including its cartesian coordinates in a Dimension dimensional space.
+\mbox{\hyperlink{classfeatk_node}{featk\+Node}} is the implementation of a node with its attributes including coordinates in Dimension cartesian dimensions.
 
-Attributes are stored as Eigen\+::\+Matrix\+Xd objects for ease but are accessed through Eigen\+::\+Matrix objects whose dimensions are fixed at compile time given the attribute order (0 for scalars, 1 for vectors, n for nth-\/order tensor). This ensures the adequacy of most Eigen\+::\+Matrix dimensions at compile time, limiting the risk of run time errors while benefiting from the template construction of Eigen.
+\mbox{\hyperlink{classfeatk_node}{featk\+Node}} stores a pointer to each \mbox{\hyperlink{classfeatk_element_interface}{featk\+Element\+Interface}} it belongs to for computational efficiency when evaluating node derivative quantities that need to be averaged over elements sharing this node.
 
-\mbox{\hyperlink{classfeatk_node}{featk\+Node}} object also store a pointer to each featk\+I\+Element it belongs to for computational efficiency.
+Each \mbox{\hyperlink{classfeatk_node}{featk\+Node}} must be given a unique id at construction time whose uniqueness is ensured by the user.
 
-Each node must be given a unique id at construction time whose uniqueness is ensured by the user.
-
+\begin{DoxyWarning}{Warning}
+\mbox{\hyperlink{classfeatk_node}{featk\+Node}} cartesian coordinates are automatically registered as a node attribute in the \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} constructor under name \char`\"{}\+Cartesian
+\+Coordinates\char`\"{}. Make sure not to assign node attribute of order 1 with name \char`\"{}\+Cartesian Coordinates\char`\"{} to \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} objects except if you intend to modify the \mbox{\hyperlink{classfeatk_mesh}{featk\+Mesh}} geometry.
+\end{DoxyWarning}
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em Dimension} & the number of cartesian dimensions of the node (1, 2, or 3). \\
+{\em Dimension} & The cartesian dimension of the node. \\
 \hline
 \end{DoxyTemplParams}
 

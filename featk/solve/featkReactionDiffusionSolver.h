@@ -1,3 +1,61 @@
+/*==========================================================================
+
+  Program:   Finite Element Analysis Toolkit
+  Module:    featkReactionDiffusionSolver.h
+
+  Copyright (c) Corentin Martens
+  All rights reserved.
+
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+     NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR
+     ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR
+     OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
+     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     OTHER DEALINGS IN THE SOFTWARE.
+
+==========================================================================*/
+
+/**
+
+ * @class featkReactionDiffusionSolver
+ *
+ * @brief Dynamic finite element solver for reaction-diffusion problems in
+ * Dimension dimensions.
+ *
+ * featkReactionDiffusionSolver is a dynamic finite element solver for
+ * reaction-diffusion problems with a logistic reaction term in Dimension
+ * dimensions.
+ *
+ * featkReactionDiffusionSolver solves
+ *
+ * \f[
+ *
+ * \begin{equation}
+ * \begin{cases}
+ * & \frac{\partial u(\bar{r}, t)}{\partial t} &= \bar{\nabla} \cdot \left( \bar{\bar{D}}(\bar{r}) \bar{\nabla} u(\bar{r}, t) \right) + \rho(\bar{r}) u(\bar{r}, t) \left( 1-u(\bar{r}, t) \right) \\
+ * & u(\bar{r}, 0) &= u_0(\bar{r}) \quad \forall \bar{r} \in \Omega \\
+ * & \left( \bar{\bar{D}}(\bar{r}) \bar{\nabla} u(\bar{r}, t) \right) \cdot \bar{n} &= 0 \quad \forall \bar{r} \in \partial \Omega
+ * \end{cases}
+ * \end{equation}
+ *
+ * \f]
+ *
+ * where \f$u(\bar{r}, t)\f$ is a normalized function of cartesian position
+ * \f$\bar{r}\f$ and time \f$t\f$ such that \f$u: \Omega \times \left[ 0, T
+ * \right] \to \left[ 0, 1 \right]; (\bar{r}, t) \mapsto u(\bar{r}, t)\f$
+ * where \f$\Omega \subset \mathbb{R}^{N}\f$ is the solving spatial domain
+ * and \f$T\f$ is the simulated time; \f$\bar{\bar{D}}(\bar{r})\f$ and
+ * \f$\rho(\bar{r})\f$ are respectively the value of the diffusion tensor
+ *  and proliferation rate at position \f$\bar{r}\f$; \f$\partial\Omega\f$
+ * is the boundary of \f$\Omega\f$; and \f$\bar{n}\f$ is the unit normal
+ * vector on \f$\partial \Omega\f$.
+ *
+ * @tparam Dimension The cartesian dimension of the problem.
+ *
+ */
+
 #ifndef FEATKREACTIONDIFFUSIONSOLVER_H
 #define FEATKREACTIONDIFFUSIONSOLVER_H
 

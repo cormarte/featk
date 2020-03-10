@@ -1,3 +1,44 @@
+/*==========================================================================
+
+  Program:   Finite Element Analysis Toolkit
+  Module:    featkMeshProducerBase.h
+
+  Copyright (c) Corentin Martens
+  All rights reserved.
+
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+     NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR
+     ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR
+     OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
+     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     OTHER DEALINGS IN THE SOFTWARE.
+
+==========================================================================*/
+
+/**
+ *
+ * @class featkMeshToVTKUnstructuredGridFilter
+ *
+ * @brief Filter for converting a featkMesh into a vtkUnstructuredGrid.
+ *
+ * featkMeshToVTKUnstructuredGridFilter is a filter that produces a
+ * vtkUnstructuredGrid from a featkMesh.
+ *
+ * featkMeshToVTKUnstructuredGridFilter translates featkNode coordinates
+ * into vtkPoints, featkElement node connectivity into vtkCell, and
+ * featkNode and featkElement attributes into vtkDoubleArray which are
+ * respectively assigned to the vtkPointData and vtkCellData of the output
+ * vtkUnstructuredGrid.
+ *
+ * @warning For now, only 3D featkMesh with featkTet4Element and/or
+ * featkHex8Element are supported.
+ *
+ * @tparam Dimension The cartesian dimension of the filter.
+ *
+ */
+
 #ifndef FEATKMESHTOVTKUNSTRUCTUREDGRIDFILTER_H
 #define FEATKMESHTOVTKUNSTRUCTUREDGRIDFILTER_H
 

@@ -23,14 +23,14 @@
  *
  * @brief Keast rule for numerical integration over the unit tetrahedron.
  *
- * featkKeastIntegrationRuleBase implements Keast rule for numerical
- * integration over a unit tetrahedron as proposed in P. Keast,
- * "Moderate-Degree Tetrahedral Quadrature Formulas," Comput. Methods. Appl.
- * Mech. Eng., vol. 55, no. 3, pp. 339-348, May 1986.
- * Constructor of featkKeastIntegrationRuleBase specializations initialize
- * the inheritted member variable
- * featkIntegrationRuleInterface::pointsAndWeights according to their Points
- * template parameter value.
+ * featkKeastIntegrationRule implements Keast rule for numerical integration
+ * over a unit tetrahedron as proposed in P. Keast, "Moderate-Degree
+ * Tetrahedral Quadrature Formulas," Comput. Methods. Appl. Mech. Eng., vol.
+ * 55, no. 3, pp. 339-348, May 1986.
+ *
+ * Constructor of featkKeastIntegrationRule specializations initialize the
+ * inheritted member variable featkIntegrationRuleInterface::pointsAndWeights
+ * according to their Points template parameter value.
  *
  * See J. E. Akin, Finite Element Analysis with Error Estimators: Chapter 10
  * - Integration Methods, p. 272, Table 10.4, 2005.

@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Base class for featk objects possessing attributes, i.e. <a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> and <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects with Dimension cartesian dimensions.">featkElementInterface</a>.  
+<p>Base class for featk objects possessing attributes, i.e. <a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> and <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects in Dimension cartesian dimensions.">featkElementInterface</a>.  
  <a href="classfeatk_attributable.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="featk_attributable_8h_source.html">featkAttributable.h</a>&gt;</code></p>
@@ -116,8 +116,8 @@ Friends</h2></td></tr>
 <div class="textblock"><h3>template&lt;unsigned int Dimension&gt;<br />
 class featkAttributable&lt; Dimension &gt;</h3>
 
-<p>Base class for featk objects possessing attributes, i.e. <a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> and <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects with Dimension cartesian dimensions.">featkElementInterface</a>. </p>
-<p><a class="el" href="classfeatk_attributable.html" title="Base class for featk objects possessing attributes, i.e. featkNode and featkElementInterface.">featkAttributable</a> is a base class for featk objects with attributes (<a class="el" href="classfeatk_node.html" title="element node with its attributes including cartesian coordinates.">featkNode</a> and <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects with Dimension cartesian dimensions.">featkElementInterface</a>), providing member variables and functions for attribute assignment, storage and access.</p>
+<p>Base class for featk objects possessing attributes, i.e. <a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> and <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects in Dimension cartesian dimensions.">featkElementInterface</a>. </p>
+<p><a class="el" href="classfeatk_attributable.html" title="Base class for featk objects possessing attributes, i.e. featkNode and featkElementInterface.">featkAttributable</a> is a base class for featk objects with attributes (<a class="el" href="classfeatk_node.html" title="Node with its attributes including coordinates in Dimension cartesian dimensions.">featkNode</a> and <a class="el" href="classfeatk_element_interface.html" title="Interface for featkElement objects in Dimension cartesian dimensions.">featkElementInterface</a>), providing member variables and functions for attribute assignment, storage and access.</p>
 <p>Attributes are stored as std::shared_ptr&lt;Eigen::MatrixXd&gt;. std::shared_ptr allows <a class="el" href="classfeatk_attributable.html" title="Base class for featk objects possessing attributes, i.e. featkNode and featkElementInterface.">featkAttributable</a> objects to share attributes without having to duplicate them nor to worry about memory mangement. Dynamic-sized Eigen::MatrixXd allows to store attributes of various Order seamlessly.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">

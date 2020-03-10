@@ -21,7 +21,7 @@
  *
  * @class featkElementInterface
  *
- * @brief Interface for featkElement objects with Dimension cartesian
+ * @brief Interface for featkElement objects in Dimension cartesian
  * dimensions.
  *
  * featkElementInterface is an interface allowing to handle featkElement
