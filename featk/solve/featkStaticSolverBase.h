@@ -82,10 +82,21 @@ void featkStaticSolverBase<Dimension, Order>::solve() {
 
     this->applyEBC(k, f);
 
+    /*k.makeCompressed();
+
+    SimplicialLDLT<SparseMatrix<double>, Lower> solver;
+    solver.compute(k);
+
+    if (solver.info() != Success) {
+
+        cout << "featkDynamicSolverBase: Warning: Global system matrix decomposition failed." << endl;
+    }*/
+
     ConjugateGradient<SparseMatrix<double>, Lower|Upper> solver;
     //solver.setTolerance(1.0e-8);
-     //solver.setMaxIterations(500);
+    //solver.setMaxIterations(500);
     solver.compute(k);
+
 
     VectorXd q = solver.solve(f);
 

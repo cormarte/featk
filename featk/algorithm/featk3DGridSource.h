@@ -1,7 +1,7 @@
 /*==========================================================================
 
   Program:   Finite Element Analysis Toolkit
-  Module:    featk3DBeamSource.h
+  Module:    featk3DGridSource.h
 
   Copyright (c) Corentin Martens
   All rights reserved.
@@ -19,14 +19,14 @@
 
 /**
  *
- * @class featk3DBeamSource
+ * @class featk3DGridSource
  *
- * @brief 3D beam mesh source.
+ * @brief 3D grid mesh source.
  *
  */
 
-#ifndef FEATK3DBEAMSOURCE_H
-#define FEATK3DBEAMSOURCE_H
+#ifndef FEATK3DGRIDSOURCE_H
+#define FEATK3DGRIDSOURCE_H
 
 #include <featk/algorithm/featkMeshProducerBase.h>
 #include <featk/core/featkGlobal.h>
@@ -34,24 +34,28 @@
 
 #include <array>
 
-class FEATK_EXPORT featk3DBeamSource : public featkMeshProducerBase<3> {
+class FEATK_EXPORT featk3DGridSource : public featkMeshProducerBase<3> {
 
     public:
 
-        featk3DBeamSource();
-        ~featk3DBeamSource();
+        featk3DGridSource();
+        ~featk3DGridSource();
 
         void execute();
 
         void setDimensions(std::array<unsigned int, 3> dimensions);
+        void setElementType(featkElementType type);
+        void setElementTypeToFEATKHex8();
+        void setElementTypeToFEATKTet4();
         void setOrigin(std::array<double, 3> origin);
         void setSpacing(std::array<double, 3> spacing);
 
     private:
 
         std::array<unsigned int, 3> dimensions;
+        featkElementType elementType;
         std::array<double, 3> origin;
         std::array<double, 3> spacing;
 };
 
-#endif // FEATK3DBEAMSOURCE_H
+#endif // FEATK3DGRIDSOURCE_H

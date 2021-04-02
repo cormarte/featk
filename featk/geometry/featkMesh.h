@@ -69,20 +69,24 @@ class featkMesh {
         const std::vector<featkNode<Dimension>*>& getNodes() const;
         size_t getNumberOfElements() const;
         size_t getNumberOfNodes() const;
-        void setElementAttributes(std::string name, unsigned int order, const std::vector<std::shared_ptr<MatrixXd>>& attributes);
+        void removeElementAttribute(std::string name);
+        void removeNodeAttribute(std::string name);
+        size_t setElementAttributes(std::string name, unsigned int order, const std::vector<std::shared_ptr<MatrixXd>>& attributes);
         size_t setElementAttributeFromValues(std::string name, unsigned int order, const MatrixXd& values);
-        void setNodeAttributes(std::string name, unsigned int order, const std::vector<std::shared_ptr<MatrixXd>>& attributes);
+        size_t setNodeAttributes(std::string name, unsigned int order, const std::vector<std::shared_ptr<MatrixXd>>& attributes);
         size_t setNodeAttributeFromValues(std::string name, unsigned int order, const MatrixXd& values);
 
     private:
 
         template<typename AttributeOwnerType> void addAttributes(const std::vector<AttributeOwnerType*>& items, size_t id, std::vector<std::shared_ptr<MatrixXd>> attributes) const;
         template<typename AttributeOwnerType> MatrixXd getAttributeValues(const std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, const std::vector<AttributeOwnerType*>& items, std::string name, unsigned int order) const;
+        template<typename AttributeOwnerType> void removeAttributes(const std::vector<AttributeOwnerType*>& items, size_t id) const;
         template<typename AttributeOwnerType> void setAttributes(const std::vector<AttributeOwnerType*>& items, size_t id, std::vector<std::shared_ptr<MatrixXd>> attributes) const;
 
         size_t getAttributeID(const std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, std::string name, unsigned int order) const;
         std::vector<std::shared_ptr<MatrixXd>> getAttributesFromValues(size_t items, unsigned int order, const MatrixXd& values) const;
         size_t registerAttribute(std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, size_t& attributeMaxID, std::string name, unsigned int order);
+        size_t unregisterAttribute(std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, std::string name);
 
         size_t elementAttributeMaxID;
         std::map<std::string, std::pair<size_t, unsigned int>> elementAttributeTable;
@@ -247,6 +251,16 @@ MatrixXd featkMesh<Dimension>::getAttributeValues(const std::map<std::string, st
     }
 
     return values;
+}
+
+template<unsigned int Dimension>
+template<typename AttributeOwnerType>
+void featkMesh<Dimension>::removeAttributes(const std::vector<AttributeOwnerType*>& items, size_t id) const {
+
+    for (size_t i=0; i!=items.size(); i++) {
+
+        items[i]->removeAttribute(id);
+    }
 }
 
 template<unsigned int Dimension>
@@ -472,11 +486,64 @@ size_t featkMesh<Dimension>::registerAttribute(std::map<std::string, std::pair<s
 }
 
 template<unsigned int Dimension>
+size_t featkMesh<Dimension>::unregisterAttribute(std::map<std::string, std::pair<size_t, unsigned int>>& attributeTable, std::string name) {
+
+    size_t id = 0;
+
+    if (attributeTable.count(name)) {
+
+        id = attributeTable[name].first;
+        attributeTable.erase(name);
+    }
+
+    return id;
+}
+
+template<unsigned int Dimension>
+void featkMesh<Dimension>::removeElementAttribute(std::string name) {
+
+    size_t id = this->unregisterAttribute(this->elementAttributeTable, name);
+
+    if (id) {
+
+        this->removeAttributes(this->elements, id);
+    }
+}
+
+template<unsigned int Dimension>
+void featkMesh<Dimension>::removeNodeAttribute(std::string name) {
+
+    size_t id = this->unregisterAttribute(this->nodeAttributeTable, name);
+
+    if (id) {
+
+        this->removeAttributes(this->nodes, id);
+    }
+}
+
+template<unsigned int Dimension>
+size_t featkMesh<Dimension>::setElementAttributes(std::string name, unsigned int order, const std::vector<std::shared_ptr<MatrixXd>>& attributes) {
+
+    size_t id = this->registerAttribute(this->elementAttributeTable, this->elementAttributeMaxID, name, order);
+    this->setAttributes(this->elements, id, attributes);
+
+    return id;
+}
+
+template<unsigned int Dimension>
 size_t featkMesh<Dimension>::setElementAttributeFromValues(std::string name, unsigned int order, const MatrixXd& values) {
 
     std::vector<std::shared_ptr<MatrixXd>> attributes = this->getAttributesFromValues(this->elements.size(), order, values);  // This must be checked before registering
-    size_t id = this->registerAttribute(this->elementAttributeTable, this->elementAttributeMaxID, name, order);
-    this->setAttributes(this->elements, id, attributes);
+    size_t id = this->setElementAttributes(name, order, attributes);
+
+    return id;
+}
+
+template<unsigned int Dimension>
+size_t featkMesh<Dimension>::setNodeAttributes(std::string name, unsigned int order, const std::vector<std::shared_ptr<MatrixXd>>& attributes) {
+
+    size_t id = this->registerAttribute(this->nodeAttributeTable, this->nodeAttributeMaxID, name, order);
+    this->setAttributes(this->nodes, id, attributes);
 
     return id;
 }
@@ -485,8 +552,7 @@ template<unsigned int Dimension>
 size_t featkMesh<Dimension>::setNodeAttributeFromValues(std::string name, unsigned int order, const MatrixXd& values) {
 
     std::vector<std::shared_ptr<MatrixXd>> attributes = this->getAttributesFromValues(this->nodes.size(), order, values);  // This must be checked before registering
-    size_t id = this->registerAttribute(this->nodeAttributeTable, this->nodeAttributeMaxID, name, order);
-    this->setAttributes(this->nodes, id, attributes);
+    size_t id = this->setNodeAttributes(name, order, attributes);
 
     return id;
 }

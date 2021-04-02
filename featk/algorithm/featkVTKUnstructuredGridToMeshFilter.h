@@ -50,7 +50,7 @@
 #include <vtkUnstructuredGrid.h>
 
 template<unsigned int Dimension>
-class featkVTKUnstructuredGridToMeshFilter : public featkMeshProducerBase<3> {
+class featkVTKUnstructuredGridToMeshFilter : public featkMeshProducerBase<Dimension> {
 
     public:
 

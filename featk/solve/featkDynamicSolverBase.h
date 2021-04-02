@@ -66,6 +66,7 @@ class featkDynamicSolverBase : public featkSolverBase<Dimension, Order> {
 
         void solve();
 
+        void setDoCutoff(bool doCutoff);
         void setDoLowerCutoff(bool doCutoff);
         void setDoUpperCutoff(bool doCutoff);
         void setIntermediateProcessIterations(std::vector<unsigned int> iterations);
@@ -114,6 +115,13 @@ featkDynamicSolverBase<Dimension, Order>::~featkDynamicSolverBase() {
 template<unsigned int Dimension, unsigned int Order>
 void featkDynamicSolverBase<Dimension, Order>::intermediateProcess(const VectorXd &u, unsigned int iteration) {
 
+}
+
+template<unsigned int Dimension, unsigned int Order>
+void featkDynamicSolverBase<Dimension, Order>::setDoCutoff(bool doCutoff) {
+
+    this->doLowerCutoff = doCutoff;
+    this->doUpperCutoff = doCutoff;
 }
 
 template<unsigned int Dimension, unsigned int Order>
@@ -170,7 +178,18 @@ void featkDynamicSolverBase<Dimension, Order>::solve() {
 
     cout << "featkDynamicSolverBase: Info: System matrix density is " << globalSystemMatrix.nonZeros() << "/" << this->numberOfDOFs*this->numberOfDOFs << "." << endl;
 
-    ConjugateGradient<SparseMatrix<double>, Lower|Upper> solver;  // Better performances can be achieved with a full matrix, hence 'Lower|Upper'. System matrix is self-adjoint since real symmetric.
+    /*k.makeCompressed();
+
+    SimplicialLLT<SparseMatrix<double>> solver;
+    solver.compute(k);
+
+    if (solver.info() != Success) {
+
+        cout << "featkDynamicSolverBase: Warning: Global system matrix decomposition failed." << endl;
+    }*/
+
+    //BiCGSTAB<SparseMatrix<double, RowMajor>> solver;  // OpenMP parallelized only for RowMajor. BiCGSTAB is more general than CG and works for all kind of matrices.
+    ConjugateGradient<SparseMatrix<double>, Lower|Upper> solver;  // Only for symmetric positive definite matrices, a bit faster than BiCGSTAB in this case.
     solver.compute(k);
 
     VectorXd u = this->getGlobalInitialVector();
@@ -178,9 +197,10 @@ void featkDynamicSolverBase<Dimension, Order>::solve() {
 
     for (unsigned int i=0; i!=this->numberOfIterations; i++) {
 
-        f = this->getGlobalSystemVector(u);  // Lower triangular matrices can also be used, then use m.selfadjointView<Lower>() * u and change solver template
+        f = this->getGlobalSystemVector(u);
         this->applyEBCToGlobalSystemVector(globalSystemMatrix, f);
         u = solver.solveWithGuess(f, u).head(this->numberOfDOFs);
+        //u = solver.solve(u).head(this->numberOfDOFs);
 
         if (this->doLowerCutoff) {
 
@@ -193,6 +213,7 @@ void featkDynamicSolverBase<Dimension, Order>::solve() {
         }
 
         cout << "featkDynamicSolverBase: Info: Iteration " << i+1 << "/" << this->numberOfIterations << " solved (" << solver.iterations() << " iterations, error: " << solver.error() << ")." << endl;
+        //cout << "featkDynamicSolverBase: Info: Iteration " << i+1 << "/" << this->numberOfIterations << " solved." << endl;
 
         if (find(this->intermediateProcessIterations.begin(), this->intermediateProcessIterations.end(), i) != this->intermediateProcessIterations.end()) {
 

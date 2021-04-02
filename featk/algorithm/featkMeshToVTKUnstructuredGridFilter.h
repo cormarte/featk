@@ -54,7 +54,7 @@
 #include <vtkSmartPointer.h>
 
 template<unsigned int Dimension>
-class featkMeshToVTKUnstructuredGridFilter : public featkMeshConsumerBase<3> {
+class featkMeshToVTKUnstructuredGridFilter : public featkMeshConsumerBase<Dimension> {
 
     public:
 

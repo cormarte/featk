@@ -71,19 +71,26 @@ class featkReactionDiffusionSolver final : public featkDynamicSolverBase<Dimensi
         featkReactionDiffusionSolver();
         ~featkReactionDiffusionSolver();
 
+        void setDiffusionElementAttributeName(std::string name);  // Check if attributes are valid and assign their IDs to vars
+        void setInputNodeAttributeName(std::string name);
+        void setOutputNodeAttributeName(std::string name);
+        void setReactionElementAttributeName(std::string name);
+        void setUseSpeedHack(bool use);
+
     protected:
 
         SparseMatrix<double> getGlobalSystemMatrix();
-        virtual VectorXd getGlobalInitialVector();
+        VectorXd getGlobalInitialVector();
         VectorXd getGlobalSystemVector(const VectorXd& u);
         void initialize();
         void intermediateProcess(const VectorXd& u, unsigned int iteration);
         void postProcess(const VectorXd& u);
 
-        std::string diffusionAttributeName;  // Check if attributes are valid and assign their IDs to vars
-        std::string inputAttributeName;
-        std::string outputAttributeName;
-        std::string reactionAttributeName;
+        std::string diffusionElementAttributeName;  // Check if attributes are valid and assign their IDs to vars
+        std::string inputNodeAttributeName;
+        std::string outputNodeAttributeName;
+        std::string reactionElementAttributeName;
+        bool useSpeedHack;
 
         SparseMatrix<double> m;
         SparseMatrix<double> d;
@@ -93,10 +100,11 @@ class featkReactionDiffusionSolver final : public featkDynamicSolverBase<Dimensi
 template<unsigned int Dimension>
 featkReactionDiffusionSolver<Dimension>::featkReactionDiffusionSolver() {
 
-    this->diffusionAttributeName = "Diffusion Tensor";
-    this->inputAttributeName = "Initial Cell Density";
-    this->outputAttributeName = "Final Cell Density";
-    this->reactionAttributeName = "Proliferation Rate";
+    this->diffusionElementAttributeName = "Diffusion Tensor";
+    this->inputNodeAttributeName = "Initial Cell Density";
+    this->outputNodeAttributeName = "Final Cell Density";
+    this->reactionElementAttributeName = "Proliferation Rate";
+    this->useSpeedHack = true;
 }
 
 template<unsigned int Dimension>
@@ -113,7 +121,7 @@ SparseMatrix<double> featkReactionDiffusionSolver<Dimension>::getGlobalSystemMat
 template<unsigned int Dimension>
 VectorXd featkReactionDiffusionSolver<Dimension>::getGlobalInitialVector() {
 
-    return this->mesh->getNodeAttributeValues(this->inputAttributeName, 0);
+    return this->mesh->getNodeAttributeValues(this->inputNodeAttributeName, 0);
 }
 
 template<unsigned int Dimension>
@@ -124,11 +132,21 @@ VectorXd featkReactionDiffusionSolver<Dimension>::getGlobalSystemVector(const Ve
         See Mocenni et al. 2011. for handling of polynomial reaction terms in FEM.
     */
 
-    size_t id = this->mesh->setNodeAttributeFromValues("tmp", 0, u);
-    VectorXd ru2 = this->getGlobalVectorFromElements(&featkReactionDiffusionSolver<Dimension>::getElementNtCNQNQIntegralVector, {this->mesh->getElementAttributeID(this->reactionAttributeName, 0), id});
-    return this->m*u + this->timeStep*(this->r*u-ru2);
+    VectorXd f;
 
-    //return this->m*u + this->timeStep*this->r*(u-u.cwiseProduct(u));
+    if (this->useSpeedHack) {
+
+        f = this->m*u + this->timeStep*this->r*(u-u.cwiseProduct(u));
+    }
+
+    else {
+
+        size_t id = this->mesh->setNodeAttributeFromValues("tmp", 0, u);
+        VectorXd ru2 = this->getGlobalVectorFromElements(&featkReactionDiffusionSolver<Dimension>::getElementNtCNQNQIntegralVector, {this->mesh->getElementAttributeID(this->reactionElementAttributeName, 0), id});
+        f = this->m*u + this->timeStep*(this->r*u-ru2);
+    }
+
+    return f;
 }
 
 template<unsigned int Dimension>
@@ -136,9 +154,9 @@ void featkReactionDiffusionSolver<Dimension>::initialize() {
 
     this->m = this->getGlobalMatrixFromElements(&featkReactionDiffusionSolver<Dimension>::getElementNtNIntegralMatrix, {});
     cout << "featkReactionDiffusionSolver: Info: M matrix assembled." << endl;
-    this->d = this->getGlobalMatrixFromElements(&featkReactionDiffusionSolver<Dimension>::getElementBtCBIntegralMatrix, {this->mesh->getElementAttributeID(this->diffusionAttributeName, 2)});
+    this->d = this->getGlobalMatrixFromElements(&featkReactionDiffusionSolver<Dimension>::getElementBtCBIntegralMatrix, {this->mesh->getElementAttributeID(this->diffusionElementAttributeName, 2)});
     cout << "featkReactionDiffusionSolver: Info: D matrix assembled." << endl;
-    this->r = this->getGlobalMatrixFromElements(&featkReactionDiffusionSolver<Dimension>::getElementNtCNIntegralMatrix, {this->mesh->getElementAttributeID(this->reactionAttributeName, 0)});
+    this->r = this->getGlobalMatrixFromElements(&featkReactionDiffusionSolver<Dimension>::getElementNtCNIntegralMatrix, {this->mesh->getElementAttributeID(this->reactionElementAttributeName, 0)});
     cout << "featkReactionDiffusionSolver: Info: R matrix assembled." << endl;
 }
 
@@ -146,16 +164,47 @@ template<unsigned int Dimension>
 void featkReactionDiffusionSolver<Dimension>::intermediateProcess(const VectorXd &u, unsigned int iteration) {
 
     std::ostringstream stream;
-    stream << fixed << std::setprecision(2) << iteration*this->timeStep;
+    stream << std::fixed << std::setprecision(2) << iteration*this->timeStep;
 
-    this->mesh->setNodeAttributeFromValues(this->outputAttributeName + " (" + stream.str() + ")", 0, u);
+    this->mesh->setNodeAttributeFromValues(this->outputNodeAttributeName + " (" + stream.str() + ")", 0, u);
 }
 
 template<unsigned int Dimension>
 void featkReactionDiffusionSolver<Dimension>::postProcess(const VectorXd& u) {
 
-    this->mesh->setNodeAttributeFromValues(this->outputAttributeName, 0, u);
-    this->mesh->computeNodeBQ<0>(this->outputAttributeName, this->outputAttributeName + " Gradient");
+    this->mesh->setNodeAttributeFromValues(this->outputNodeAttributeName, 0, u);
+    // this->mesh->computeNodeBQ<0>(this->outputNodeAttributeName, this->outputNodeAttributeName + " Gradient");  // No more perfmored here since gradient is zero along CSF boundaries
+}
+
+
+template<unsigned int Dimension>
+void featkReactionDiffusionSolver<Dimension>::setDiffusionElementAttributeName(std::string name) {
+
+    this->diffusionElementAttributeName = name;
+}
+
+template<unsigned int Dimension>
+void featkReactionDiffusionSolver<Dimension>::setInputNodeAttributeName(std::string name) {
+
+    this->inputNodeAttributeName = name;
+}
+
+template<unsigned int Dimension>
+void featkReactionDiffusionSolver<Dimension>::setOutputNodeAttributeName(std::string name) {
+
+    this->outputNodeAttributeName = name;
+}
+
+template<unsigned int Dimension>
+void featkReactionDiffusionSolver<Dimension>::setReactionElementAttributeName(std::string name) {
+
+    this->reactionElementAttributeName = name;
+}
+
+template<unsigned int Dimension>
+void featkReactionDiffusionSolver<Dimension>::setUseSpeedHack(bool use) {
+
+    this->useSpeedHack = use;
 }
 
 #endif // FEATKREACTIONDIFFUSIONSOLVER_H

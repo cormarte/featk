@@ -42,7 +42,7 @@
 #include <vector>
 
 template<unsigned int Dimension>
-class featkMeshProducerBase : public featkAlgorithmBase {
+class featkMeshProducerBase : public virtual featkAlgorithmBase {
 
     public:
 
