@@ -1,4 +1,7 @@
 build/
+docs/latex
+docs/logo
+docs/Doxyfile
 install/
 src/archive
 *.pro
