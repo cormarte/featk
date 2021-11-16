@@ -70,7 +70,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d4d4afa6cca00a96d67d076828ef4602.html">featk</a></li><li class="navelem"><a class="el" href="dir_b517978c535289570b82257c503c0d6f.html">geometry</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d4d4afa6cca00a96d67d076828ef4602.html">featk</a></li><li class="navelem"><a class="el" href="dir_f459508c6c6e1c345d89e79e17d6d432.html">src</a></li><li class="navelem"><a class="el" href="dir_07c139144b0e56a3f52f4fb501e33dfc.html">featk</a></li><li class="navelem"><a class="el" href="dir_9bc1949cfaaff338f15c8c60b5812023.html">geometry</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -124,50 +124,58 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classfeatk_attributable.html">featkAttributable</a>();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> addAttribute(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> setAttribute(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a21d44bcec7f63b4112a2db59dc355064">   70</a></span>&#160;        std::map&lt;size_t, std::shared_ptr&lt;MatrixXd&gt;&gt; <a class="code" href="classfeatk_attributable.html#a21d44bcec7f63b4112a2db59dc355064">attributes</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">   74</a></span>&#160;<a class="code" href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">featkAttributable&lt;Dimension&gt;::featkAttributable</a>() {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#ad548f4774968d887a8f06ca9afcd4271">   79</a></span>&#160;<a class="code" href="classfeatk_attributable.html#ad548f4774968d887a8f06ca9afcd4271">featkAttributable&lt;Dimension&gt;::~featkAttributable</a>() {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> removeAttribute(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> setAttribute(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a21d44bcec7f63b4112a2db59dc355064">   71</a></span>&#160;        std::map&lt;size_t, std::shared_ptr&lt;MatrixXd&gt;&gt; <a class="code" href="classfeatk_attributable.html#a21d44bcec7f63b4112a2db59dc355064">attributes</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">   75</a></span>&#160;<a class="code" href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">featkAttributable&lt;Dimension&gt;::featkAttributable</a>() {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#ad548f4774968d887a8f06ca9afcd4271">   80</a></span>&#160;<a class="code" href="classfeatk_attributable.html#ad548f4774968d887a8f06ca9afcd4271">featkAttributable&lt;Dimension&gt;::~featkAttributable</a>() {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">featkAttributable&lt;Dimension&gt;::addAttribute</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    (*this-&gt;attributes[id]) += (*attribute);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a56a7593089dd60442bb497c178bcbecd">   91</a></span>&#160;MatrixXd <a class="code" href="classfeatk_attributable.html#a56a7593089dd60442bb497c178bcbecd">featkAttributable&lt;Dimension&gt;::getAttributeValue</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> this-&gt;attributes.count(<span class="keywordtype">id</span>) ? *(this-&gt;attributes.at(<span class="keywordtype">id</span>)) : MatrixXd::Zero(1, 1);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">featkAttributable&lt;Dimension&gt;::setAttribute</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    this-&gt;attributes[id] = attribute;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif // FEATKATTRIBUTUTABLE_H</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">featkAttributable&lt;Dimension&gt;::addAttribute</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    (*this-&gt;attributes[id]) += (*attribute);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a56a7593089dd60442bb497c178bcbecd">   92</a></span>&#160;MatrixXd <a class="code" href="classfeatk_attributable.html#a56a7593089dd60442bb497c178bcbecd">featkAttributable&lt;Dimension&gt;::getAttributeValue</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> this-&gt;attributes.count(<span class="keywordtype">id</span>) ? *(this-&gt;attributes.at(<span class="keywordtype">id</span>)) : MatrixXd::Zero(1, 1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a77fdd6a646c41354a9b5137277087c46">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_attributable.html#a77fdd6a646c41354a9b5137277087c46">featkAttributable&lt;Dimension&gt;::removeAttribute</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    this-&gt;attributes.erase(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension&gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">  104</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">featkAttributable&lt;Dimension&gt;::setAttribute</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, std::shared_ptr&lt;MatrixXd&gt; attribute) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    this-&gt;attributes[id] = attribute;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif // FEATKATTRIBUTUTABLE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassfeatk_attributable_html_a77fdd6a646c41354a9b5137277087c46"><div class="ttname"><a href="classfeatk_attributable.html#a77fdd6a646c41354a9b5137277087c46">featkAttributable::removeAttribute</a></div><div class="ttdeci">void removeAttribute(size_t id)</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:98</div></div>
 <div class="ttc" id="aclassfeatk_attributable_html"><div class="ttname"><a href="classfeatk_attributable.html">featkAttributable</a></div><div class="ttdoc">Base class for featk objects possessing attributes, i.e. featkNode and featkElementInterface.</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:53</div></div>
-<div class="ttc" id="aclassfeatk_attributable_html_a9f81c4d17c432ab01ca1659cf7438bb3"><div class="ttname"><a href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">featkAttributable::featkAttributable</a></div><div class="ttdeci">featkAttributable()</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:74</div></div>
-<div class="ttc" id="aclassfeatk_attributable_html_a1548f3bc69eb35dd474a72a2cf94c507"><div class="ttname"><a href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">featkAttributable::setAttribute</a></div><div class="ttdeci">void setAttribute(size_t id, std::shared_ptr&lt; MatrixXd &gt; attribute)</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:97</div></div>
-<div class="ttc" id="aclassfeatk_attributable_html_a21d44bcec7f63b4112a2db59dc355064"><div class="ttname"><a href="classfeatk_attributable.html#a21d44bcec7f63b4112a2db59dc355064">featkAttributable::attributes</a></div><div class="ttdeci">std::map&lt; size_t, std::shared_ptr&lt; MatrixXd &gt; &gt; attributes</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:70</div></div>
-<div class="ttc" id="aclassfeatk_attributable_html_a56a7593089dd60442bb497c178bcbecd"><div class="ttname"><a href="classfeatk_attributable.html#a56a7593089dd60442bb497c178bcbecd">featkAttributable::getAttributeValue</a></div><div class="ttdeci">MatrixXd getAttributeValue(size_t id) const</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:91</div></div>
+<div class="ttc" id="aclassfeatk_attributable_html_a9f81c4d17c432ab01ca1659cf7438bb3"><div class="ttname"><a href="classfeatk_attributable.html#a9f81c4d17c432ab01ca1659cf7438bb3">featkAttributable::featkAttributable</a></div><div class="ttdeci">featkAttributable()</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:75</div></div>
+<div class="ttc" id="aclassfeatk_attributable_html_a1548f3bc69eb35dd474a72a2cf94c507"><div class="ttname"><a href="classfeatk_attributable.html#a1548f3bc69eb35dd474a72a2cf94c507">featkAttributable::setAttribute</a></div><div class="ttdeci">void setAttribute(size_t id, std::shared_ptr&lt; MatrixXd &gt; attribute)</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:104</div></div>
+<div class="ttc" id="aclassfeatk_attributable_html_a21d44bcec7f63b4112a2db59dc355064"><div class="ttname"><a href="classfeatk_attributable.html#a21d44bcec7f63b4112a2db59dc355064">featkAttributable::attributes</a></div><div class="ttdeci">std::map&lt; size_t, std::shared_ptr&lt; MatrixXd &gt; &gt; attributes</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:71</div></div>
+<div class="ttc" id="aclassfeatk_attributable_html_a56a7593089dd60442bb497c178bcbecd"><div class="ttname"><a href="classfeatk_attributable.html#a56a7593089dd60442bb497c178bcbecd">featkAttributable::getAttributeValue</a></div><div class="ttdeci">MatrixXd getAttributeValue(size_t id) const</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:92</div></div>
 <div class="ttc" id="aclassfeatk_mesh_html"><div class="ttname"><a href="classfeatk_mesh.html">featkMesh</a></div><div class="ttdoc">Mesh in Dimension dimensions with its elements and nodes.</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:50</div></div>
-<div class="ttc" id="aclassfeatk_attributable_html_ad548f4774968d887a8f06ca9afcd4271"><div class="ttname"><a href="classfeatk_attributable.html#ad548f4774968d887a8f06ca9afcd4271">featkAttributable::~featkAttributable</a></div><div class="ttdeci">~featkAttributable()</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:79</div></div>
-<div class="ttc" id="aclassfeatk_attributable_html_a046b79da694a68f2f2882757a59cd848"><div class="ttname"><a href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">featkAttributable::addAttribute</a></div><div class="ttdeci">void addAttribute(size_t id, std::shared_ptr&lt; MatrixXd &gt; attribute)</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:85</div></div>
+<div class="ttc" id="aclassfeatk_attributable_html_ad548f4774968d887a8f06ca9afcd4271"><div class="ttname"><a href="classfeatk_attributable.html#ad548f4774968d887a8f06ca9afcd4271">featkAttributable::~featkAttributable</a></div><div class="ttdeci">~featkAttributable()</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:80</div></div>
+<div class="ttc" id="aclassfeatk_attributable_html_a046b79da694a68f2f2882757a59cd848"><div class="ttname"><a href="classfeatk_attributable.html#a046b79da694a68f2f2882757a59cd848">featkAttributable::addAttribute</a></div><div class="ttdeci">void addAttribute(size_t id, std::shared_ptr&lt; MatrixXd &gt; attribute)</div><div class="ttdef"><b>Definition:</b> featkAttributable.h:86</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

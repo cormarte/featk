@@ -1,4 +1,6 @@
-archive/
-doc/latex/
+build/
+install/
+docs/latex/
+src/archive/
 *.pro
 *.pro.user

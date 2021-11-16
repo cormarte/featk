@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 165.975104
+%%BoundingBox: 0 0 500 92.879257
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 3.012500 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 5.383333 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 2 def
-/cols 1 def
+/rows 3 def
+/cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -175,6 +175,8 @@ boxfont setfont
 1 boundaspect scale
 (featkMeshProducerBase< Dimension >) cw
 (featkAlgorithmBase) cw
+(featkThresholdMeshFilter< Dimension >) cw
+(featkVTKUnstructuredGridToMeshFilter< Dimension >) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -186,12 +188,24 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (featkMeshProducerBase< Dimension >) 0.000000 0.000000 box
- (featkAlgorithmBase) 0.000000 1.000000 box
+ (featkMeshProducerBase< Dimension >) 0.500000 1.000000 box
+dashed
+ (featkAlgorithmBase) 0.500000 2.000000 box
+solid
+ (featkThresholdMeshFilter< Dimension >) 0.000000 0.000000 box
+ (featkVTKUnstructuredGridToMeshFilter< Dimension >) 1.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-0 0.000000 0.000000 out
+0 0.500000 1.000000 out
 solid
-1 0.000000 1.000000 in
+1 0.500000 2.000000 in
+solid
+1 0.500000 0.250000 out
+solid
+0.000000 1.000000 1.000000 conn
+solid
+0 0.000000 0.750000 in
+solid
+0 1.000000 0.750000 in

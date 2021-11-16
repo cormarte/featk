@@ -46,11 +46,15 @@ size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_afd3f3c02d6dc477324c3f725db06a577}{
 \item 
 size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_ab880c3fac2edb84a8c5093094f3652ad}{get\+Number\+Of\+Nodes}} () const
 \item 
-void \mbox{\hyperlink{classfeatk_mesh_a4d445a2e2e32bfb99104003ddffc6b4a}{set\+Element\+Attributes}} (std\+::string name, unsigned int order, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&attributes)
+void \mbox{\hyperlink{classfeatk_mesh_ae5dedf054d46ba755cc02bcdc4c45343}{remove\+Element\+Attribute}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classfeatk_mesh_aa10b958b6099983a94089b708f01b3d7}{remove\+Node\+Attribute}} (std\+::string name)
+\item 
+size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_a5f864b3ac3fdb6124db5cdda6ccaa5a0}{set\+Element\+Attributes}} (std\+::string name, unsigned int order, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&attributes)
 \item 
 size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_a967105e23509c63f1eec646398de7171}{set\+Element\+Attribute\+From\+Values}} (std\+::string name, unsigned int order, const Matrix\+Xd \&values)
 \item 
-void \mbox{\hyperlink{classfeatk_mesh_a08a23794ce9f21afed387e6e4c3f6592}{set\+Node\+Attributes}} (std\+::string name, unsigned int order, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&attributes)
+size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_a2a5bbd65b2e1104cd149311d5e000eac}{set\+Node\+Attributes}} (std\+::string name, unsigned int order, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&attributes)
 \item 
 size\+\_\+t \mbox{\hyperlink{classfeatk_mesh_aedffb2b1506d98834f6a6f11831bccd0}{set\+Node\+Attribute\+From\+Values}} (std\+::string name, unsigned int order, const Matrix\+Xd \&values)
 \end{DoxyCompactItemize}
@@ -178,17 +182,29 @@ void featk\+Mesh\+::compute\+Node\+C\+BQ (\begin{DoxyParamCaption}\item[{std\+::
 \doxysubsubsection{\texorpdfstring{getNumberOfNodes()}{getNumberOfNodes()}}
 {\footnotesize\ttfamily size\+\_\+t featk\+Mesh\+::get\+Number\+Of\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\mbox{\Hypertarget{classfeatk_mesh_ae5dedf054d46ba755cc02bcdc4c45343}\label{classfeatk_mesh_ae5dedf054d46ba755cc02bcdc4c45343}} 
+\index{featkMesh@{featkMesh}!removeElementAttribute@{removeElementAttribute}}
+\index{removeElementAttribute@{removeElementAttribute}!featkMesh@{featkMesh}}
+\doxysubsubsection{\texorpdfstring{removeElementAttribute()}{removeElementAttribute()}}
+{\footnotesize\ttfamily void featk\+Mesh\+::remove\+Element\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfeatk_mesh_aa10b958b6099983a94089b708f01b3d7}\label{classfeatk_mesh_aa10b958b6099983a94089b708f01b3d7}} 
+\index{featkMesh@{featkMesh}!removeNodeAttribute@{removeNodeAttribute}}
+\index{removeNodeAttribute@{removeNodeAttribute}!featkMesh@{featkMesh}}
+\doxysubsubsection{\texorpdfstring{removeNodeAttribute()}{removeNodeAttribute()}}
+{\footnotesize\ttfamily void featk\+Mesh\+::remove\+Node\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classfeatk_mesh_a967105e23509c63f1eec646398de7171}\label{classfeatk_mesh_a967105e23509c63f1eec646398de7171}} 
 \index{featkMesh@{featkMesh}!setElementAttributeFromValues@{setElementAttributeFromValues}}
 \index{setElementAttributeFromValues@{setElementAttributeFromValues}!featkMesh@{featkMesh}}
 \doxysubsubsection{\texorpdfstring{setElementAttributeFromValues()}{setElementAttributeFromValues()}}
 {\footnotesize\ttfamily size\+\_\+t featk\+Mesh\+::set\+Element\+Attribute\+From\+Values (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const Matrix\+Xd \&}]{values }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfeatk_mesh_a4d445a2e2e32bfb99104003ddffc6b4a}\label{classfeatk_mesh_a4d445a2e2e32bfb99104003ddffc6b4a}} 
+\mbox{\Hypertarget{classfeatk_mesh_a5f864b3ac3fdb6124db5cdda6ccaa5a0}\label{classfeatk_mesh_a5f864b3ac3fdb6124db5cdda6ccaa5a0}} 
 \index{featkMesh@{featkMesh}!setElementAttributes@{setElementAttributes}}
 \index{setElementAttributes@{setElementAttributes}!featkMesh@{featkMesh}}
 \doxysubsubsection{\texorpdfstring{setElementAttributes()}{setElementAttributes()}}
-{\footnotesize\ttfamily void featk\+Mesh\+::set\+Element\+Attributes (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&}]{attributes }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily size\+\_\+t featk\+Mesh\+::set\+Element\+Attributes (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&}]{attributes }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classfeatk_mesh_aedffb2b1506d98834f6a6f11831bccd0}\label{classfeatk_mesh_aedffb2b1506d98834f6a6f11831bccd0}} 
 \index{featkMesh@{featkMesh}!setNodeAttributeFromValues@{setNodeAttributeFromValues}}
@@ -196,11 +212,11 @@ void featk\+Mesh\+::compute\+Node\+C\+BQ (\begin{DoxyParamCaption}\item[{std\+::
 \doxysubsubsection{\texorpdfstring{setNodeAttributeFromValues()}{setNodeAttributeFromValues()}}
 {\footnotesize\ttfamily size\+\_\+t featk\+Mesh\+::set\+Node\+Attribute\+From\+Values (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const Matrix\+Xd \&}]{values }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfeatk_mesh_a08a23794ce9f21afed387e6e4c3f6592}\label{classfeatk_mesh_a08a23794ce9f21afed387e6e4c3f6592}} 
+\mbox{\Hypertarget{classfeatk_mesh_a2a5bbd65b2e1104cd149311d5e000eac}\label{classfeatk_mesh_a2a5bbd65b2e1104cd149311d5e000eac}} 
 \index{featkMesh@{featkMesh}!setNodeAttributes@{setNodeAttributes}}
 \index{setNodeAttributes@{setNodeAttributes}!featkMesh@{featkMesh}}
 \doxysubsubsection{\texorpdfstring{setNodeAttributes()}{setNodeAttributes()}}
-{\footnotesize\ttfamily void featk\+Mesh\+::set\+Node\+Attributes (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&}]{attributes }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily size\+\_\+t featk\+Mesh\+::set\+Node\+Attributes (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned int}]{order,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ Matrix\+Xd $>$$>$ \&}]{attributes }\end{DoxyParamCaption})}
 
 
 

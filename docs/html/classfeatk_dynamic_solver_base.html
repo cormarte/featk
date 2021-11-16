@@ -100,6 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a94d36376127a30a0953c2c78037afc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11da6ef441ed3451b2dcd56b3708389f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_dynamic_solver_base.html#a11da6ef441ed3451b2dcd56b3708389f">solve</a> ()</td></tr>
 <tr class="separator:a11da6ef441ed3451b2dcd56b3708389f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b09e6d308a56e5ccd5cd63ba95acbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_dynamic_solver_base.html#a52b09e6d308a56e5ccd5cd63ba95acbf">setDoCutoff</a> (bool doCutoff)</td></tr>
+<tr class="separator:a52b09e6d308a56e5ccd5cd63ba95acbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e036ce1cacc02d8a4a3682561af90d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_dynamic_solver_base.html#a7e036ce1cacc02d8a4a3682561af90d9">setDoLowerCutoff</a> (bool doCutoff)</td></tr>
 <tr class="separator:a7e036ce1cacc02d8a4a3682561af90d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a509a6e11166aab48d8054dac142ccf07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfeatk_dynamic_solver_base.html#a509a6e11166aab48d8054dac142ccf07">setDoUpperCutoff</a> (bool doCutoff)</td></tr>
@@ -307,7 +309,7 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a64d91439da7f1d34cf9bf2bc255f8587">featkReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a64d91439da7f1d34cf9bf2bc255f8587">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk2_populations_reaction_diffusion_solver.html#a65f704e45b288f94f1f7ae3386954cc0">featk2PopulationsReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
 
 </div>
 </div>
@@ -338,7 +340,7 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 
 <p>Implements <a class="el" href="classfeatk_solver_base.html#acddf99bbfc1908f9a5e84c22a23e9f36">featkSolverBase&lt; Dimension, Order &gt;</a>.</p>
 
-<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a8736dd765d52ad3c5f987ae895365138">featkReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a8736dd765d52ad3c5f987ae895365138">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk2_populations_reaction_diffusion_solver.html#a3e65cc2eba3022f592dda34d0486cdea">featk2PopulationsReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
 
 </div>
 </div>
@@ -368,7 +370,7 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a1c087e841cf00e2b0978e8eb80b666a5">featkReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a1c087e841cf00e2b0978e8eb80b666a5">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk2_populations_reaction_diffusion_solver.html#ab7a35ebfeafbd084346e276a19b9b7a7">featk2PopulationsReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
 
 </div>
 </div>
@@ -408,7 +410,7 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a06e4f37beccd2c6c93fd3f6dcd4f6baf">featkReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a06e4f37beccd2c6c93fd3f6dcd4f6baf">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk2_populations_reaction_diffusion_solver.html#a2656f1368441ec9fefcac7fed941d4fe">featk2PopulationsReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
 
 </div>
 </div>
@@ -440,7 +442,27 @@ template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
 
 <p>Implements <a class="el" href="classfeatk_solver_base.html#a1062d8f689866f75771e19349f27ae0a">featkSolverBase&lt; Dimension, Order &gt;</a>.</p>
 
-<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a584b380a23746a317d1054cc1089314f">featkReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classfeatk_reaction_diffusion_solver.html#a584b380a23746a317d1054cc1089314f">featkReactionDiffusionSolver&lt; Dimension &gt;</a>, and <a class="el" href="classfeatk2_populations_reaction_diffusion_solver.html#a1f1d82a68e2375df51b54ac65f75207c">featk2PopulationsReactionDiffusionSolver&lt; Dimension &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a52b09e6d308a56e5ccd5cd63ba95acbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b09e6d308a56e5ccd5cd63ba95acbf">&#9670;&nbsp;</a></span>setDoCutoff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int Dimension, unsigned int Order&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classfeatk_dynamic_solver_base.html">featkDynamicSolverBase</a>&lt; Dimension, Order &gt;::setDoCutoff </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>doCutoff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

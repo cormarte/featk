@@ -22,6 +22,8 @@ virtual \mbox{\hyperlink{classfeatk_dynamic_solver_base_a94d36376127a30a0953c2c7
 \item 
 void \mbox{\hyperlink{classfeatk_dynamic_solver_base_a11da6ef441ed3451b2dcd56b3708389f}{solve}} ()
 \item 
+void \mbox{\hyperlink{classfeatk_dynamic_solver_base_a52b09e6d308a56e5ccd5cd63ba95acbf}{set\+Do\+Cutoff}} (bool do\+Cutoff)
+\item 
 void \mbox{\hyperlink{classfeatk_dynamic_solver_base_a7e036ce1cacc02d8a4a3682561af90d9}{set\+Do\+Lower\+Cutoff}} (bool do\+Cutoff)
 \item 
 void \mbox{\hyperlink{classfeatk_dynamic_solver_base_a509a6e11166aab48d8054dac142ccf07}{set\+Do\+Upper\+Cutoff}} (bool do\+Cutoff)
@@ -130,7 +132,7 @@ virtual Vector\+Xd \mbox{\hyperlink{classfeatk_dynamic_solver_base}{featk\+Dynam
 
 
 
-Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a64d91439da7f1d34cf9bf2bc255f8587}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
+Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a64d91439da7f1d34cf9bf2bc255f8587}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}, and \mbox{\hyperlink{classfeatk2_populations_reaction_diffusion_solver_a65f704e45b288f94f1f7ae3386954cc0}{featk2\+Populations\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
 
 \mbox{\Hypertarget{classfeatk_dynamic_solver_base_a9010f2ac534f4790f9f9aab8c8493196}\label{classfeatk_dynamic_solver_base_a9010f2ac534f4790f9f9aab8c8493196}} 
 \index{featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}!getGlobalSystemMatrix@{getGlobalSystemMatrix}}
@@ -145,7 +147,7 @@ Implements \mbox{\hyperlink{classfeatk_solver_base_acddf99bbfc1908f9a5e84c22a23e
 
 
 
-Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a8736dd765d52ad3c5f987ae895365138}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
+Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a8736dd765d52ad3c5f987ae895365138}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}, and \mbox{\hyperlink{classfeatk2_populations_reaction_diffusion_solver_a3e65cc2eba3022f592dda34d0486cdea}{featk2\+Populations\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
 
 \mbox{\Hypertarget{classfeatk_dynamic_solver_base_a6ce22a4365569bf559c70f31b4420541}\label{classfeatk_dynamic_solver_base_a6ce22a4365569bf559c70f31b4420541}} 
 \index{featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}!getGlobalSystemVector@{getGlobalSystemVector}}
@@ -156,7 +158,7 @@ virtual Vector\+Xd \mbox{\hyperlink{classfeatk_dynamic_solver_base}{featk\+Dynam
 
 
 
-Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a1c087e841cf00e2b0978e8eb80b666a5}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
+Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a1c087e841cf00e2b0978e8eb80b666a5}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}, and \mbox{\hyperlink{classfeatk2_populations_reaction_diffusion_solver_ab7a35ebfeafbd084346e276a19b9b7a7}{featk2\+Populations\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
 
 \mbox{\Hypertarget{classfeatk_dynamic_solver_base_a3ccc53e28780049cd8e3e887aab58e54}\label{classfeatk_dynamic_solver_base_a3ccc53e28780049cd8e3e887aab58e54}} 
 \index{featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}!intermediateProcess@{intermediateProcess}}
@@ -167,7 +169,7 @@ void \mbox{\hyperlink{classfeatk_dynamic_solver_base}{featk\+Dynamic\+Solver\+Ba
 
 
 
-Reimplemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a06e4f37beccd2c6c93fd3f6dcd4f6baf}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
+Reimplemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a06e4f37beccd2c6c93fd3f6dcd4f6baf}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}, and \mbox{\hyperlink{classfeatk2_populations_reaction_diffusion_solver_a2656f1368441ec9fefcac7fed941d4fe}{featk2\+Populations\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
 
 \mbox{\Hypertarget{classfeatk_dynamic_solver_base_a4598fd4c6e61fad82cade009411eed70}\label{classfeatk_dynamic_solver_base_a4598fd4c6e61fad82cade009411eed70}} 
 \index{featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}!postProcess@{postProcess}}
@@ -182,7 +184,14 @@ Implements \mbox{\hyperlink{classfeatk_solver_base_a1062d8f689866f75771e19349f27
 
 
 
-Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a584b380a23746a317d1054cc1089314f}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
+Implemented in \mbox{\hyperlink{classfeatk_reaction_diffusion_solver_a584b380a23746a317d1054cc1089314f}{featk\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}, and \mbox{\hyperlink{classfeatk2_populations_reaction_diffusion_solver_a1f1d82a68e2375df51b54ac65f75207c}{featk2\+Populations\+Reaction\+Diffusion\+Solver$<$ Dimension $>$}}.
+
+\mbox{\Hypertarget{classfeatk_dynamic_solver_base_a52b09e6d308a56e5ccd5cd63ba95acbf}\label{classfeatk_dynamic_solver_base_a52b09e6d308a56e5ccd5cd63ba95acbf}} 
+\index{featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}!setDoCutoff@{setDoCutoff}}
+\index{setDoCutoff@{setDoCutoff}!featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}}
+\doxysubsubsection{\texorpdfstring{setDoCutoff()}{setDoCutoff()}}
+{\footnotesize\ttfamily template$<$unsigned int Dimension, unsigned int Order$>$ \\
+void \mbox{\hyperlink{classfeatk_dynamic_solver_base}{featk\+Dynamic\+Solver\+Base}}$<$ Dimension, Order $>$\+::set\+Do\+Cutoff (\begin{DoxyParamCaption}\item[{bool}]{do\+Cutoff }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classfeatk_dynamic_solver_base_a7e036ce1cacc02d8a4a3682561af90d9}\label{classfeatk_dynamic_solver_base_a7e036ce1cacc02d8a4a3682561af90d9}} 
 \index{featkDynamicSolverBase$<$ Dimension, Order $>$@{featkDynamicSolverBase$<$ Dimension, Order $>$}!setDoLowerCutoff@{setDoLowerCutoff}}
