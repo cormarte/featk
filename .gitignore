@@ -1,6 +1,5 @@
 build/
 install/
-docs/Doxyfile
 src/archive
 *.pro
 *.pro.user
